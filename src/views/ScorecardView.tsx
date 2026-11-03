@@ -1,7 +1,7 @@
-// src/views/ScorecardView.tsx
 import React, { useState } from 'react';
-import { Share2, Printer, ArrowLeft, Trophy } from 'lucide-react';
+import { Share2, Printer, ArrowLeft, Trophy, Award, Sparkles } from 'lucide-react';
 import type { MatchState, InningsState } from '../types';
+import { calculatePlayerOfTheMatch } from '../components/VictoryModal';
 
 interface ScorecardViewProps {
   match: MatchState;
@@ -14,6 +14,10 @@ export const ScorecardView: React.FC<ScorecardViewProps> = ({ match, onBack }) =
   const inn1 = match.innings1;
   const inn2 = match.innings2;
   const activeInn = activeInningsTab === 1 ? inn1 : inn2;
+
+  const potm = match.status === 'COMPLETED'
+    ? (match.playerOfTheMatch || calculatePlayerOfTheMatch(match))
+    : null;
 
   const handlePrint = () => {
     window.print();
@@ -34,28 +38,28 @@ export const ScorecardView: React.FC<ScorecardViewProps> = ({ match, onBack }) =
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-6 space-y-6 select-none animate-fadeIn pb-24 print:bg-white print:text-black print:p-0">
+    <div className="w-full max-w-4xl mx-auto px-4 py-6 space-y-5 select-none animate-fadeIn pb-24 print:bg-white print:text-black print:p-0">
       {/* Top Header */}
       <div className="flex items-center justify-between border-b border-[#272b26] pb-3 print:hidden">
         <button
           onClick={onBack}
-          className="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5"
+          className="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back</span>
+          <span>Back to Live Arena</span>
         </button>
 
         <div className="flex items-center gap-2">
           <button
             onClick={handleShare}
-            className="px-3.5 py-1.5 rounded-full bg-[#1d211c] hover:bg-[#272b26] text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 border border-white/10"
+            className="px-3.5 py-1.5 rounded-full bg-[#1d211c] hover:bg-[#272b26] text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 border border-white/10 cursor-pointer"
           >
             <Share2 className="w-3.5 h-3.5" />
             <span>Share</span>
           </button>
           <button
             onClick={handlePrint}
-            className="px-3.5 py-1.5 rounded-full bg-[#1d211c] hover:bg-[#272b26] text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 border border-white/10"
+            className="px-3.5 py-1.5 rounded-full bg-[#1d211c] hover:bg-[#272b26] text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1.5 border border-white/10 cursor-pointer"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print / PDF</span>
@@ -88,6 +92,34 @@ export const ScorecardView: React.FC<ScorecardViewProps> = ({ match, onBack }) =
           </div>
         </div>
       </div>
+
+      {/* Player of the Match Banner in Scorecard */}
+      {potm && (
+        <div className="bg-gradient-to-r from-[#1c180f] via-[#241e12] to-[#1c180f] border border-amber-400/40 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-lg print:border-black">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-black font-black text-lg flex items-center justify-center shrink-0 shadow-md">
+              <Award className="w-5 h-5 text-black" />
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[9px] font-black uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.2 rounded-full border border-amber-400/30">
+                  PLAYER OF THE MATCH
+                </span>
+                <span className="text-xs font-black text-white">{potm.name}</span>
+                <span className="text-[10px] text-amber-300 font-bold">({potm.teamCode})</span>
+              </div>
+              <div className="text-[11px] text-slate-300 mt-0.5 font-semibold">
+                {potm.headline}
+              </div>
+            </div>
+          </div>
+          <div className="text-right shrink-0">
+            <span className="text-[10px] font-mono text-[#ccff00] font-bold bg-[#101410] px-2.5 py-1 rounded-full border border-white/10">
+              ★ {potm.fantasyPoints} Rating
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* Innings Switcher Tabs */}
       <div className="flex border-b border-[#272b26] gap-3 print:hidden">

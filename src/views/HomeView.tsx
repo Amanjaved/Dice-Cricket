@@ -1,8 +1,9 @@
-// src/views/HomeView.tsx
 import React, { useState } from 'react';
 import type { MatchState, GroundType } from '../types';
 import { storage } from '../services/storage';
 import { soundEngine } from '../services/sound';
+import { TEAMS_DATA } from '../../scripts/master_data.js';
+import { calculatePlayerOfTheMatch } from '../components/VictoryModal';
 
 interface HomeViewProps {
   onNavigate: (view: string, data?: unknown) => void;
@@ -24,6 +25,84 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const inProgressMatches = matches.filter(m => m.status === 'IN_PROGRESS' || m.status === 'TIE_SUPER_OVER');
   const activeMatch = inProgressMatches[0] || null;
   const recentCompleted = matches.filter(m => m.status === 'COMPLETED').slice(0, 3);
+
+  const getSampleMatch = (): MatchState => {
+    const pak = TEAMS_DATA.find(t => t.code === 'PAK') || TEAMS_DATA[2];
+    const aus = TEAMS_DATA.find(t => t.code === 'AUS') || TEAMS_DATA[0];
+
+    const matchObj: MatchState = {
+      id: 'sample_sf2_completed',
+      format: '10_overs',
+      ground: 'NSG',
+      teamA: pak as any,
+      teamB: aus as any,
+      teamASnapshotStars: 5,
+      teamBSnapshotStars: 5,
+      tossWinnerId: aus.id,
+      tossDecision: 'bowl',
+      battingFirstId: pak.id,
+      bowlingFirstId: aus.id,
+      innings1: {
+        team: pak as any,
+        score: 195,
+        wickets: 6,
+        completedOvers: 10,
+        ballsInCurrentOver: 0,
+        deliveries: [],
+        battingCard: [
+          { player: pak.players[0] as any, runs: 68, balls: 26, fours: 6, sixes: 4, isOut: true, strikeRate: 261.5, battingOrder: 1 },
+          { player: pak.players[1] as any, runs: 42, balls: 18, fours: 3, sixes: 3, isOut: true, strikeRate: 233.3, battingOrder: 2 },
+          { player: pak.players[2] as any, runs: 35, balls: 14, fours: 2, sixes: 2, isOut: false, strikeRate: 250.0, battingOrder: 3 },
+          { player: pak.players[3] as any, runs: 18, balls: 8, fours: 2, sixes: 1, isOut: true, strikeRate: 225.0, battingOrder: 4 }
+        ],
+        bowlingFigures: [
+          { player: aus.players[11] as any, overs: 2, maidens: 0, runsConceded: 32, wickets: 2, dots: 5, economy: 16.0 },
+          { player: aus.players[15] as any, overs: 2, maidens: 0, runsConceded: 28, wickets: 3, dots: 6, economy: 14.0 }
+        ],
+        fallOfWickets: [],
+        extras: { wides: 3, noBalls: 1, byes: 0, legByes: 2, total: 6 },
+        strikerIndex: 0,
+        nonStrikerIndex: 1,
+        currentBowlerName: aus.players[11].name,
+        lastBowlerName: null,
+        isCompleted: true
+      },
+      innings2: {
+        team: aus as any,
+        score: 196,
+        wickets: 7,
+        completedOvers: 9,
+        ballsInCurrentOver: 5,
+        deliveries: [],
+        battingCard: [
+          { player: aus.players[0] as any, runs: 74, balls: 28, fours: 7, sixes: 5, isOut: false, strikeRate: 264.3, battingOrder: 1 },
+          { player: aus.players[1] as any, runs: 38, balls: 15, fours: 3, sixes: 2, isOut: true, strikeRate: 253.3, battingOrder: 2 },
+          { player: aus.players[2] as any, runs: 29, balls: 12, fours: 3, sixes: 1, isOut: true, strikeRate: 241.7, battingOrder: 3 }
+        ],
+        bowlingFigures: [
+          { player: pak.players[12] as any, overs: 2, maidens: 0, runsConceded: 34, wickets: 2, dots: 4, economy: 17.0 },
+          { player: pak.players[16] as any, overs: 2, maidens: 0, runsConceded: 36, wickets: 3, dots: 5, economy: 18.0 }
+        ],
+        fallOfWickets: [],
+        extras: { wides: 4, noBalls: 1, byes: 1, legByes: 0, total: 6 },
+        strikerIndex: 0,
+        nonStrikerIndex: 1,
+        currentBowlerName: pak.players[12].name,
+        lastBowlerName: null,
+        isCompleted: true
+      },
+      currentInningsNo: 2,
+      targetRuns: 196,
+      status: 'COMPLETED',
+      winnerTeamId: aus.id,
+      winDescription: 'Australia won by 3 wickets (1 ball remaining)!',
+      isSuperOver: false,
+      powerCardsRemaining: { [aus.id]: { reroll: 0, wonderfulShot: 0, greatDelivery: 0 }, [pak.id]: { reroll: 0, wonderfulShot: 0, greatDelivery: 0 } },
+      startTime: Date.now() - 3600000
+    };
+    matchObj.playerOfTheMatch = calculatePlayerOfTheMatch(matchObj);
+    return matchObj;
+  };
 
   const handleToggleSound = () => {
     const next = !soundActive;
@@ -418,13 +497,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           {/* Showcase or Recorded Match 1 */}
-          <div className="bg-[#191d18] border border-[#293024] rounded-3xl p-4 flex flex-col gap-3 shadow-md hover:bg-[#232821] transition-colors">
+          <div
+            onClick={() => onResumeMatch(recentCompleted[0] || getSampleMatch())}
+            className="bg-[#191d18] border border-[#293024] hover:border-[#ccff00]/40 rounded-3xl p-4 flex flex-col gap-3 shadow-md hover:bg-[#232821] transition-all cursor-pointer group"
+          >
             <div className="flex items-center justify-between">
               <span className="bg-[#0b0f0b] text-[#9ba394] text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                 Semi-Final 2 · Eden Gardens
               </span>
-              <span className="text-[11px] text-[#c3f400] font-bold flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c3f400]" /> Completed
+              <span className="text-[11px] text-[#ccff00] font-bold flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ccff00] animate-beacon-pulse" /> Completed
               </span>
             </div>
             <div className="flex items-center justify-between">

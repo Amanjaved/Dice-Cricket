@@ -145,6 +145,36 @@ class FaizSoundEngine {
       osc.stop(t + idx * 0.15 + 0.42);
     });
   }
+
+  playVictoryFanfare() {
+    if (!this.enabled) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+
+    // Grand championship fanfare chords
+    const notes = [
+      { f: 523.25, time: 0.0, dur: 0.2 }, // C5
+      { f: 659.25, time: 0.15, dur: 0.2 }, // E5
+      { f: 783.99, time: 0.3, dur: 0.2 }, // G5
+      { f: 1046.50, time: 0.45, dur: 0.7 }, // C6
+      { f: 783.99, time: 0.8, dur: 0.2 }, // G5
+      { f: 1046.50, time: 0.95, dur: 0.9 } // C6 climax
+    ];
+
+    notes.forEach(note => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(note.f, t + note.time);
+      gain.gain.setValueAtTime(0.25, t + note.time);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + note.time + note.dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t + note.time);
+      osc.stop(t + note.time + note.dur + 0.05);
+    });
+  }
 }
 
 export const soundEngine = new FaizSoundEngine();

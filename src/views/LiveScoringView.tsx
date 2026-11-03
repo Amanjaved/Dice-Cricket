@@ -16,6 +16,7 @@ import { NewBatsmanModal } from '../components/NewBatsmanModal';
 import { OverCompleteCard } from '../components/OverCompleteCard';
 import { DrsModal } from '../components/DrsModal';
 import { PowerCardModal } from '../components/PowerCardModal';
+import { VictoryModal, calculatePlayerOfTheMatch } from '../components/VictoryModal';
 
 interface LiveScoringViewProps {
   match: MatchState;
@@ -50,6 +51,7 @@ export const LiveScoringView: React.FC<LiveScoringViewProps> = ({
   const [showOverCompleteCard, setShowOverCompleteCard] = useState(false);
   const [showDrsModal, setShowDrsModal] = useState(false);
   const [showPowerModal, setShowPowerModal] = useState<'wonderful_shot' | 'great_delivery' | 'reroll' | null>(null);
+  const [showVictoryModal, setShowVictoryModal] = useState<boolean>(match.status === 'COMPLETED');
 
   // Ball Resolution Pipeline States
   const [pipelineState, setPipelineState] = useState<'awaiting_bowling' | 'awaiting_batting' | 'wicket_flow'>('awaiting_bowling');
@@ -498,6 +500,8 @@ export const LiveScoringView: React.FC<LiveScoringViewProps> = ({
         updated.winnerTeamId = inn.team.id;
         const wktMargin = maxWickets - inn.wickets;
         updated.winDescription = `${inn.team.name} won by ${wktMargin} wicket${wktMargin > 1 ? 's' : ''}!`;
+        updated.playerOfTheMatch = calculatePlayerOfTheMatch(updated);
+        setShowVictoryModal(true);
       } else if (isAllOut || isOversDone) {
         inn.isCompleted = true;
         if (inn.score === target - 1) {
@@ -510,6 +514,8 @@ export const LiveScoringView: React.FC<LiveScoringViewProps> = ({
           updated.winnerTeamId = updated.innings1.team.id;
           const runMargin = target - 1 - inn.score;
           updated.winDescription = `${updated.innings1.team.name} won by ${runMargin} run${runMargin > 1 ? 's' : ''}!`;
+          updated.playerOfTheMatch = calculatePlayerOfTheMatch(updated);
+          setShowVictoryModal(true);
         }
       }
     }
@@ -775,10 +781,36 @@ export const LiveScoringView: React.FC<LiveScoringViewProps> = ({
 
       {/* Match Win Banner */}
       {match.status === 'COMPLETED' && (
-        <div className="bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-500 p-4 rounded-3xl text-black font-black text-center shadow-2xl animate-bounce">
-          <div className="text-xl">🏆 {match.winDescription}</div>
-          <div className="text-xs font-bold mt-1">Match Complete · All figures updated in database</div>
+        <div
+          onClick={() => setShowVictoryModal(true)}
+          className="bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-500 p-4 rounded-3xl text-black font-black text-center shadow-2xl cursor-pointer hover:scale-[1.01] transition-transform animate-subtle-pulse select-none"
+          title="Click to view victory celebration and Player of the Match"
+        >
+          <div className="text-xl flex items-center justify-center gap-2">
+            <span>🏆</span>
+            <span>{match.winDescription}</span>
+          </div>
+          <div className="text-xs font-bold mt-1 flex items-center justify-center gap-2">
+            <span>Match Complete · Tap to View Victory Screen &amp; POTM</span>
+            <span>→</span>
+          </div>
         </div>
+      )}
+
+      {/* Animated Victory Screen Modal */}
+      {showVictoryModal && match.status === 'COMPLETED' && (
+        <VictoryModal
+          match={match}
+          onViewScorecard={() => {
+            setShowVictoryModal(false);
+            onNavigateTab('scorecard');
+          }}
+          onViewSummary={() => {
+            setShowVictoryModal(false);
+            onNavigateTab('summary');
+          }}
+          onClose={() => setShowVictoryModal(false)}
+        />
       )}
 
       {/* Over N Complete Summary Card (Triggered after 6th delivery) */}

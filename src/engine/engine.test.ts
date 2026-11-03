@@ -63,3 +63,86 @@ test('Batting line resolution distinguishes RHB and LHB', () => {
   assert.ok(rhbLine.lineName.includes('RHB') || rhbLine.lineName.length > 0);
   assert.ok(lhbLine.lineName.includes('LHB') || lhbLine.lineName.length > 0);
 });
+
+test('calculatePlayerOfTheMatch picks the highest impact performer', async () => {
+  const { calculatePlayerOfTheMatch } = await import('../components/VictoryModal');
+
+  const mockMatch: any = {
+    winnerTeamId: 'IND',
+    innings1: {
+      team: { id: 'IND', name: 'India', code: 'IND', captain: 'Debashish' },
+      score: 184,
+      wickets: 4,
+      completedOvers: 10,
+      ballsInCurrentOver: 0,
+      battingCard: [
+        {
+          player: { name: 'Debashish', role: 'BTBW', marks: ['C', '★'] },
+          runs: 62,
+          balls: 25,
+          fours: 5,
+          sixes: 4,
+          strikeRate: 248.0,
+          isOut: false
+        },
+        {
+          player: { name: 'Rana', role: 'BAT', marks: ['★'] },
+          runs: 24,
+          balls: 12,
+          fours: 2,
+          sixes: 1,
+          strikeRate: 200.0,
+          isOut: true
+        }
+      ],
+      bowlingFigures: [
+        {
+          player: { name: 'Faizan', role: 'BW', marks: [] },
+          overs: 2,
+          wickets: 1,
+          runsConceded: 28,
+          dots: 4,
+          economy: 14.0
+        }
+      ]
+    },
+    innings2: {
+      team: { id: 'PAK', name: 'Pakistan', code: 'PAK', captain: 'Daniyal' },
+      score: 168,
+      wickets: 7,
+      completedOvers: 10,
+      ballsInCurrentOver: 0,
+      battingCard: [
+        {
+          player: { name: 'Daniyal', role: 'BTBW', marks: ['C', '★'] },
+          runs: 45,
+          balls: 22,
+          fours: 3,
+          sixes: 3,
+          strikeRate: 204.5,
+          isOut: true
+        }
+      ],
+      bowlingFigures: [
+        {
+          player: { name: 'Ojas', role: 'BW', marks: [] },
+          overs: 2,
+          wickets: 3,
+          runsConceded: 18,
+          dots: 6,
+          economy: 9.0
+        }
+      ]
+    },
+    format: '10_overs',
+    ground: 'NSG',
+    targetRuns: 185
+  };
+
+  const potm = calculatePlayerOfTheMatch(mockMatch);
+  assert.ok(potm, 'POTM should be calculated');
+  assert.ok(potm.name === 'Debashish' || potm.name === 'Ojas', `POTM should be Debashish (62*) or Ojas (3/18), got ${potm.name}`);
+  assert.ok(potm.fantasyPoints > 0, 'Fantasy impact rating should be positive');
+  assert.ok(potm.headline.length > 0, 'Headline must be populated');
+});
+

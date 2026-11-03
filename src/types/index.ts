@@ -182,6 +182,19 @@ export interface MatchState {
   endTime?: number;
   tournamentId?: string;
   fixtureId?: string;
+  playerOfTheMatch?: PlayerOfTheMatch;
+}
+
+export interface PlayerOfTheMatch {
+  name: string;
+  teamName: string;
+  teamCode: string;
+  role: string;
+  headline: string;
+  summary: string;
+  batting?: { runs: number; balls: number; fours: number; sixes: number; notOut: boolean; strikeRate: number };
+  bowling?: { wickets: number; runsConceded: number; overs: number; dots: number; economy: number };
+  fantasyPoints: number;
 }
 
 export interface TournamentFixture {
