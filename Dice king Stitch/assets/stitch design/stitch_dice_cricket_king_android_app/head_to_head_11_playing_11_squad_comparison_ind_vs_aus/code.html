@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;font-family:'Outfit',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#272b26","on-tertiary-fixed-variant":"#930005","secondary":"#c0c9bc","on-secondary":"#2a3329","tertiary":"#ffffff","error":"#ffb4ab","primary-fixed":"#c3f400","tertiary-fixed-dim":"#ffb4aa","on-secondary-fixed":"#161e15","on-error-container":"#ffdad6","secondary-fixed":"#dce5d7","secondary-container":"#434b41","surface":"#101410","on-secondary-container":"#b2bbae","outline":"#8e9379","surface-variant":"#323631","surface-container-highest":"#323631","inverse-surface":"#e0e4dc","primary-fixed-dim":"#abd600","on-primary":"#283500","error-container":"#93000a","secondary-fixed-dim":"#c0c9bc","inverse-on-surface":"#2d312d","surface-tint":"#abd600","tertiary-container":"#ffdad5","on-primary-fixed":"#161e00","on-error":"#690005","primary-container":"#c3f400","on-surface-variant":"#c4c9ac","on-background":"#e0e4dc","on-surface":"#e0e4dc","inverse-primary":"#506600","on-tertiary-fixed":"#410001","surface-dim":"#101410","on-primary-fixed-variant":"#3c4d00","surface-bright":"#363a35","on-tertiary":"#690003","on-secondary-fixed-variant":"#41493f","primary":"#ffffff","on-primary-container":"#556d00","outline-variant":"#444933","on-tertiary-container":"#ca0a0f","surface-container-low":"#191d18","background":"#101410","tertiary-fixed":"#ffdad5","surface-container-lowest":"#0b0f0b","surface-container":"#1d211c"},borderRadius:{DEFAULT:"1rem",lg:"2rem",xl:"3rem",full:"9999px"},spacing:{"gutter-desktop":"1.5rem",margin:"1.25rem","margin-desktop":"2.5rem","space-xl":"2rem","space-lg":"1.25rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"0.875rem",gutter:"1rem"},fontFamily:{"headline-sm":["Outfit"],"body-lg":["Outfit"],"headline-lg-mobile":["Outfit"],"headline-lg":["Outfit"],"label-md":["Outfit"],"label-lg":["Outfit"],"body-sm":["Outfit"],"body-md":["Outfit"],"headline-xl":["Outfit"],"label-sm":["Outfit"],"headline-md":["Outfit"],"score-display":["Outfit"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"38px",letterSpacing:"-0.025em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.03em",fontWeight:"700"}],"label-sm":["10px",{lineHeight:"12px",letterSpacing:"0.06em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.02em",fontWeight:"600"}],"score-display":["28px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container text-[20px]">sports_cricket</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Head To Head 11</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Search fixtures" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface px-margin"><div class="flex flex-col w-full space-y-space-md">
+<!-- TOP HERO BANNER: Grand Final Match & Conditions -->
+<div class="relative w-full rounded-2xl bg-surface-container-low p-space-md overflow-hidden shadow-xl">
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-surface-tint/5 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-sm">
+<!-- Tournament & Level Badges -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+          World Cup 2026 · Grand Final
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+          10 Overs Slog
+        </span>
+</div>
+<!-- Matchup Display -->
+<div class="flex items-center justify-between pt-1">
+<!-- Team IND -->
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center shadow-md">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold tracking-tight">IND</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">India</span>
+<span class="text-primary-fixed font-label-md text-label-md">5★</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rank #1 · Form W-W-W</span>
+</div>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-black">VS</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">GRID B</span>
+</div>
+<!-- Team AUS -->
+<div class="flex items-center gap-space-sm flex-row-reverse text-right">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center shadow-md">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold tracking-tight">AUS</span>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1 flex-row-reverse">
+<span class="font-headline-md text-headline-md text-on-surface">Australia</span>
+<span class="text-primary-fixed font-label-md text-label-md">5★</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rank #2 · Form W-W-W</span>
+</div>
+</div>
+</div>
+<!-- Pitch Telemetry Microstrip -->
+<div class="grid grid-cols-2 gap-space-xs pt-space-xs">
+<div class="flex items-center gap-1.5 p-2 rounded-xl bg-surface-container-high/60 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">stadium</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pitch / Venue</span>
+<span class="font-label-md text-label-md text-on-surface truncate">NSG Melbourne (Par 150)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 p-2 rounded-xl bg-surface-container-high/60 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">verified_user</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Roster State</span>
+<span class="font-label-md text-label-md text-primary-fixed truncate">Confirmed XI · 22 Cards</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VISUAL TELEMETRY SUMMARY CARD: Statistical Balance -->
+<div class="w-full rounded-2xl bg-surface-container-low p-space-md shadow-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">equalizer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Team Balance Telemetry</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-fixed font-label-sm text-label-sm">Rating 99 vs 99</span>
+</div>
+<!-- Power Gauges (Batting & Bowling) -->
+<div class="space-y-space-sm">
+<!-- Batting Power -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="text-primary-fixed">IND 96</span>
+<span class="text-on-surface-variant">Batting Power</span>
+<span class="text-on-surface">AUS 95</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest flex overflow-hidden">
+<div class="h-full bg-primary-fixed" style="width: 50.25%;"></div>
+<div class="h-full bg-surface-container" style="width: 0.5%;"></div>
+<div class="h-full bg-secondary" style="width: 49.25%;"></div>
+</div>
+</div>
+<!-- Bowling Depth -->
+<div>
+<div class="flex justify-between font-label-md text-label-md mb-1">
+<span class="text-on-surface">IND 94</span>
+<span class="text-on-surface-variant">Bowling Depth (2 DBs Each)</span>
+<span class="text-primary-fixed">AUS 95</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest flex overflow-hidden">
+<div class="h-full bg-secondary" style="width: 49.7%;"></div>
+<div class="h-full bg-surface-container" style="width: 0.6%;"></div>
+<div class="h-full bg-primary-fixed" style="width: 49.7%;"></div>
+</div>
+</div>
+</div>
+<!-- Star Power & Tactical Inventories -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">star</span> Star Arsenal
+        </span>
+<div class="flex items-baseline justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">IND: 2 Stars</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">★25r + ★18r</span>
+</div>
+<div class="flex items-baseline justify-between text-on-surface-variant">
+<span class="font-label-lg text-label-lg text-secondary">AUS: 1 Star</span>
+<span class="font-label-sm text-label-sm text-secondary">★17r Haden</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">style</span> Power Cards
+        </span>
+<div class="font-label-md text-label-md text-on-surface font-semibold truncate">Both: 2 Active Cards</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Reroll + Wonderful Shot</span>
+</div>
+</div>
+<!-- Fielding Tier Ratios -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/80 flex items-center justify-between text-center">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">IND Red Ringers</span>
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold">7 Red Catchers</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">AUS Red Ringers</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">6 Red Catchers</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Wicket Keepers</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">Maneesh vs Haden</span>
+</div>
+</div>
+</div>
+<!-- SECTION TITLE: 11v11 Matchup Stack -->
+<div class="flex items-center justify-between pt-2 px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed shadow-[0_0_10px_rgba(195,244,0,0.8)]"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Position-by-Position 11 Roster</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Section 16.2 Suggested 11</span>
+</div>
+<!-- POSITION CARDS LIST (1 to 11) -->
+<div class="space-y-space-sm">
+<!-- POS 1: OPENERS (Debashish vs Malcolm) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-bold">POS #1 · OPENERS</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">IND Batting Edge (+5)</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- IND Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Debashish</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">C · ★25r</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">O · BTBW · RHB / RO</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface">184 runs · Orange Cap 🧢</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+<!-- AUS Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Malcolm</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">O</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BAT · RHB</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary">134 runs (Aggressive)</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 2: TOP ORDER / WK (Aarav vs Haden) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #2 · TOP ORDER</span>
+<span class="font-label-sm text-label-sm text-secondary">AUS Keeper/Star Weapon</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- IND Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Aarav</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTAL · LHB / LM</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface">Pinch Hitter 44(18)</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">C: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+</div>
+<!-- AUS Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Haden</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">★17r · WK</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">O · WK · LHB</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">142 runs · 18 Sixes ⚡</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>Keep: Red/Grn/Red</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 3: TOP ORDER / ANCHORS (Rana vs Declan) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-bold">POS #3 · MATCH-WINNERS</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">SF POTM Battle</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- IND Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Rana</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">★18r</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTAL · LHB / LO</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">POTM SF1 (72* off 26)</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+<!-- AUS Player -->
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Declan</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary-fixed font-label-sm text-label-sm font-bold">C · F</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTBW · RHB / RM</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">POTM SF2 · 158 runs</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 4: MIDDLE ANCHORS (Arham vs Ben) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #4 · SPINE ANCHOR</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dead Heat</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Arham</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">O · BTBW · RHB / RM</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Ben</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTBW · RHB / RO</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 5: FINISHERS (Tejas vs Flynn) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #5 · FINISHERS</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">IND Strike Rate Peak</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Tejas</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary-fixed font-label-sm text-label-sm">F</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BAT · LHB</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">Super Striker SR 284.2 🔥</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Flynn</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">O</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BAT · LHB</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary">Reliable Slogger SR 198</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 6: WICKET-KEEPER / MIDDLE ORDER (Maneesh vs Jonathan) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #6 · GLOVES &amp; CLUTCH</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Specialist Roles</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Maneesh</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary-fixed font-label-sm text-label-sm">F · WK</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">RHB · Keeping: Red/Blu/Grn</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-primary-fixed">Catch: Green</span> · <span class="text-error">RO: Red</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Jonathan</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTAL · LHB / LO</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span>Catch: Red</span> · <span>RO: Red</span>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 7: ALL-ROUNDERS (Randeep vs Victor) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #7 · ALL-ROUNDERS</span>
+<span class="font-label-sm text-label-sm text-secondary">AUS Death Bowler 1</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Randeep</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm">F</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BTAL · LHB / LO</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Victor</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">F · D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BWAL · LHB / LFM</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">Key Death Bowler 🎯</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-primary-fixed">C: Green</span> · <span class="text-error">RO: Red</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 8: BOWLING AR / SPINNERS (Ojas vs Harrison) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #8 · VARIATION ATTACK</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">IND Death Specialist</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Ojas</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · LHB / LFM</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">7 wkts · Slog Maestro</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-primary-fixed">C: Green</span> · <span class="text-error">RO: Red</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Harrison</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · RHB / RL (Leg-spin)</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary">Grid B Turn Weapon</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>C: Green</span> · <span>RO: Blue</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 9: KEY WRIST SPINNERS (Subroto vs Ali) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #9 · CHINAMAN SPINNERS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Twin Left-Arm Wrist Spin</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Subroto</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · LHB / LC (Wrist)</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>Catch: Blue</span> · <span>RO: Blue</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Ali</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · LHB / LC (Wrist)</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 10: EXPRESS PACE SPEARHEADS (Javed vs Bruce) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #10 · 145+ KM/H EXPRESS</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">IND Death Bowler 2</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Javed</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · RHB / RF (Express)</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">145+ km/h Fireballs 🔥</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>C: Green</span> · <span>RO: Blue</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Bruce</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · LHB / LF (Express)</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary">Left-Arm Thunderbolts</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>C: Blue</span> · <span>RO: Blue</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POS 11: DEATH BOWLER / FINISH (Nischay vs Abhay) -->
+<div class="rounded-2xl bg-surface-container-low p-space-md shadow-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-bold">POS #11 · DEATH CLOSERS</span>
+<span class="font-label-sm text-label-sm text-secondary">AUS Death Bowler 2</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Nischay</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · LHB / LF</p>
+</div>
+<div class="pt-1 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="text-error">Catch: Red</span> · <span class="text-primary-fixed">RO: Green</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high flex flex-col justify-between space-y-1">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold truncate">Abhay</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">D</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">BW · RHB / RFM</p>
+</div>
+<div class="pt-1 flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">Death Specialist 2</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span>C: Blue</span> · <span>RO: Blue</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- KEY MATCHUP BATTLECARDS (3 Crucial Clashes) -->
+<div class="space-y-space-sm pt-2">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">sports_kabaddi</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">3 Decisive Matchup Battles</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">Crucial Keys</span>
+</div>
+<!-- Battle 1: Debashish vs AUS Death Bowlers -->
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-md space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-semibold">BATTLE 01 · POWERPLAY &amp; SLOG</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">High Leverage</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Debashish (★25r Captain) vs Victor &amp; Abhay (AUS DBs)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Debashish holds Orange Cap with 184 tournament runs. If Australia cannot dismiss him prior to Overs 8-10, Victor and Abhay's Death Bowler card abilities will decide the title in full-toss/yorker duels.
+      </p>
+</div>
+<!-- Battle 2: Declan vs IND Death Bowlers -->
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-md space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">BATTLE 02 · AUS CHASE ENGINE</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Clutch Index 98%</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Declan (AUS Captain Finisher) vs Ojas &amp; Javed (IND DBs)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Declan won POTM in SF2 with 158 tournament runs. Javed's 145+ km/h pace paired with Ojas' cutters create a direct confrontation with Declan's Wonderful Shot Power Card in Overs 9-10.
+      </p>
+</div>
+<!-- Battle 3: Wrist Spinners Clash -->
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-md space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">BATTLE 03 · NSG MELBOURNE SPIN</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Overs 4 to 7</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Subroto (IND LC) vs Harrison (AUS RL)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        On NSG Melbourne's Matchup Grid B, wrist spinners gain +1 wicket dice modifier on mis-timed pulls. Harrison's leg-break and Subroto's left-arm googly will squeeze the middle overs.
+      </p>
+</div>
+</div>
+<!-- TACTICAL INSIGHTS: Grid B, Death Overs & Power Cards -->
+<div class="rounded-2xl bg-surface-container-high/70 p-space-md shadow-md space-y-space-sm backdrop-blur-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[22px]">lightbulb</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grand Final Tactical Brief</h3>
+</div>
+<div class="space-y-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mt-0.5">grid_view</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Matchup Grid B Dynamic</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Melbourne's drop-in pitch rewards front-foot drives in overs 1-3, but steep bounce activates inside edges for left-arm seamers.</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mt-0.5">timer</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Death Quota Allocation (Overs 9 &amp; 10)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">IND: Ojas (Ov 9) &amp; Javed (Ov 10). AUS: Victor (Ov 9) &amp; Abhay (Ov 10). Neither side will have non-DB bowlers in the death.</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mt-0.5">flash_on</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Power Card Strategy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Both captains hold 1 Reroll and 1 Wonderful Shot. Expect Debashish and Declan to burn Wonderful Shots in Over 6-7 surges.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STICKY BOTTOM ACTION BAR -->
+<div class="sticky bottom-16 z-30 pt-space-xs pb-space-sm">
+<div class="p-space-sm rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl space-y-space-xs">
+<!-- Primary Action: Proceed to Toss & Scoring -->
+<button class="w-full h-14 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(195,244,0,0.35)] hover:scale-[0.99] active:scale-[0.97] transition-all" id="btn-proceed-toss">
+<span>PROCEED TO COIN TOSS &amp; SCORING</span>
+<span class="material-symbols-outlined text-[24px]">sports_score</span>
+</button>
+<!-- Secondary Action: Back to Match Preview -->
+<button class="w-full h-10 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-variant transition-colors" id="btn-back-preview">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Back to Match Preview</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for button responsiveness
+  const tossBtn = document.getElementById('btn-proceed-toss');
+  const backBtn = document.getElementById('btn-back-preview');
+
+  if (tossBtn) {
+    tossBtn.addEventListener('click', () => {
+      tossBtn.classList.add('opacity-90');
+      // Visual feedback ripple effect
+      const originalText = tossBtn.innerHTML;
+      tossBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span><span>ENTERING COIN TOSS...</span>';
+      setTimeout(() => {
+        tossBtn.innerHTML = originalText;
+        tossBtn.classList.remove('opacity-90');
+      }, 1000);
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      window.history.back();
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-primary-fixed bg-surface-container-high rounded-full shadow-[0_0_16px_rgba(195,244,0,0.15)]"><div class="flex items-center justify-around h-16 px-gutter"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="grand-final-preview" href="#"><span class="material-symbols-outlined text-[24px]">stadium</span><span class="font-label-sm text-label-sm mt-space-xs">Match</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="squad-comparison" href="#"><span class="material-symbols-outlined text-[24px]">compare_arrows</span><span class="font-label-sm text-label-sm mt-space-xs">Squads</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-colors text-primary-fixed bg-surface-container-high rounded-full shadow-[0_0_16px_rgba(195,244,0,0.15)]" data-path="head-to-head-11" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-sm text-label-sm mt-space-xs">H2H XI</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="match-telemetry" href="#"><span class="material-symbols-outlined text-[24px]">analytics</span><span class="font-label-sm text-label-sm mt-space-xs">Stats</span></a></div></nav></body></html>

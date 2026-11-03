@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;color:#e0e4dc;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"outline-variant": "#444933","on-surface": "#e0e4dc","on-primary-fixed": "#161e00","surface-container-highest": "#323631","surface-container-low": "#191d18","primary-fixed-dim": "#abd600","secondary-fixed-dim": "#c0c9bc","outline": "#8e9379","inverse-on-surface": "#2d312d","on-secondary-fixed": "#161e15","error": "#ffb4ab","on-primary": "#283500","surface": "#101410","on-primary-container": "#556d00","surface-bright": "#363a35","secondary": "#c0c9bc","tertiary-fixed": "#ffdad5","on-tertiary": "#690003","surface-tint": "#abd600","tertiary": "#ffffff","on-background": "#e0e4dc","on-tertiary-fixed-variant": "#930005","secondary-fixed": "#dce5d7","on-secondary": "#2a3329","secondary-container": "#434b41","tertiary-fixed-dim": "#ffb4aa","primary": "#ffffff","surface-variant": "#323631","surface-container": "#1d211c","on-primary-fixed-variant": "#3c4d00","surface-container-high": "#272b26","on-error-container": "#ffdad6","surface-container-lowest": "#0b0f0b","on-tertiary-fixed": "#410001","tertiary-container": "#ffdad5","on-surface-variant": "#c4c9ac","surface-dim": "#101410","background": "#101410","primary-container": "#c3f400","on-error": "#690005","on-tertiary-container": "#ca0a0f","primary-fixed": "#c3f400","error-container": "#93000a","on-secondary-container": "#b2bbae","inverse-primary": "#506600","inverse-surface": "#e0e4dc","on-secondary-fixed-variant": "#41493f"},"borderRadius": {"DEFAULT": "1rem","lg": "2rem","xl": "3rem","full": "9999px"},"spacing": {"space-md": "0.875rem","gutter-desktop": "1.5rem","space-xs": "0.25rem","space-xl": "2rem","gutter": "1rem","margin": "1.25rem","space-lg": "1.25rem","margin-desktop": "2.5rem","space-sm": "0.5rem"},"fontFamily": {"label-md": ["Outfit"],"headline-md": ["Outfit"],"score-display": ["Outfit"],"label-lg": ["Outfit"],"headline-xl": ["Outfit"],"headline-sm": ["Outfit"],"headline-lg": ["Outfit"],"body-md": ["Outfit"],"label-sm": ["Outfit"],"headline-lg-mobile": ["Outfit"],"body-lg": ["Outfit"],"body-sm": ["Outfit"]},"fontSize": {"label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600"}],"headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600"}],"score-display": ["28px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],"label-lg": ["14px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}],"headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700"}],"headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],"headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700"}],"body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],"label-sm": ["10px", {"lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700"}],"headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],"body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],"body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_4px_20px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 -ml-space-xs rounded-full flex items-center justify-center text-on-surface hover:text-primary-container active:scale-95 transition-all" onclick="window.history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="inline-flex items-center px-space-xs py-0.5 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm uppercase tracking-wider">Dice Cricket King</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Tournaments Fixtures</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Toggle Audio" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary-container active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(204,255,0,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-16 pb-20 bg-surface flex flex-col"><div class="flex flex-col w-full pb-28">
+<!-- Ambient Stadium Glow Effect -->
+<div class="relative w-full overflow-hidden px-margin pt-space-md">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-72 h-32 bg-primary-container/15 blur-3xl pointer-events-none rounded-full"></div>
+<!-- Official Tournament Banner Card -->
+<section class="relative w-full bg-surface-container rounded-lg p-space-md shadow-xl overflow-hidden">
+<!-- Glow corner accent -->
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-primary-fixed/10 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between gap-space-sm mb-space-xs">
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Official Schedule Confirmed</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">emoji_events</span>
+<span>WC '26</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">World Cup 2026 Dice King</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+        10 Nations · 2 Groups · 23 Total Matches (20 Group Stage + 2 Semi-Finals + 1 Grand Final)
+      </p>
+<div class="mt-space-sm pt-space-sm bg-surface-container-low/80 rounded-md p-space-sm flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">timer</span>
+<span class="font-label-sm text-label-sm text-on-surface">10 Overs · Set 2 Sheets (v2)</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-container/15 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Top 2 Qualify for SF</span>
+</div>
+</div>
+</section>
+<!-- Groups Recap & Star Sync Bar -->
+<section class="mt-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Group Distribution</span>
+<span class="inline-flex items-center gap-1 text-primary-fixed font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">balance</span>
+          100% Star Sync Balance
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Group A Pill Card -->
+<div class="bg-surface-container-high rounded-md p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Group A</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary-fixed font-semibold">21 ★</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-relaxed">
+            🇮🇳 IND <span class="text-primary-fixed font-semibold">5★</span> · 🇵🇰 PAK <span class="text-primary-fixed font-semibold">5★</span> · 🇿🇦 SA <span class="text-on-surface font-semibold">4★</span> · 🇧🇩 BAN <span class="text-on-surface font-semibold">4★</span> · 🇦🇫 AFG <span class="text-secondary font-semibold">3★</span>
+</p>
+</div>
+<!-- Group B Pill Card -->
+<div class="bg-surface-container-high rounded-md p-space-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Group B</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary-fixed font-semibold">21 ★</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-relaxed">
+            🇱🇰 SL <span class="text-primary-fixed font-semibold">5★</span> · 🇦🇺 AUS <span class="text-primary-fixed font-semibold">5★</span> · 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ENG <span class="text-on-surface font-semibold">4★</span> · 🇳🇿 NZ <span class="text-on-surface font-semibold">4★</span> · 🌴 WI <span class="text-secondary font-semibold">3★</span>
+</p>
+</div>
+</div>
+</section>
+<!-- Ground Indicator Badges Legend -->
+<div class="mt-space-md bg-surface-container-lowest rounded-md px-space-md py-space-xs flex items-center justify-around">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">HSG (High Score)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">NSG (Standard)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">LSG (Bowling)</span>
+</div>
+</div>
+<!-- Filter Category Pills (Horizontally Scrollable) -->
+<section class="mt-space-md">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<button class="group-filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary-fixed text-on-primary-fixed font-bold shadow-md transition-all active:scale-95" data-filter="all" type="button">
+          All Fixtures (23)
+        </button>
+<button class="group-filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-95" data-filter="group-a" type="button">
+          Group A (10)
+        </button>
+<button class="group-filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-95" data-filter="group-b" type="button">
+          Group B (10)
+        </button>
+<button class="group-filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all active:scale-95" data-filter="knockouts" type="button">
+          Knockouts (3)
+        </button>
+</div>
+<!-- Round / Day Horizontal Stepper -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar mt-space-sm pt-0.5">
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high text-primary-fixed font-label-sm text-label-sm font-bold shadow-sm" type="button">
+          Round 1 (M1–4)
+        </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">
+          Round 2 (M5–8)
+        </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">
+          Round 3 (M9–12)
+        </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">
+          Round 4 (M13–16)
+        </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">
+          Round 5 (M17–20)
+        </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">
+          Finals (SF &amp; F)
+        </button>
+</div>
+</section>
+<!-- Fixture Stream Cards -->
+<section class="mt-space-lg flex flex-col gap-space-md" id="fixtures-container">
+<!-- MATCH 1: HERO SPOTLIGHT (Electric Neon Pitch Card) -->
+<article class="relative w-full rounded-lg bg-primary-fixed text-on-primary-fixed p-space-md shadow-[0_10px_35px_rgba(195,244,0,0.22)] overflow-hidden transition-transform duration-200">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface text-on-surface font-label-sm text-label-sm font-bold uppercase tracking-wider">Match 1 · Group A</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface/15 text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-fixed"></span>
+              TODAY 14:00
+            </span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface text-primary-fixed font-label-sm text-label-sm font-bold">NSG</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<!-- Team India -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-14 h-14 rounded-full bg-surface flex items-center justify-center shadow-lg relative">
+<span class="text-2xl">🇮🇳</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">5★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary-fixed mt-1.5">IND</span>
+<span class="font-label-sm text-label-sm opacity-80 text-center truncate max-w-[85px]">Debashish</span>
+</div>
+<!-- Scoreline & Versus Pillar -->
+<div class="flex flex-col items-center px-space-xs">
+<span class="font-score-display text-score-display font-extrabold text-on-primary-fixed tracking-tight">VS</span>
+<span class="font-label-sm text-label-sm bg-surface/20 px-2 py-0.5 rounded-full font-bold">10 Overs</span>
+<span class="font-body-sm text-[11px] text-on-primary-fixed/80 mt-1">Melbourne Arena</span>
+</div>
+<!-- Team Pakistan -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-14 h-14 rounded-full bg-surface flex items-center justify-center shadow-lg relative">
+<span class="text-2xl">🇵🇰</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">5★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary-fixed mt-1.5">PAK</span>
+<span class="font-label-sm text-label-sm opacity-80 text-center truncate max-w-[85px]">Daniyal</span>
+</div>
+</div>
+<!-- Sheet Set & Dominance Preview Note -->
+<div class="mt-space-sm bg-surface/15 rounded-md p-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-primary-fixed">auto_awesome</span>
+<p class="font-label-sm text-label-sm text-on-primary-fixed leading-tight font-medium">
+              Equal Stars (5★ vs 5★) · Sheet Set 2 · Star Dominance: 4★ Middle Order
+            </p>
+</div>
+</div>
+<!-- Quick Launch CTA -->
+<button class="mt-space-md w-full py-3 rounded-full bg-surface text-primary-fixed font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-lg active:scale-98 transition-all hover:bg-surface-container-highest" type="button">
+<span class="material-symbols-outlined text-[20px]">sports_cricket</span>
+<span>START MATCH 1 🏏</span>
+</button>
+</article>
+<!-- MATCH 2: Group B Clash (Graphite Surface Card) -->
+<article class="relative w-full rounded-lg bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold uppercase">Match 2 · Group B</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">TODAY 18:30</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">HSG (Red)</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<!-- Australia -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🇦🇺</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">5★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">AUS</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">Declan</span>
+</div>
+<!-- Middle Details -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-md text-label-md font-bold">
+              VS
+            </div>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1.5">Sydney Oval</span>
+<span class="font-label-sm text-[10px] text-primary-fixed bg-surface-container-lowest px-2 py-0.5 rounded-full mt-1">10 Overs</span>
+</div>
+<!-- England -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">4★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">ENG</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">Joshua</span>
+</div>
+</div>
+<div class="mt-space-sm bg-surface-container-low rounded-md p-space-sm flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">★ AUS dominate on stars (5★ vs 4★)</span>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm hover:text-primary-fixed transition-colors" type="button">
+            Inspect Squads
+          </button>
+</div>
+</article>
+<!-- MATCH 3: Group A Scheduled Card -->
+<article class="relative w-full rounded-lg bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold uppercase">Match 3 · Group A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TOMORROW 14:00</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary-fixed-dim font-label-sm text-label-sm font-bold">LSG (Low)</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<!-- South Africa -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🇿🇦</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">4★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">SA</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">Siyabonga</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-md text-label-md font-bold">
+              VS
+            </div>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1.5">Perth Stadium</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80 mt-0.5">Pitch: Bowlers Delight</span>
+</div>
+<!-- Bangladesh -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🇧🇩</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">4★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">BAN</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">Faisal</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Set 2 Sheets · 10 Overs Target</span>
+<span class="text-primary-fixed">Status: Scheduled</span>
+</div>
+</article>
+<!-- MATCH 4: Group B Scheduled Card -->
+<article class="relative w-full rounded-lg bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold uppercase">Match 4 · Group B</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TOMORROW 18:30</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm font-bold">NSG</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<!-- Sri Lanka -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🇱🇰</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">5★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">SL</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">Sanjeeva</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-md text-label-md font-bold">
+              VS
+            </div>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1.5">Adelaide Oval</span>
+<span class="font-label-sm text-label-sm text-primary-fixed/80 mt-0.5">SL +1★ Advantage</span>
+</div>
+<!-- New Zealand -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="text-2xl">🇳🇿</span>
+<span class="absolute -bottom-1 px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">4★</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">NZ</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[80px]">David</span>
+</div>
+</div>
+</article>
+<!-- MATCH 5: Teaser Blockbuster -->
+<article class="relative w-full rounded-lg bg-surface-container-high p-space-md shadow-md overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm font-bold">MATCH 5 · DAY 3 BLOCKBUSTER</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">HSG</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-2xl">🇮🇳</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">IND (5★)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sheet 2 Titans</p>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold">VS</span>
+<div class="flex items-center gap-3 flex-row-reverse">
+<div class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-2xl">🇿🇦</div>
+<div class="text-right">
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">SA (4★)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fast Pitch</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Knockout Bracket Snapshot Teaser -->
+<section class="mt-space-md w-full rounded-lg bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">military_tech</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Knockout Stage Path</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">Matches 21–23</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- SF 1 -->
+<div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-semibold">Semi-Final 1 · Match 21</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">1st Group A vs 2nd Group B</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/15 text-primary-container font-label-sm text-label-sm font-bold">NSG Ground</span>
+</div>
+<!-- SF 2 -->
+<div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-semibold">Semi-Final 2 · Match 22</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">1st Group B vs 2nd Group A</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container/30 text-error font-label-sm text-label-sm font-bold">HSG Ground</span>
+</div>
+<!-- GRAND FINAL -->
+<div class="flex items-center justify-between p-space-sm rounded-md bg-surface-container-highest">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">trophy</span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-bold">Grand Final · Match 23</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-bold">Winner SF1 vs Winner SF2</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">NSG Melbourne</span>
+</div>
+</div>
+</section>
+</section>
+</div>
+<!-- Sticky Dynamic Floating Bottom Hub -->
+<aside class="fixed bottom-16 left-0 w-full z-40 px-margin pb-2 pt-2 bg-surface-container-lowest/90 backdrop-blur-xl">
+<div class="flex items-center gap-space-sm max-w-lg mx-auto">
+<!-- Main Action: Simulate Match 1 -->
+<button class="flex-1 h-14 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(195,244,0,0.3)] hover:brightness-105 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">play_circle</span>
+<span class="truncate">PLAY M1: IND vs PAK 🏏</span>
+</button>
+<!-- Utility Action: Download PDF -->
+<button aria-label="Download Schedule PDF" class="w-14 h-14 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:text-primary-fixed active:scale-95 transition-all shadow-md shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">download</span>
+</button>
+<!-- Utility Action: Export Fixtures JSON -->
+<button aria-label="Export Fixtures JSON" class="w-14 h-14 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:text-primary-fixed active:scale-95 transition-all shadow-md shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">share</span>
+</button>
+</div>
+</aside>
+</div>
+<script>
+  // Filter button interactions
+  document.querySelectorAll('.group-filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.group-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed', 'font-bold', 'shadow-md');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      button.classList.add('bg-primary-fixed', 'text-on-primary-fixed', 'font-bold', 'shadow-md');
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-primary-container"><div class="h-16 px-space-sm grid grid-cols-4 items-center"><a class="flex flex-col items-center justify-center min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">sports_cricket</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-h-[44px] gap-0.5 transition-colors text-primary-container" data-path="tournaments-fixtures" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-label-sm text-label-sm">Fixtures</span></a><a class="flex flex-col items-center justify-center min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="rankings" href="#"><span class="material-symbols-outlined text-[22px]">leaderboard</span><span class="font-label-sm text-label-sm">Rankings</span></a><a class="flex flex-col items-center justify-center min-h-[44px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="stats" href="#"><span class="material-symbols-outlined text-[22px]">query_stats</span><span class="font-label-sm text-label-sm">Stats</span></a></div></nav></body></html>

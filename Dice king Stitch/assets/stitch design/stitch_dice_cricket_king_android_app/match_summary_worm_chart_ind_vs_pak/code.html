@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#c0c9bc", "tertiary-fixed": "#ffdad5", "surface-container-high": "#272b26", "tertiary-container": "#ffdad5", "surface-variant": "#323631", "inverse-surface": "#e0e4dc", "on-error-container": "#ffdad6", "primary-fixed-dim": "#abd600", "on-error": "#690005", "tertiary-fixed-dim": "#ffb4aa", "secondary-fixed": "#dce5d7", "secondary-container": "#434b41", "surface-container-highest": "#323631", "primary-container": "#c3f400", "on-tertiary": "#690003", "outline": "#8e9379", "surface-dim": "#101410", "inverse-on-surface": "#2d312d", "tertiary": "#ffffff", "on-background": "#e0e4dc", "on-surface-variant": "#c4c9ac", "on-tertiary-fixed-variant": "#930005", "primary": "#ffffff", "inverse-primary": "#506600", "surface-tint": "#abd600", "on-primary-fixed-variant": "#3c4d00", "background": "#101410", "secondary-fixed-dim": "#c0c9bc", "error-container": "#93000a", "on-secondary": "#2a3329", "on-primary": "#283500", "on-secondary-fixed-variant": "#41493f", "on-primary-container": "#556d00", "surface-bright": "#363a35", "surface-container-lowest": "#0b0f0b", "on-secondary-fixed": "#161e15", "on-secondary-container": "#b2bbae", "outline-variant": "#444933", "surface": "#101410", "on-tertiary-container": "#ca0a0f", "error": "#ffb4ab", "surface-container-low": "#191d18", "on-primary-fixed": "#161e00", "surface-container": "#1d211c", "on-tertiary-fixed": "#410001", "on-surface": "#e0e4dc", "primary-fixed": "#c3f400" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "gutter-desktop": "1.5rem", "margin": "1.25rem", "space-xl": "2rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "space-md": "0.875rem", "margin-desktop": "2.5rem", "space-sm": "0.5rem", "gutter": "1rem" }, fontFamily: { "headline-xl": ["Outfit"], "headline-lg-mobile": ["Outfit"], "label-md": ["Outfit"], "label-lg": ["Outfit"], "headline-lg": ["Outfit"], "body-md": ["Outfit"], "score-display": ["Outfit"], "label-sm": ["Outfit"], "body-sm": ["Outfit"], "body-lg": ["Outfit"], "headline-sm": ["Outfit"], "headline-md": ["Outfit"] }, fontSize: { "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "700" }], "headline-lg-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }], "headline-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.025em", fontWeight: "700" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "score-display": ["28px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.06em", fontWeight: "700" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Back to Live Match" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate uppercase tracking-wider">Scorecard</h1><div class="flex items-center gap-space-xs"><span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-primary-fixed font-label-sm text-label-sm tracking-widest uppercase"><span class="w-1.5 h-1.5 rounded-full bg-primary-fixed mr-1 animate-pulse"></span>IND vs PAK · Completed/Live</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Share match summary" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">share</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Horizontal Pill Tabs -->
+<section class="w-full px-margin py-space-sm overflow-x-auto scrollbar-none flex items-center gap-space-xs shrink-0">
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      Scorecard
+    </button>
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md whitespace-nowrap font-bold shadow-[0_0_16px_rgba(195,244,0,0.35)] active:scale-95 transition-transform" type="button">
+      Summary
+    </button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      Ball by Ball
+    </button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      Worm &amp; Manhattan
+    </button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:scale-95 transition-transform" type="button">
+      MVP / Highlights
+    </button>
+</section>
+<!-- Content Stream -->
+<div class="px-margin flex flex-col gap-space-lg pb-space-xl">
+<!-- 1. Hero Match Result Card -->
+<div class="relative w-full rounded-lg bg-surface-container-high p-space-lg shadow-xl overflow-hidden">
+<!-- Ambient Glow Behind India -->
+<div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-primary-fixed/10 blur-3xl pointer-events-none"></div>
+<!-- Victory Banner -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span>
+          Super 10 Match Result
+        </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Melbourne NSG</span>
+</div>
+<!-- Result Headline -->
+<div class="mb-space-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+          India won by <span class="text-primary-fixed">18 runs</span>
+</h2>
+</div>
+<!-- Score Comparison Block -->
+<div class="grid grid-cols-2 gap-space-sm bg-surface-container-lowest/80 rounded-DEFAULT p-space-md backdrop-blur-md mb-space-md">
+<!-- Team IND -->
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold tracking-wide">INDIA</span>
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">military_tech</span>
+</div>
+<div class="font-score-display text-score-display text-on-surface">168<span class="text-on-surface-variant text-headline-sm font-body-md">/4</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">10.0 ov · <span class="text-primary-fixed">RR 16.80</span></div>
+</div>
+<!-- Team PAK -->
+<div class="flex flex-col pl-space-xs">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-md text-label-md text-on-surface-variant font-bold tracking-wide">PAKISTAN</span>
+</div>
+<div class="font-score-display text-score-display text-on-surface-variant">150<span class="text-outline text-headline-sm font-body-md">/7</span></div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">10.0 ov · RR 15.00</div>
+</div>
+</div>
+<!-- Player of the Match Card -->
+<div class="rounded-DEFAULT bg-surface-container p-space-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Close up athletic portrait of cricket batsman Debashish wearing vibrant India sports kit, focused energetic expression with dramatic neon stadium side lighting, dark obsidian and electric lime backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB0VRvK1Zaex7Og1HaPIj5GPSzZYupv0LdHVh2C46m3xVjp0qohayl26wrb-my_lJkMrQ9eALqdmhJo2Y_kmS1PBwOXdJGVaImPNmz9xsrzrdNoexQF2QkCBqC9cxB1xRfjLqEKA2GlFkV1DAugYao5dGkIA2o3vLHquwEh-uyR6xSTDn7qN9Z9oNbfRS-S7dbVvPIEooOXISXrcSbUH0aNh7GM78rNyAyGdmNa5o"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-primary font-bold">star</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-bold uppercase">MVP</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Debashish (C)</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed truncate font-semibold mt-0.5">
+              68* <span class="text-on-surface-variant font-normal">(26b, 5x4, 6x6)</span> · 1/14
+            </p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold">9.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Impact</span>
+</div>
+</div>
+<!-- Match Metadata Badges -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-md pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">stadium</span> Par 150
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">bolt</span> Pitch Pace 8.9
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+          5★ vs 5★ Equal Contest
+        </span>
+</div>
+</div>
+<!-- 2. Worm Chart Comparison -->
+<div class="w-full rounded-lg bg-surface-container p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">show_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Worm Chart</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cumulative Runs Comparison · Overs 1-10</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-1 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface">IND</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-1 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">PAK</span>
+</div>
+</div>
+</div>
+<!-- Phase Badges -->
+<div class="grid grid-cols-3 gap-1.5 p-1 rounded-full bg-surface-container-lowest text-center">
+<span class="py-1 rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant">PP (Ov 1-2)</span>
+<span class="py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Middle (3-8)</span>
+<span class="py-1 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm font-bold">Slog (9-10)</span>
+</div>
+<!-- SVG Worm Graph with Inline Curves & Markers -->
+<div class="relative w-full aspect-[16/9] bg-surface-container-lowest rounded-DEFAULT p-space-sm flex flex-col justify-end overflow-hidden">
+<!-- Background Grid -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 320 180">
+<defs>
+<lineargradient id="indGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#c3f400" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#c3f400" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="pakGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#dce5d7" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#dce5d7" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Milestone Lines -->
+<line stroke="#272b26" stroke-dasharray="3 3" stroke-width="1" x1="20" x2="310" y1="30" y2="30"></line>
+<line stroke="#272b26" stroke-dasharray="3 3" stroke-width="1" x1="20" x2="310" y1="75" y2="75"></line>
+<line stroke="#272b26" stroke-dasharray="3 3" stroke-width="1" x1="20" x2="310" y1="120" y2="120"></line>
+<!-- PAK Area Fill -->
+<polygon fill="url(#pakGrad)" points="20,165 48,154 77,141 106,126 135,110 164,96 192,82 221,68 250,56 279,44 308,35 308,165"></polygon>
+<!-- IND Area Fill -->
+<polygon fill="url(#indGrad)" points="20,165 48,152 77,138 106,121 135,103 164,88 192,72 221,55 250,41 279,28 308,16 308,165"></polygon>
+<!-- PAK Curve: 0 to 150 -->
+<polyline fill="none" points="20,165 48,154 77,141 106,126 135,110 164,96 192,82 221,68 250,56 279,44 308,35" stroke="#dce5d7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- IND Curve: 0 to 168 -->
+<polyline fill="none" points="20,165 48,152 77,138 106,121 135,103 164,88 192,72 221,55 250,41 279,28 308,16" stroke="#c3f400" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- IND Fall of Wickets (red rings) -->
+<!-- Ov 2.4 (W1) -->
+<circle cx="90" cy="130" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<!-- Ov 5.1 (W2) -->
+<circle cx="166" cy="87" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<!-- Ov 7.2 (W3) -->
+<circle cx="227" cy="52" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<!-- Ov 8.5 (W4) -->
+<circle cx="265" cy="34" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<!-- PAK Fall of Wickets (Ov 1.3, 4.2, 6.1, 7.5, 8.3, 8.5, 9.6) -->
+<circle cx="34" cy="158" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="140" cy="107" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="195" cy="80" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="240" cy="60" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="258" cy="52" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="264" cy="49" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<circle cx="298" cy="38" fill="#ffb4ab" r="3.5" stroke="#93000a" stroke-width="1.5"></circle>
+<!-- End Points Pulsing Target -->
+<circle cx="308" cy="16" fill="#c3f400" r="4.5"></circle>
+<circle cx="308" cy="35" fill="#dce5d7" r="3.5"></circle>
+</svg>
+<!-- Over Markers Legend Footer -->
+<div class="relative z-10 flex justify-between px-2 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+<span>Ov 1</span>
+<span>Ov 3</span>
+<span>Ov 5</span>
+<span>Ov 7</span>
+<span>Ov 10</span>
+</div>
+</div>
+<!-- Quick Inspection Points -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-high p-space-sm rounded-DEFAULT flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Over 5 Marker</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">IND 78 <span class="text-on-surface-variant">vs</span> PAK 72</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">+6 IND</span>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded-DEFAULT flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Final 10.0</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">IND 168 <span class="text-on-surface-variant">vs</span> PAK 150</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">+18 IND</span>
+</div>
+</div>
+</div>
+<!-- 3. Manhattan Bar Chart (Runs per Over) -->
+<div class="w-full rounded-lg bg-surface-container p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">bar_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Manhattan Chart</h3>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Runs scored in each over (1 to 10)</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+          Peak: 24 (Ov 10)
+        </span>
+</div>
+<!-- 10 Over Pair Bars -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-md flex flex-col gap-space-sm">
+<div class="h-36 w-full flex items-end justify-between gap-1 pt-2 pb-1">
+<!-- Over 1: IND 14, PAK 12 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[48%] relative"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[42%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">1</span>
+</div>
+<!-- Over 2: IND 14, PAK 14 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[48%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[48%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">2</span>
+</div>
+<!-- Over 3: IND 18, PAK 15 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[62%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[52%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">3</span>
+</div>
+<!-- Over 4: IND 16, PAK 17 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[55%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[59%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">4</span>
+</div>
+<!-- Over 5: IND 16, PAK 14 (Faizan strike!) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[55%] relative">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[48%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">5</span>
+</div>
+<!-- Over 6: IND 13, PAK 18 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[45%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[62%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">6</span>
+</div>
+<!-- Over 7: IND 17, PAK 13 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[59%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[45%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">7</span>
+</div>
+<!-- Over 8: IND 18, PAK 8 (Ojas 2 Wickets!) -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[62%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[28%] relative">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">8</span>
+</div>
+<!-- Over 9: IND 18, PAK 17 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[62%]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[59%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">9</span>
+</div>
+<!-- Over 10: IND 24 (Debashish Blitz!), PAK 17 -->
+<div class="flex-1 flex flex-col items-center h-full justify-end group">
+<div class="w-full flex items-end justify-center gap-0.5 h-full">
+<div class="w-2.5 rounded-t bg-primary-fixed h-[95%] shadow-[0_0_10px_rgba(195,244,0,0.6)]"></div>
+<div class="w-2.5 rounded-t bg-secondary-fixed/70 h-[59%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold mt-1">10</span>
+</div>
+</div>
+<!-- Over 10 Surge Highlight Banner -->
+<div class="mt-space-xs p-space-sm rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">electric_bolt</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Over 10: Debashish 24 runs explosion! (4, 6, 6, 4, 2, 2)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold shrink-0">400.0 SR</span>
+</div>
+</div>
+</div>
+<!-- 4. Key Turning Points / Match Momentum Shifts -->
+<div class="w-full rounded-lg bg-surface-container p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">timelapse</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Momentum Shifts</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tactical Events</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Event 1 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-high flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold font-label-sm text-label-sm shrink-0 mt-0.5">
+            3.2
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Captain Reroll Used</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm">IND Advantage</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Debashish overturned caught-behind on review with reroll perk, going on to hit 68*.
+            </p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-high flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold font-label-sm text-label-sm shrink-0 mt-0.5">
+            5.1
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Daniyal Cleans Up Rana</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary-fixed font-label-sm text-label-sm">PAK Strike</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              142 km/h yorker smashed off-stump, interrupting India’s 48-run opening salvo.
+            </p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-high flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold font-label-sm text-label-sm shrink-0 mt-0.5">
+            8.3
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Double Strike in 3 Balls</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm">Match Decider</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Ojas claimed dangerous Rizwan &amp; Asif back-to-back, crashing PAK run rate from 16.2 to 14.1.
+            </p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-high flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold font-label-sm text-label-sm shrink-0 mt-0.5">
+            9.4
+          </div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Wonderful Shot Booster Dispatched</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/20 text-primary-fixed font-label-sm text-label-sm">102m SIX</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Debashish hooked over square leg onto the tier 2 roof, sealing IND 165+ par target.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. Partnerships Comparison -->
+<div class="w-full rounded-lg bg-surface-container p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">group</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Top Partnerships</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Runs (Balls)</span>
+</div>
+<!-- India High Stand -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-md rounded-DEFAULT">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Debashish &amp; Tejas</span>
+</div>
+<span class="font-label-md text-label-md text-primary-fixed font-bold">66* <span class="text-on-surface-variant font-normal">(22b)</span></span>
+</div>
+<!-- Split Ratio Bar -->
+<div class="w-full h-2.5 rounded-full bg-surface-container-lowest overflow-hidden flex">
+<div class="h-full bg-primary-fixed" style="width: 72%;"></div>
+<div class="h-full bg-primary-fixed-dim" style="width: 28%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Debashish 48 (15)</span>
+<span>Tejas 18 (7)</span>
+</div>
+</div>
+<!-- Pakistan High Stand -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high p-space-md rounded-DEFAULT">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Daniyal &amp; Umair</span>
+</div>
+<span class="font-label-md text-label-md text-secondary-fixed font-bold">54 <span class="text-on-surface-variant font-normal">(19b)</span></span>
+</div>
+<!-- Split Ratio Bar -->
+<div class="w-full h-2.5 rounded-full bg-surface-container-lowest overflow-hidden flex">
+<div class="h-full bg-secondary-fixed" style="width: 58%;"></div>
+<div class="h-full bg-secondary-container" style="width: 42%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Daniyal 31 (11)</span>
+<span>Umair 23 (8)</span>
+</div>
+</div>
+</div>
+<!-- 6. Stadium Atmosphere & Match Visual Card -->
+<div class="relative w-full rounded-lg overflow-hidden bg-surface-container shadow-xl">
+<div class="relative w-full h-44">
+<img class="w-full h-full object-cover" data-alt="Wide angle panoramic shot of Melbourne cricket ground at night filled with cheering fans, intense green stadium lighting, fireworks exploding, pitch action in neon sports broadcast style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP0l32jJQIyIXamoGVMt3jEsMDT4y1Xp9l8LokBsuOJsuPd1m1F4N_Fok58TptFFOj2FMmDSReBV1MQhJp20_AcqhNcNc3BN1mgpi438701BAVc6PDixXEKrG3iT5rEJhdecUyFdFJ5fxO46rHS_7EbwtPBSQfggpaexQ6w8bxwAh1hjW7-XZ41WRNvinxdxo1WqzjMqKm0PkZ_3mgm0jBwzgIVpAx8tDPU2Xo26o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/60 to-transparent"></div>
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-bold">Match Atmosphere</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">96,482 Fans in Stadium</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest/80 backdrop-blur-md flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. Primary Action Buttons -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-13 py-3.5 px-space-lg rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-xs shadow-[0_4px_24px_rgba(195,244,0,0.35)] active:scale-[0.98] transition-transform" type="button">
+<span>View Ball by Ball Commentary</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-12 py-3 px-space-lg rounded-full bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs hover:bg-surface-bright active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Export Match Report / PDF</span>
+</button>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary-fixed bg-surface-container-high/60"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-full px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-full px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="live-match" href="#"><span class="material-symbols-outlined text-[22px]">sports_cricket</span><span class="font-label-sm text-label-sm mt-0.5">Live</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-full px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="scorecard" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-sm text-label-sm mt-0.5">Scorecard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-full px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="stats" href="#"><span class="material-symbols-outlined text-[22px]">equalizer</span><span class="font-label-sm text-label-sm mt-0.5">Stats</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-full px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="rankings" href="#"><span class="material-symbols-outlined text-[22px]">leaderboard</span><span class="font-label-sm text-label-sm mt-0.5">Rankings</span></a></div></nav></body></html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#323631", "on-secondary-fixed": "#161e15", "secondary-container": "#434b41", "tertiary-fixed": "#ffdad5", "on-primary-fixed-variant": "#3c4d00", "primary": "#ffffff", "secondary-fixed": "#dce5d7", "on-primary": "#283500", "inverse-surface": "#e0e4dc", "on-secondary-fixed-variant": "#41493f", "on-surface-variant": "#c4c9ac", "surface-bright": "#363a35", "on-tertiary": "#690003", "primary-container": "#c3f400", "surface": "#101410", "on-secondary-container": "#b2bbae", "on-primary-container": "#556d00", "outline-variant": "#444933", "primary-fixed-dim": "#abd600", "on-tertiary-container": "#ca0a0f", "on-tertiary-fixed": "#410001", "outline": "#8e9379", "tertiary": "#ffffff", "surface-tint": "#abd600", "surface-container-highest": "#323631", "surface-dim": "#101410", "on-surface": "#e0e4dc", "secondary": "#c0c9bc", "background": "#101410", "surface-container": "#1d211c", "surface-container-low": "#191d18", "on-primary-fixed": "#161e00", "tertiary-container": "#ffdad5", "on-secondary": "#2a3329", "primary-fixed": "#c3f400", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#930005", "on-error": "#690005", "on-error-container": "#ffdad6", "on-background": "#e0e4dc", "inverse-on-surface": "#2d312d", "error-container": "#93000a", "surface-container-lowest": "#0b0f0b", "surface-container-high": "#272b26", "secondary-fixed-dim": "#c0c9bc", "tertiary-fixed-dim": "#ffb4aa", "inverse-primary": "#506600" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-lg": "1.25rem", "space-md": "0.875rem", "gutter-desktop": "1.5rem", "margin-desktop": "2.5rem", "space-sm": "0.5rem", "gutter": "1rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-xl": "2rem" }, "fontFamily": { "score-display": ["Outfit"], "headline-xl": ["Outfit"], "body-sm": ["Outfit"], "label-sm": ["Outfit"], "headline-md": ["Outfit"], "label-md": ["Outfit"], "headline-lg": ["Outfit"], "body-md": ["Outfit"], "label-lg": ["Outfit"], "headline-sm": ["Outfit"], "body-lg": ["Outfit"], "headline-lg-mobile": ["Outfit"] }, "fontSize": { "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe"><div class="h-16 px-space-md flex items-center justify-between max-w-screen-md mx-auto"><div class="flex items-center gap-space-sm"><button aria-label="Go Back" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface bg-surface-container-high/60 hover:bg-surface-container-highest transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight uppercase">Live Match Play</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Match Options" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface bg-surface-container-high/60 transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface max-w-screen-md mx-auto"><div class="flex flex-col w-full px-space-md gap-space-md pb-space-xl">
+<!-- Top Match Status & Live Mini Scoreboard -->
+<section class="w-full bg-surface-container-low rounded-lg p-space-md shadow-xl flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Ambient Pitch Pulse Glow -->
+<div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-primary-fixed opacity-15 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-10 bottom-0 w-36 h-36 rounded-full bg-amber-400 opacity-10 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+          IND vs AUS · Innings 1
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/20 text-primary-fixed text-label-sm font-label-sm uppercase">Powerplay 1</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">stadium</span>
+        Melbourne Oval
+      </div>
+</div>
+<!-- Primary Scoreboard Strip -->
+<div class="flex items-end justify-between z-10 pt-space-xs">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">10/0</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-medium">(1.2 ov)</span>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<span class="">CRR: <strong class="text-primary-fixed font-bold">7.50</strong></span>
+<span class="opacity-40">•</span>
+<span class="">Proj: <strong class="text-on-surface font-semibold">186</strong></span>
+<span class="opacity-40">•</span>
+<span class="text-amber-400 font-semibold">+6 surge</span>
+</div>
+</div>
+<!-- Over 1 Ball Tracker Chips -->
+<div class="flex flex-col items-end gap-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">Current Over (Faizan)</span>
+<div class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-highest">
+<span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center font-label-md text-label-md text-primary-fixed font-bold shadow-sm" title="Ball 1.1: 4 Runs">4</span>
+<span class="w-7 h-7 rounded-full bg-amber-400 text-surface-container-lowest flex items-center justify-center font-label-md text-label-md font-bold shadow-lg shadow-amber-400/40 animate-pulse" title="Ball 1.2: MAXIMUM SIX!">6</span>
+<span class="w-6 h-6 rounded-full bg-surface-container/60 text-on-surface-variant flex items-center justify-center text-label-sm font-label-sm">•</span>
+<span class="w-6 h-6 rounded-full bg-surface-container/60 text-on-surface-variant flex items-center justify-center text-label-sm font-label-sm">•</span>
+<span class="w-6 h-6 rounded-full bg-surface-container/60 text-on-surface-variant flex items-center justify-center text-label-sm font-label-sm">•</span>
+<span class="w-6 h-6 rounded-full bg-surface-container/60 text-on-surface-variant flex items-center justify-center text-label-sm font-label-sm">•</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pitch View Arena with Vector Ball Trajectory & Celebration Overlays -->
+<section class="w-full relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-2xl flex flex-col border-0">
+<!-- Top Header Bar inside Arena Card: Celebration Banner & Trajectory Toggle Pills -->
+<div class="w-full p-space-sm bg-surface-container-low/90 backdrop-blur-md flex flex-col gap-2 z-20 border-b border-surface-container-high/60">
+<div class="flex items-center justify-between gap-2">
+<!-- Telemetry Mode Selector Pills (FOUR vs SIX toggles) -->
+<div class="flex items-center gap-1 bg-surface-container-highest/80 p-1 rounded-full">
+<button class="px-2.5 py-1 rounded-full bg-amber-400 text-surface-container-lowest font-label-sm text-label-sm font-bold transition-all shadow-md" id="toggle-six-btn">
+          SIX (Lofted 98m)
+        </button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold transition-all" id="toggle-four-btn">
+          FOUR (Cover Drive)
+        </button>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="">142 km/h</span>
+</div>
+</div>
+<!-- Celebration Floating HUD Banner (Clean dedicated layout with no overlap) -->
+<div class="w-full px-space-md py-space-sm bg-surface-container-highest/60 rounded-lg flex flex-col items-center gap-1" id="celebration-banner">
+<div class="flex items-center gap-space-xs">
+<span class="text-xl">💥</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-amber-300 font-bold uppercase tracking-wider drop-shadow-[0_0_12px_rgba(255,215,0,0.7)]">
+            MAXIMUM SIX!
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-amber-400 text-surface-container-lowest font-label-sm text-label-sm font-bold">
+            98 METRES
+          </span>
+</div>
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant flex-wrap justify-center">
+<span class="text-primary-fixed font-semibold">Exit Velo: 142 km/h</span>
+<span class="">•</span>
+<span class="text-on-surface">Launch: 32°</span>
+<span class="">•</span>
+<span class="text-amber-400 font-semibold">Zone: Long-On Stand</span>
+</div>
+</div>
+</div>
+<!-- Ground Pitch Simulation Canvas Area with contained dimensions & relative position -->
+<div class="relative w-full h-[320px] overflow-hidden flex items-center justify-center select-none bg-surface-container-lowest" id="pitch-arena">
+<!-- Ground Aesthetic Surface (Isometric Stadium Turf) -->
+<svg class="absolute inset-0 w-full h-full" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient cx="50%" cy="50%" id="fieldGrass" r="50%">
+<stop offset="0%" stop-color="#19281a"></stop>
+<stop offset="60%" stop-color="#121b13"></stop>
+<stop offset="100%" stop-color="#0b100c"></stop>
+</radialGradient>
+<radialGradient cx="50%" cy="50%" id="boundaryGlow" r="48%">
+<stop offset="92%" stop-color="transparent"></stop>
+<stop offset="96%" stop-color="#ccff00" stop-opacity="0.3"></stop>
+<stop offset="99%" stop-color="#ccff00" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#ffd700" stop-opacity="0.95"></stop>
+</radialGradient>
+<linearGradient id="pitchStrip" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2c281e"></stop>
+<stop offset="50%" stop-color="#3c372a"></stop>
+<stop offset="100%" stop-color="#2c281e"></stop>
+</linearGradient>
+<linearGradient gradientUnits="userSpaceOnUse" id="loftSixTrail" x1="200" x2="330" y1="280" y2="45">
+<stop offset="0%" stop-color="#c3f400" stop-opacity="0.1"></stop>
+<stop offset="40%" stop-color="#c3f400" stop-opacity="0.9"></stop>
+<stop offset="85%" stop-color="#ffd700" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#ffffff"></stop>
+</linearGradient>
+<filter height="140%" id="neonGlow" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="blur" stdDeviation="3"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<!-- Outfield Grass Base -->
+<rect fill="url(#fieldGrass)" height="390" width="400"></rect>
+<!-- Mowing Stripe Rings -->
+<ellipse cx="200" cy="195" fill="none" rx="180" ry="170" stroke="#223323" stroke-opacity="0.25" stroke-width="14"></ellipse>
+<ellipse cx="200" cy="195" fill="none" rx="145" ry="135" stroke="#2a3e2b" stroke-opacity="0.25" stroke-width="14"></ellipse>
+<ellipse cx="200" cy="195" fill="none" rx="105" ry="98" stroke="#223323" stroke-opacity="0.2" stroke-width="14"></ellipse>
+<!-- 30-Yard Circle (Inner Ring) -->
+<ellipse cx="200" cy="195" fill="none" rx="120" ry="110" stroke="#444933" stroke-dasharray="4 4" stroke-opacity="0.6" stroke-width="1.5"></ellipse>
+<!-- Glowing Boundary Rope with Active Laser Surge -->
+<ellipse cx="200" cy="195" fill="url(#boundaryGlow)" rx="188" ry="175"></ellipse>
+<ellipse cx="200" cy="195" filter="url(#neonGlow)" rx="188" ry="175" stroke="#ccff00" stroke-opacity="0.8" stroke-width="2"></ellipse>
+<!-- 22-Yard Central Pitch Strip -->
+<rect fill="url(#pitchStrip)" height="170" rx="3" width="28" x="186" y="110"></rect>
+<!-- Bowling Crease & Stumps (Top - Bowler end) -->
+<line stroke="#e0e4dc" stroke-opacity="0.8" stroke-width="1.5" x1="181" x2="219" y1="126" y2="126"></line>
+<line stroke="#e0e4dc" stroke-opacity="0.6" stroke-width="1" x1="184" x2="184" y1="126" y2="114"></line>
+<line stroke="#e0e4dc" stroke-opacity="0.6" stroke-width="1" x1="216" x2="216" y1="126" y2="114"></line>
+<circle cx="197" cy="122" fill="#ffd700" r="1.5"></circle>
+<circle cx="200" cy="122" fill="#ffd700" r="1.5"></circle>
+<circle cx="203" cy="122" fill="#ffd700" r="1.5"></circle>
+<!-- Batting Crease & Popping Crease (Bottom - Striker end) -->
+<line stroke="#e0e4dc" stroke-opacity="0.8" stroke-width="1.5" x1="181" x2="219" y1="264" y2="264"></line>
+<line stroke="#e0e4dc" stroke-opacity="0.6" stroke-width="1" x1="184" x2="184" y1="264" y2="276"></line>
+<line stroke="#e0e4dc" stroke-opacity="0.6" stroke-width="1" x1="216" x2="216" y1="264" y2="276"></line>
+<circle cx="197" cy="268" fill="#ffd700" r="1.5"></circle>
+<circle cx="200" cy="268" fill="#ffd700" r="1.5"></circle>
+<circle cx="203" cy="268" fill="#ffd700" r="1.5"></circle>
+<!-- Pitch Batting Arc Direction Markers (Long-On & Mid-Wicket zone) -->
+<path d="M200 264 L340 40" stroke="#ccff00" stroke-dasharray="3 3" stroke-opacity="0.2" stroke-width="1"></path>
+<!-- Dynamic Animated Trajectory: SIX (Lofted High-Arc to Long-On Stand) -->
+<g class="transition-opacity duration-300" id="trajectory-six">
+<!-- Shadow of lofted ball on ground -->
+<path d="M200 264 Q 240 180 332 54" fill="none" stroke="#000000" stroke-linecap="round" stroke-opacity="0.35" stroke-width="4"></path>
+<!-- Aerial Loft Arc Trail with Multi-stage Glow -->
+<path d="M200 264 Q 255 120 338 42" fill="none" filter="url(#neonGlow)" stroke="url(#loftSixTrail)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M200 264 Q 255 120 338 42" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="1.8"></path>
+<!-- Launch Origin Kinetic Blast at Crease -->
+<circle cx="200" cy="264" fill="#c3f400" fill-opacity="0.7" r="6"></circle>
+<circle cx="200" cy="264" r="12" stroke="#ccff00" stroke-opacity="0.5" stroke-width="1.5"></circle>
+<!-- Apex Shockwave indicator -->
+<circle cx="255" cy="138" fill="#ffd700" filter="url(#neonGlow)" r="4"></circle>
+<text fill="#ffd700" font-family="Outfit" font-size="10" font-weight="700" x="264" y="142">APEX 26m</text>
+<!-- Landing Impact Burst over Boundary Rope (Long-on Crowd Stand) -->
+<circle class="animate-ping" cx="338" cy="42" fill="#ffd700" fill-opacity="0.25" r="18"></circle>
+<circle cx="338" cy="42" fill="#ffd700" fill-opacity="0.8" filter="url(#neonGlow)" r="10"></circle>
+<circle cx="338" cy="42" fill="#ffffff" r="4"></circle>
+<!-- Starburst rays -->
+<line stroke="#ffd700" stroke-width="2" x1="338" x2="338" y1="28" y2="20"></line>
+<line stroke="#ffd700" stroke-width="2" x1="352" x2="360" y1="42" y2="42"></line>
+<line stroke="#ffd700" stroke-width="2" x1="348" x2="355" y1="32" y2="25"></line>
+<line stroke="#ffd700" stroke-width="2" x1="328" x2="321" y1="32" y2="25"></line>
+</g>
+<!-- Alternate Dynamic Trajectory: FOUR (Grass Skimmer & Boundary Rebound) -->
+<g class="opacity-0 transition-opacity duration-300 pointer-events-none" id="trajectory-four">
+<path d="M200 264 Q 130 230 85 190 T 22 145" fill="none" filter="url(#neonGlow)" stroke="#c3f400" stroke-dasharray="6 3" stroke-width="3.5"></path>
+<circle cx="140" cy="235" fill="#c3f400" r="4"></circle>
+<circle cx="85" cy="190" fill="#c3f400" r="4.5"></circle>
+<!-- Rope Flare -->
+<circle class="animate-ping" cx="22" cy="145" fill="#c3f400" fill-opacity="0.4" r="14"></circle>
+<circle cx="22" cy="145" fill="#c3f400" r="6"></circle>
+</g>
+</svg>
+<!-- Corner Ground HUD: Bowler (Top-Left) -->
+<div class="absolute top-2 left-2 z-10 bg-surface-container-high/90 backdrop-blur-md rounded-DEFAULT p-2 flex items-center gap-2 shadow-lg max-w-[145px]">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-fixed font-bold text-label-sm">
+          RF
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Faizan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono text-[9px]">0.2-0-10-0</span>
+</div>
+</div>
+<!-- Corner Ground HUD: Non-Striker (Top-Right) -->
+<div class="absolute top-2 right-2 z-10 bg-surface-container-high/90 backdrop-blur-md rounded-DEFAULT p-2 flex items-center gap-2 shadow-lg max-w-[130px]">
+<div class="flex flex-col min-w-0 text-right">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Aarav</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[9px]">0* (0b)</span>
+</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-bold text-label-sm">
+          NS
+        </div>
+</div>
+</div>
+<!-- Striker HUD: Now docked in its own clearly partitioned card base, eliminating any overlap -->
+<div class="w-full z-20 bg-surface-container-high/95 backdrop-blur-md p-space-sm border-t border-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center font-bold shadow-md">
+              D
+            </div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-amber-400 text-surface-container-lowest font-label-sm text-[9px] flex items-center justify-center font-bold">★</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-bold">Debashish</span>
+<span class="px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 font-label-sm text-label-sm font-bold">STRIKE</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="text-primary-fixed">10*</strong> (2 balls) · <span class="text-on-surface">1x4, 1x6</span> · SR 500.0
+            </div>
+</div>
+</div>
+<!-- Star Runs Quest Progression Tracker -->
+<div class="flex flex-col items-end gap-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Star Quest: 10 / 25r</span>
+<div class="w-20 h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-fixed to-amber-400 rounded-full w-[40%] transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dice Cricket King Resolution Matrix (Ball 1.2 Die Resolution) -->
+<section class="w-full bg-surface-container rounded-lg p-space-md shadow-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">casino</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider">Ball 1.2 Matrix Roll Resolution</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary-fixed font-bold uppercase bg-surface-container-highest px-2 py-0.5 rounded-full">
+        Cell B6
+      </span>
+</div>
+<!-- Dice Visual Presentation & Cell Action -->
+<div class="flex items-center gap-space-md p-space-sm rounded-DEFAULT bg-surface-container-lowest mt-1">
+<!-- Pair of Dice Faces -->
+<div class="flex items-center gap-space-xs">
+<!-- Red Die (Letter B) -->
+<div class="w-11 h-11 rounded-DEFAULT bg-red-600 text-white flex flex-col items-center justify-center shadow-lg font-headline-sm text-headline-sm font-bold">
+          B
+        </div>
+<span class="text-on-surface-variant font-bold text-headline-sm">+</span>
+<!-- Blue Die (Number 6) -->
+<div class="w-11 h-11 rounded-DEFAULT bg-blue-600 text-white flex flex-col items-center justify-center shadow-lg font-headline-sm text-headline-sm font-bold">
+          6
+        </div>
+</div>
+<!-- Resolved Action & Rulebook Output -->
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-amber-400 font-bold">6 RUNS</span>
+<span class="text-on-surface text-body-sm font-body-sm font-medium">· Lofted drive over long-on</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant truncate">
+          Table: <span class="text-primary-fixed font-semibold">Master Powerplay Pacer Sheet</span> (PWPO Opener Boost Active)
+        </p>
+</div>
+</div>
+</section>
+<!-- Interactive Animation Controls & Instant Replay Bar -->
+<section class="w-full flex items-center gap-space-xs">
+<button class="flex-1 py-2.5 px-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center justify-center gap-1.5 transition-all active:scale-95 shadow-md" id="replay-btn">
+<span class="material-symbols-outlined text-[18px] text-amber-400">replay</span>
+      Replay 6️⃣ Celebration
+    </button>
+<button class="flex-1 py-2.5 px-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center justify-center gap-1.5 transition-all active:scale-95 shadow-md" id="toggle-shot-type">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">slow_motion_video</span>
+      Test 4️⃣ Rope Bounce
+    </button>
+</section>
+<!-- Main Next Ball Action CTA (Tactile Electric Lime Hero) -->
+<button class="w-full py-4 px-6 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm font-bold uppercase tracking-tight flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(195,244,0,0.35)] hover:brightness-105 active:scale-[0.98] transition-all" id="roll-next-ball">
+<span class="">Roll Ball 1.3 · Faizan to Debashish</span>
+<span class="material-symbols-outlined text-[24px]">sports_cricket</span>
+</button>
+<!-- Match Engine Quick Dock (Section 19.11 Action Dock) -->
+<nav class="w-full bg-surface-container-low/90 backdrop-blur-xl p-space-xs rounded-xl shadow-xl flex items-center justify-around">
+<button class="flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+<span class="text-label-sm font-label-sm">DRS (2)</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+<span class="text-label-sm font-label-sm">Cross Strike</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">table_view</span>
+<span class="text-label-sm font-label-sm">Bat Sheet</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+<span class="text-label-sm font-label-sm">Undo 1.2</span>
+</button>
+<button class="flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-DEFAULT text-primary-fixed font-bold transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">crop_free</span>
+<span class="text-label-sm font-label-sm">Pitch Cam</span>
+</button>
+</nav>
+<!-- Micro-interaction script for toggling boundary animation styles & replays -->
+<script>
+    (function initBoundaryArena() {
+      const trajSix = document.getElementById('trajectory-six');
+      const trajFour = document.getElementById('trajectory-four');
+      const banner = document.getElementById('celebration-banner');
+      const toggleSixBtn = document.getElementById('toggle-six-btn');
+      const toggleFourBtn = document.getElementById('toggle-four-btn');
+      const replayBtn = document.getElementById('replay-btn');
+      const toggleShotBtn = document.getElementById('toggle-shot-type');
+
+      let currentMode = 'six';
+
+      function showSix() {
+        currentMode = 'six';
+        trajSix.classList.remove('opacity-0', 'pointer-events-none');
+        trajFour.classList.add('opacity-0', 'pointer-events-none');
+        
+        toggleSixBtn.className = "px-2.5 py-1 rounded-full bg-amber-400 text-surface-container-lowest font-label-sm text-label-sm font-bold transition-all shadow-md";
+        toggleFourBtn.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold transition-all";
+
+        banner.innerHTML = `
+          <div class="flex items-center gap-space-xs">
+            <span class="text-xl">💥</span>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-amber-300 font-bold uppercase tracking-wider drop-shadow-[0_0_12px_rgba(255,215,0,0.7)]">
+              MAXIMUM SIX!
+            </span>
+            <span class="px-2 py-0.5 rounded-full bg-amber-400 text-surface-container-lowest font-label-sm text-label-sm font-bold">
+              98 METRES
+            </span>
+          </div>
+          <div class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant">
+            <span class="text-primary-fixed font-semibold">Exit Velo: 142 km/h</span>
+            <span>•</span>
+            <span class="text-on-surface">Launch: 32°</span>
+            <span>•</span>
+            <span class="text-amber-400 font-semibold">Zone: Long-On Stand</span>
+          </div>
+        `;
+        banner.classList.remove('animate-bounce');
+        void banner.offsetWidth;
+        banner.classList.add('animate-bounce');
+      }
+
+      function showFour() {
+        currentMode = 'four';
+        trajSix.classList.add('opacity-0', 'pointer-events-none');
+        trajFour.classList.remove('opacity-0', 'pointer-events-none');
+
+        toggleFourBtn.className = "px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold transition-all shadow-md";
+        toggleSixBtn.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-bold transition-all";
+
+        banner.innerHTML = `
+          <div class="flex items-center gap-space-xs">
+            <span class="text-xl">⚡</span>
+            <span class="font-headline-lg-mobile text-headline-lg-mobile text-primary-fixed font-bold uppercase tracking-wider drop-shadow-[0_0_12px_rgba(195,244,0,0.7)]">
+              CRACKING FOUR!
+            </span>
+            <span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+              ROPE BOUNCE
+            </span>
+          </div>
+          <div class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant">
+            <span class="text-primary-fixed font-semibold">Exit Velo: 138 km/h</span>
+            <span>•</span>
+            <span class="text-on-surface">Launch: 4°</span>
+            <span>•</span>
+            <span class="text-primary-fixed font-semibold">Zone: Extra Cover</span>
+          </div>
+        `;
+        banner.classList.remove('animate-bounce');
+        void banner.offsetWidth;
+        banner.classList.add('animate-bounce');
+      }
+
+      toggleSixBtn.addEventListener('click', showSix);
+      toggleFourBtn.addEventListener('click', showFour);
+      replayBtn.addEventListener('click', showSix);
+      toggleShotBtn.addEventListener('click', () => {
+        if (currentMode === 'six') {
+          showFour();
+        } else {
+          showSix();
+        }
+      });
+    })();
+  </script>
+</div></main>
+
+
+</body></html>

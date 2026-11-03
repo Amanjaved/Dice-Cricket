@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#c4c9ac", "outline-variant": "#444933", "on-surface": "#e0e4dc", "background": "#101410", "surface-variant": "#323631", "surface-tint": "#abd600", "on-tertiary-fixed-variant": "#930005", "on-primary-container": "#556d00", "primary-fixed-dim": "#abd600", "surface-dim": "#101410", "inverse-on-surface": "#2d312d", "on-background": "#e0e4dc", "surface-container-highest": "#323631", "tertiary": "#ffffff", "primary-container": "#c3f400", "surface": "#101410", "secondary-fixed": "#dce5d7", "on-primary": "#283500", "on-primary-fixed": "#161e00", "primary-fixed": "#c3f400", "on-tertiary-container": "#ca0a0f", "on-secondary-container": "#b2bbae", "secondary": "#c0c9bc", "tertiary-fixed": "#ffdad5", "on-secondary": "#2a3329", "secondary-container": "#434b41", "on-secondary-fixed": "#161e15", "error-container": "#93000a", "inverse-surface": "#e0e4dc", "surface-container-low": "#191d18", "on-primary-fixed-variant": "#3c4d00", "outline": "#8e9379", "surface-container": "#1d211c", "primary": "#ffffff", "on-error": "#690005", "on-tertiary-fixed": "#410001", "on-error-container": "#ffdad6", "surface-bright": "#363a35", "tertiary-fixed-dim": "#ffb4aa", "inverse-primary": "#506600", "on-secondary-fixed-variant": "#41493f", "surface-container-high": "#272b26", "error": "#ffb4ab", "secondary-fixed-dim": "#c0c9bc", "on-tertiary": "#690003", "tertiary-container": "#ffdad5", "surface-container-lowest": "#0b0f0b" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.25rem" }, "fontFamily": { "body-md": ["Outfit"], "headline-lg-mobile": ["Outfit"], "headline-lg": ["Outfit"], "label-sm": ["Outfit"], "score-display": ["Outfit"], "label-lg": ["Outfit"], "body-sm": ["Outfit"], "headline-sm": ["Outfit"], "headline-xl": ["Outfit"], "body-lg": ["Outfit"], "label-md": ["Outfit"], "headline-md": ["Outfit"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] -ml-space-xs flex items-center justify-center text-on-surface hover:text-primary-container transition-colors rounded-full" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0 flex-1 pr-space-xs"><div class="flex items-center gap-space-xs"><h1 class="text-label-lg font-label-lg text-on-surface truncate">Over Summary Details</h1></div><div class="flex items-center gap-space-xs mt-0.5"><span class="px-space-xs py-0.5 bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-full font-bold leading-none">Over 1 Complete</span><span class="px-space-xs py-0.5 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full leading-none">TGT: 48</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(195,244,0,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface pb-safe flex-1"><div class="flex flex-col w-full">
+<!-- Top Match Status & Live Metrics Banner -->
+<section class="flex flex-col px-margin pt-space-md pb-space-sm bg-surface-container-lowest">
+<!-- Match Info & Status Pill -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_rgba(195,244,0,0.8)]"></span>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant truncate">AUS vs DLD · 5-Over Blitz · NSG Ground</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-container">wifi_tethering</span>
+<span>LIVE TELEMETRY</span>
+</div>
+</div>
+<!-- Matchup Hero Card -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col gap-space-sm shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-primary-container shadow-inner font-bold">
+            AUS
+          </div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="text-score-display font-score-display text-primary tracking-tight">16/2</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">(1.0 / 5.0 ov)</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary-container font-semibold">TGT 58 · 42 runs needed off 24 balls</span>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-on-surface-variant">CRR <b class="text-on-surface">16.00</b></span>
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary-container font-bold">RRR 10.50</span>
+</div>
+</div>
+<!-- Live Mini Run Rate & Balls Progression Bar -->
+<div class="w-full bg-surface-container-lowest rounded-full h-1.5 overflow-hidden flex">
+<div class="bg-primary-container h-full transition-all duration-500 shadow-[0_0_8px_rgba(195,244,0,0.5)]" style="width: 20%;"></div>
+<div class="bg-surface-variant h-full flex-1"></div>
+</div>
+</div>
+<!-- Tab View Switcher -->
+<div class="flex items-center gap-space-xs mt-space-md overflow-x-auto no-scrollbar py-0.5">
+<button class="px-space-md py-1.5 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors whitespace-nowrap">
+        Live
+      </button>
+<button class="px-space-md py-1.5 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors whitespace-nowrap">
+        Scorecard
+      </button>
+<button class="px-space-md py-1.5 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors whitespace-nowrap">
+        Summary
+      </button>
+<button class="px-space-md py-1.5 rounded-full text-label-md font-label-md bg-primary-container text-on-primary font-bold shadow-[0_0_16px_rgba(195,244,0,0.4)] whitespace-nowrap flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary animate-ping"></span>
+        Ball by Ball
+      </button>
+</div>
+</section>
+<!-- Commentary Tools & Language Switcher Strip -->
+<section class="flex flex-col px-margin py-space-sm gap-space-sm bg-surface-container-low">
+<div class="flex items-center justify-between gap-space-sm">
+<!-- Bilingual Language Pill Toggle -->
+<div class="flex items-center bg-surface-container-lowest p-1 rounded-full shadow-inner">
+<button class="px-space-sm py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant transition-all flex items-center gap-1" id="lang-btn-en" onclick="setLanguage('en')">
+<span>🇬🇧</span> English
+        </button>
+<button class="px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary font-bold shadow-sm transition-all flex items-center gap-1" id="lang-btn-hi" onclick="setLanguage('hi')">
+<span>🇮🇳</span> हिंदी
+        </button>
+</div>
+<!-- Quick Status & Voice Audio Simulator -->
+<div class="flex items-center gap-space-xs">
+<span class="hidden sm:inline-flex items-center px-space-xs py-0.5 rounded-full bg-surface-container text-primary-container font-label-sm text-label-sm">
+          हिन्दी कमेंट्री चालू
+        </span>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary-container transition-all active:scale-95 shadow-md" id="audio-btn" onclick="toggleAudioSpeech()" title="Play Audio Commentary">
+<span class="material-symbols-outlined text-[18px]" id="audio-icon">volume_up</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips Row -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="ball-filter active-filter px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-bright text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" onclick="filterBalls('all')">
+<span>All Balls</span>
+<span class="px-1 rounded-full bg-surface-container-highest text-[10px]">6</span>
+</button>
+<button class="ball-filter px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" onclick="filterBalls('boundary')">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Boundaries (4s &amp; 6s)</span>
+</button>
+<button class="ball-filter px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" onclick="filterBalls('wicket')">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Wickets (W)</span>
+</button>
+<button class="ball-filter px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" onclick="filterBalls('drs')">
+<span>DRS &amp; Reviews</span>
+</button>
+<button class="ball-filter px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant hover:text-on-surface whitespace-nowrap transition-colors flex items-center gap-1" onclick="filterBalls('power')">
+<span>Power Cards</span>
+</button>
+</div>
+</section>
+<!-- Over Timeline Stream -->
+<section class="flex flex-col px-margin py-space-md gap-space-md">
+<!-- OVER 1 BANNER -->
+<div class="p-space-md rounded-lg bg-surface-container-high flex flex-col gap-space-xs shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface tracking-tight">OVER 1 COMPLETE</h2>
+</div>
+<span class="text-label-sm font-label-sm uppercase px-space-xs py-0.5 rounded-full bg-surface-container-highest text-primary-container font-bold">16 Runs · 1 Wicket</span>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<span>Imran (RFM): <strong class="text-on-surface">1.0 - 0 - 16 - 1</strong></span>
+<span>Australia: <strong class="text-primary-container">16/2</strong> (Target 58 · 42 req / 24b)</span>
+</div>
+<!-- Quick Balls Indicator Strip -->
+<div class="flex items-center gap-1.5 mt-space-xs pt-space-xs">
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface text-label-sm font-label-sm flex items-center justify-center">1</span>
+<span class="w-6 h-6 rounded-full bg-surface-tint/20 text-surface-tint text-label-sm font-label-sm flex items-center justify-center font-bold">DRS</span>
+<span class="w-6 h-6 rounded-full bg-amber-400/20 text-amber-300 text-label-sm font-label-sm flex items-center justify-center font-bold">★1</span>
+<span class="w-6 h-6 rounded-full bg-error-container text-on-error-container text-label-sm font-label-sm flex items-center justify-center font-bold">W</span>
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm flex items-center justify-center">•</span>
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary text-label-sm font-label-sm flex items-center justify-center font-bold shadow-[0_0_8px_rgba(195,244,0,0.5)]">4</span>
+</div>
+</div>
+<!-- BALL FEED CONTAINER -->
+<div class="flex flex-col gap-space-md" id="commentary-list">
+<!-- BALL 1.6 - Boundary (4) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="boundary">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-primary-container text-on-primary text-headline-sm font-headline-sm flex items-center justify-center font-bold shadow-[0_0_12px_rgba(195,244,0,0.4)]">
+              4
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-primary font-bold">Over 1.6</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-primary-container/20 text-primary-container uppercase font-bold">Boundary</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Imran to Declan</span>
+</div>
+</div>
+<!-- Dice Telemetry Badge -->
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>E</span>
+<span class="text-on-surface-variant">+</span>
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>4</span>
+<span class="text-on-surface-variant">→</span>
+<span class="text-primary-container font-semibold">Cell E4 (NS Line)</span>
+</div>
+</div>
+<!-- Telemetry Details Subrow -->
+<div class="px-space-sm py-1 rounded bg-surface-container-low text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1.5 mb-space-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">sports_cricket</span>
+<span>Master Batting Grid: Full &amp; wide, pierced through the extra-cover gap</span>
+</div>
+<!-- Commentary Text -->
+<div class="flex flex-col gap-1 text-commentary">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            चौका! डिकलन का करारा प्रहार! इमरान की ओवरपिच गेंद को एक्स्ट्रा कवर की दिशा में खूबसूरती से पंच किया, गेंद गोली की रफ्तार से बाउंड्री के पार 4 रनों के लिए!
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            FOUR! Declan crunches it through extra cover with pure timing. 4 runs!
+          </p>
+</div>
+</article>
+<!-- BALL 1.5 - Dot Ball (•) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="dot">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface-variant text-headline-sm font-headline-sm flex items-center justify-center font-bold">
+              •
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-primary font-bold">Over 1.5</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant uppercase font-medium">Dot Ball</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Imran to Declan</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>B</span>
+<span class="text-on-surface-variant">+</span>
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>2</span>
+<span class="text-on-surface-variant">→</span>
+<span class="text-on-surface-variant font-medium">Dot (D)</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-commentary mt-1">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            डॉट गेंद। इमरान की शानदार लेंथ गेंद, डिकलन ने बैकफुट पर जाकर रक्षात्मक तरीके से खेला। कोई रन नहीं।
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            Dot ball. Good length outside off, Declan defends solidly.
+          </p>
+</div>
+</article>
+<!-- BALL 1.4 - WICKET (W) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="wicket">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-error-container text-on-error-container text-headline-sm font-headline-sm flex items-center justify-center font-bold shadow-[0_0_14px_rgba(147,0,10,0.6)]">
+              W
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-error font-bold">Over 1.4</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container uppercase font-bold tracking-wide">Wicket</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface font-semibold">MALCOLM c&amp;b IMRAN</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="material-symbols-outlined text-[14px] text-error">style</span>
+<span class="text-error font-bold">Card #14</span>
+<span class="text-on-surface-variant">·</span>
+<span class="text-primary-container font-semibold">Skill: Red Pass</span>
+</div>
+</div>
+<!-- Fall of Wicket Badge -->
+<div class="flex items-center justify-between p-space-sm rounded bg-surface-container-low mb-space-sm">
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm text-error">
+<span class="material-symbols-outlined text-[16px]">dangerous</span>
+<span class="font-bold">FALL OF WICKET: 12/2</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Malcolm 9 (5b, 1x4, 0x6)</span>
+</div>
+<div class="flex flex-col gap-1 text-commentary">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            विकेट! बड़ा झटका ऑस्ट्रेलिया को! मैल्कम वापस पवेलियन लौटे! इमरान ने अपनी ही गेंद पर आगे डाइव लगाकर सनसनीखेज कॉट एंड बोल्ड लपका! 12 पर दूसरा विकेट गिरा।
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            WICKET! Malcolm departs c&amp;b Imran. Stunning return catch diving low in his follow-through!
+          </p>
+</div>
+</article>
+<!-- BALL 1.3 - Power Card (★1) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="power">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-amber-400/20 text-amber-300 text-label-lg font-label-lg flex items-center justify-center font-bold">
+              ★1
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-primary font-bold">Over 1.3</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 uppercase font-bold">Power Card</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Imran to Malcolm</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>C</span>
+<span class="text-on-surface-variant">+</span>
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>1</span>
+<span class="text-on-surface-variant">→</span>
+<span class="text-amber-300 font-semibold">Wonderful Shot</span>
+</div>
+</div>
+<div class="px-space-sm py-1 rounded bg-surface-container-low text-body-sm font-body-sm text-amber-300 flex items-center gap-1.5 mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+<span>Modifier Applied: Wonderful Shot card equipped · 1 Run converted</span>
+</div>
+<div class="flex flex-col gap-1 text-commentary">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            सिंगल। वंडरफुल शॉट पावर कार्ड इस्तेमाल हुआ। डीप मिड-विकेट की ओर खेलकर 1 रन पूरा किया।
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            Single. Wonderful shot power card played, tucked into the leg side for one.
+          </p>
+</div>
+</article>
+<!-- BALL 1.2 - DRS Overturned (DRS✓) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="drs">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-teal-400/20 text-teal-300 text-label-sm font-label-sm flex items-center justify-center font-bold tracking-tight">
+              DRS✓
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-primary font-bold">Over 1.2</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 uppercase font-bold">Overturned</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Imran to Malcolm</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="material-symbols-outlined text-[14px] text-teal-300">casino</span>
+<span>1-Die: Rolled 6</span>
+<span class="text-on-surface-variant">→</span>
+<span class="text-teal-300 font-bold">NOT OUT</span>
+</div>
+</div>
+<div class="px-space-sm py-1 rounded bg-surface-container-low text-body-sm font-body-sm text-teal-300 flex items-center gap-1.5 mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span>Review Result: On-field Out decision overturned by 1-Die Review mechanic</span>
+</div>
+<div class="flex flex-col gap-1 text-commentary">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            डीआरएस रिव्यू सफल! फैसला पलटा! अंपायर ने एलबीडब्ल्यू दिया था, लेकिन हेडेन ने 1-डाई रिव्यू लिया और पासे पर 6 आया! नॉट आउट करार दिया गया!
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            DRS Success! On-field LBW overturned after 1-Die roll yielded 6. Not Out!
+          </p>
+</div>
+</article>
+<!-- BALL 1.1 - Single (1) -->
+<article class="ball-item flex flex-col p-space-md rounded-lg bg-surface-container shadow-md transition-transform duration-200 hover:-translate-y-0.5" data-ball-type="all">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-9 h-9 rounded-full bg-surface-container-highest text-on-surface text-headline-sm font-headline-sm flex items-center justify-center font-bold">
+              1
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="text-label-lg font-label-lg text-primary font-bold">Over 1.1</span>
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant uppercase font-medium">Single</span>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Imran to Malcolm</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-highest text-on-surface text-label-sm font-label-sm shadow-inner">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>A</span>
+<span class="text-on-surface-variant">+</span>
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span>1</span>
+<span class="text-on-surface-variant">→</span>
+<span class="text-on-surface font-semibold">Single (1)</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-commentary mt-1">
+<p class="commentary-hi text-body-lg font-body-lg text-on-surface leading-snug">
+            मैच की पहली गेंद! इमरान ने पैड्स पर गेंद डाली, मैल्कम ने स्क्वायर लेग की दिशा में ग्लांस करके 1 रन लिया और खाता खोला।
+          </p>
+<p class="commentary-en text-body-sm font-body-sm text-on-surface-variant leading-relaxed">
+            Single to start. Malcolm tucks it off the pads to get off the mark.
+          </p>
+</div>
+</article>
+</div>
+</section>
+<!-- Interactive Bottom Sticky Control Bar -->
+<footer class="sticky bottom-0 z-40 bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_-4px_24px_rgba(0,0,0,0.6)]">
+<div class="flex items-center gap-space-sm max-w-md mx-auto">
+<!-- Primary Action: Jump to Live Arena -->
+<button class="flex-1 py-3 px-space-md rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-xs shadow-[0_0_20px_rgba(195,244,0,0.35)] active:scale-95 transition-all">
+<span>Back to Live Arena</span>
+<span class="material-symbols-outlined text-[20px]">sports_cricket</span>
+</button>
+<!-- Auxiliary Action: Export Commentary -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface flex items-center justify-center transition-all active:scale-90 shadow-md" onclick="downloadPDFNotification()" title="Export Commentary PDF">
+<span class="material-symbols-outlined text-[22px]">picture_as_pdf</span>
+</button>
+<!-- Auxiliary Action: Jump to Over 2 -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high hover:bg-surface-bright text-primary-container flex items-center justify-center transition-all active:scale-90 shadow-md" title="Jump to Over 2">
+<span class="material-symbols-outlined text-[22px]">keyboard_double_arrow_down</span>
+</button>
+</div>
+</footer>
+<!-- Toast Notification Simulator -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-space-md py-2 rounded-full bg-surface-container-highest text-on-surface text-label-md font-label-md shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none" id="toast-msg">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+<span id="toast-text">Action completed</span>
+</div>
+</div>
+<script>
+  // Bilingual Commentary Toggle Logic
+  function setLanguage(lang) {
+    const btnEn = document.getElementById('lang-btn-en');
+    const btnHi = document.getElementById('lang-btn-hi');
+    const hiTexts = document.querySelectorAll('.commentary-hi');
+    const enTexts = document.querySelectorAll('.commentary-en');
+
+    if (lang === 'hi') {
+      btnHi.className = 'px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary font-bold shadow-sm transition-all flex items-center gap-1';
+      btnEn.className = 'px-space-sm py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant transition-all flex items-center gap-1';
+      
+      hiTexts.forEach(el => el.classList.remove('hidden'));
+      enTexts.forEach(el => {
+        el.classList.add('text-on-surface-variant');
+        el.classList.remove('text-on-surface', 'font-body-lg', 'text-body-lg');
+      });
+      showToast('हिन्दी कमेंट्री मोड सक्रिय (Hindi Commentary Active)');
+    } else {
+      btnEn.className = 'px-space-sm py-1 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary font-bold shadow-sm transition-all flex items-center gap-1';
+      btnHi.className = 'px-space-sm py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant transition-all flex items-center gap-1';
+      
+      hiTexts.forEach(el => el.classList.add('hidden'));
+      enTexts.forEach(el => {
+        el.classList.remove('text-on-surface-variant');
+        el.classList.add('text-on-surface', 'font-body-lg', 'text-body-lg');
+      });
+      showToast('English commentary mode active');
+    }
+  }
+
+  // Filter Chips Logic
+  function filterBalls(category) {
+    const filters = document.querySelectorAll('.ball-filter');
+    filters.forEach(btn => {
+      btn.classList.remove('bg-surface-bright', 'text-on-surface');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+
+    event.currentTarget.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    event.currentTarget.classList.add('bg-surface-bright', 'text-on-surface');
+
+    const items = document.querySelectorAll('.ball-item');
+    items.forEach(item => {
+      const type = item.getAttribute('data-ball-type');
+      if (category === 'all' || type === category) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Audio Speech Simulation Toggle
+  let isPlayingAudio = false;
+  function toggleAudioSpeech() {
+    isPlayingAudio = !isPlayingAudio;
+    const icon = document.getElementById('audio-icon');
+    const btn = document.getElementById('audio-btn');
+    if (isPlayingAudio) {
+      icon.innerText = 'graphic_eq';
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      btn.classList.remove('bg-surface-container', 'text-primary-container');
+      showToast('Playing voice audio commentary (AI Synthesizer)');
+    } else {
+      icon.innerText = 'volume_up';
+      btn.classList.remove('bg-primary-container', 'text-on-primary');
+      btn.classList.add('bg-surface-container', 'text-primary-container');
+      showToast('Audio commentary paused');
+    }
+  }
+
+  // Export PDF Feedback
+  function downloadPDFNotification() {
+    showToast('Exporting Ball-by-Ball commentary to PDF...');
+  }
+
+  // Lightweight Toast Utility
+  function showToast(message) {
+    const toast = document.getElementById('toast-msg');
+    const toastText = document.getElementById('toast-text');
+    toastText.innerText = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2400);
+  }
+</script></main></body></html>

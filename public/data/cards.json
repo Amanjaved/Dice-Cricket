@@ -1,0 +1,1198 @@
+{
+  "wicketCards": [
+    {
+      "id": 1,
+      "type": "lbw",
+      "title": "LBW",
+      "desc": "LEG BEFORE WICKET",
+      "chance": "none"
+    },
+    {
+      "id": 2,
+      "type": "lbw",
+      "title": "LBW",
+      "desc": "LEG BEFORE WICKET",
+      "chance": "none"
+    },
+    {
+      "id": 3,
+      "type": "lbw",
+      "title": "LBW",
+      "desc": "LEG BEFORE WICKET",
+      "chance": "none"
+    },
+    {
+      "id": 4,
+      "type": "lbw",
+      "title": "LBW",
+      "desc": "LEG BEFORE WICKET",
+      "chance": "none"
+    },
+    {
+      "id": 5,
+      "type": "caught",
+      "title": "CATCH",
+      "desc": "CAUGHT IN THE FIELD",
+      "chance": "fielder_catch"
+    },
+    {
+      "id": 6,
+      "type": "caught",
+      "title": "CATCH",
+      "desc": "CAUGHT IN THE FIELD",
+      "chance": "fielder_catch"
+    },
+    {
+      "id": 7,
+      "type": "caught",
+      "title": "CATCH",
+      "desc": "CAUGHT IN THE FIELD",
+      "chance": "fielder_catch"
+    },
+    {
+      "id": 8,
+      "type": "caught",
+      "title": "CATCH",
+      "desc": "CAUGHT IN THE FIELD",
+      "chance": "fielder_catch"
+    },
+    {
+      "id": 9,
+      "type": "caught",
+      "title": "CATCH",
+      "desc": "CAUGHT IN THE FIELD",
+      "chance": "fielder_catch"
+    },
+    {
+      "id": 10,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 11,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 12,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 13,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 14,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 15,
+      "type": "bowled",
+      "title": "BOWLED",
+      "desc": "STUMPS HIT",
+      "chance": "none"
+    },
+    {
+      "id": 16,
+      "type": "stumpingOrCaughtBehind",
+      "title": "STUMPING OR CAUGHT BEHIND",
+      "desc": "STUMPED: LM, RM, LO, RO, RL, LC · CAUGHT BEHIND: LF, RF, LFM, RFM",
+      "chance": "conditional"
+    },
+    {
+      "id": 17,
+      "type": "stumpingOrCaughtBehind",
+      "title": "STUMPING OR CAUGHT BEHIND",
+      "desc": "STUMPED: LM, RM, LO, RO, RL, LC · CAUGHT BEHIND: LF, RF, LFM, RFM",
+      "chance": "conditional"
+    },
+    {
+      "id": 18,
+      "type": "stumpingOrCaughtBehind",
+      "title": "STUMPING OR CAUGHT BEHIND",
+      "desc": "STUMPED: LM, RM, LO, RO, RL, LC · CAUGHT BEHIND: LF, RF, LFM, RFM",
+      "chance": "conditional"
+    },
+    {
+      "id": 19,
+      "type": "caughtBehind",
+      "title": "CAUGHT BEHIND",
+      "desc": "BY THE KEEPER",
+      "chance": "keeper_catch"
+    },
+    {
+      "id": 20,
+      "type": "caughtBehind",
+      "title": "CAUGHT BEHIND",
+      "desc": "BY THE KEEPER",
+      "chance": "keeper_catch"
+    },
+    {
+      "id": 21,
+      "type": "caughtAndBowled",
+      "title": "CAUGHT & BOWLED",
+      "desc": "BY THE BOWLER",
+      "chance": "bowler_catch"
+    },
+    {
+      "id": 22,
+      "type": "runOutStriker",
+      "title": "RUN OUT",
+      "desc": "AT STRIKER'S END",
+      "chance": "fielder_run_out"
+    },
+    {
+      "id": 23,
+      "type": "runOutStriker",
+      "title": "RUN OUT",
+      "desc": "AT STRIKER'S END",
+      "chance": "fielder_run_out"
+    },
+    {
+      "id": 24,
+      "type": "runOutNonStriker",
+      "title": "RUN OUT",
+      "desc": "AT NON-STRIKER'S END",
+      "chance": "fielder_run_out"
+    },
+    {
+      "id": 25,
+      "type": "runOutNonStriker",
+      "title": "RUN OUT",
+      "desc": "AT NON-STRIKER'S END",
+      "chance": "fielder_run_out"
+    }
+  ],
+  "runsCards": [
+    {
+      "card": 1,
+      "catchDroppedFielder": 0,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 1,
+      "noFielderRunOut": 1,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "extrasPrinted": "WIDE",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 0,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 2,
+      "catchDroppedFielder": 0,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 1,
+      "noFielderRunOut": 1,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "extrasPrinted": "WIDE +1",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 1,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 3,
+      "catchDroppedFielder": 1,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 2,
+      "noFielderRunOut": 1,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "extrasPrinted": "WIDE +2",
+      "extrasAppNow": "WIDE",
+      "freeHitOthers": 2,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 4,
+      "catchDroppedFielder": 1,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 2,
+      "noFielderRunOut": 2,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "extrasPrinted": "WIDE +3",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 3,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 5,
+      "catchDroppedFielder": 1,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 2,
+      "noFielderRunOut": 2,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 1
+      },
+      "extrasPrinted": "WIDE +4",
+      "extrasAppNow": "L1",
+      "freeHitOthers": 4,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 6,
+      "catchDroppedFielder": 2,
+      "catchDroppedKeeperBowler": 0,
+      "noFielderCatch": 2,
+      "noFielderRunOut": 2,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 1
+      },
+      "extrasPrinted": "NO BALL",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 4,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 7,
+      "catchDroppedFielder": 2,
+      "catchDroppedKeeperBowler": 1,
+      "noFielderCatch": 2,
+      "noFielderRunOut": 2,
+      "stumpingMissed": 0,
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "NO BALL +1",
+      "extrasAppNow": "NO BALL",
+      "freeHitOthers": 4,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 8,
+      "catchDroppedFielder": 2,
+      "catchDroppedKeeperBowler": 1,
+      "noFielderCatch": 3,
+      "noFielderRunOut": 2,
+      "stumpingMissed": "WIDE",
+      "runOutHit": {
+        "fielder": 0,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "NO BALL +2",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 4,
+      "freeHitBowler": 0
+    },
+    {
+      "card": 9,
+      "catchDroppedFielder": 2,
+      "catchDroppedKeeperBowler": 2,
+      "noFielderCatch": 3,
+      "noFielderRunOut": 2,
+      "stumpingMissed": "WIDE +1",
+      "runOutHit": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "NO BALL +3",
+      "extrasAppNow": "B1",
+      "freeHitOthers": 6,
+      "freeHitBowler": 1
+    },
+    {
+      "card": 10,
+      "catchDroppedFielder": 2,
+      "catchDroppedKeeperBowler": 2,
+      "noFielderCatch": 3,
+      "noFielderRunOut": 3,
+      "stumpingMissed": "WIDE +2",
+      "runOutHit": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "NO BALL +4",
+      "extrasAppNow": "WIDE +1",
+      "freeHitOthers": 6,
+      "freeHitBowler": 2
+    },
+    {
+      "card": 11,
+      "catchDroppedFielder": 3,
+      "catchDroppedKeeperBowler": 3,
+      "noFielderCatch": 3,
+      "noFielderRunOut": 3,
+      "stumpingMissed": "WIDE +3",
+      "runOutHit": {
+        "fielder": 1,
+        "bowler": 0,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "NO BALL +6",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 6,
+      "freeHitBowler": 3
+    },
+    {
+      "card": 12,
+      "catchDroppedFielder": 3,
+      "catchDroppedKeeperBowler": 3,
+      "noFielderCatch": 3,
+      "noFielderRunOut": 3,
+      "stumpingMissed": "WIDE +4",
+      "runOutHit": {
+        "fielder": 1,
+        "bowler": 1,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": 2,
+        "keeper": "B1"
+      },
+      "extrasPrinted": "B4",
+      "extrasAppNow": "NO BALL +1",
+      "freeHitOthers": 6,
+      "freeHitBowler": 4
+    },
+    {
+      "card": 13,
+      "catchDroppedFielder": 4,
+      "catchDroppedKeeperBowler": 4,
+      "noFielderCatch": 4,
+      "noFielderRunOut": "L1",
+      "stumpingMissed": "B1",
+      "runOutHit": {
+        "fielder": 1,
+        "bowler": 1,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": "L1",
+        "keeper": "B1"
+      },
+      "extrasPrinted": "L1",
+      "extrasAppNow": "L2",
+      "freeHitOthers": 6,
+      "freeHitBowler": 4
+    },
+    {
+      "card": 14,
+      "catchDroppedFielder": 4,
+      "catchDroppedKeeperBowler": 4,
+      "noFielderCatch": 4,
+      "noFielderRunOut": "L1",
+      "stumpingMissed": "B2",
+      "runOutHit": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": 0
+      },
+      "runOutMissed": {
+        "fielder": 2,
+        "bowler": "L1",
+        "keeper": "B1"
+      },
+      "extrasPrinted": "L2",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 6,
+      "freeHitBowler": 4
+    },
+    {
+      "card": 15,
+      "catchDroppedFielder": 6,
+      "catchDroppedKeeperBowler": 4,
+      "noFielderCatch": 4,
+      "noFielderRunOut": "L2",
+      "stumpingMissed": "B3",
+      "runOutHit": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": 1
+      },
+      "runOutMissed": {
+        "fielder": 3,
+        "bowler": "L1",
+        "keeper": "B1"
+      },
+      "extrasPrinted": "L3",
+      "extrasAppNow": "WIDE +2",
+      "freeHitOthers": 6,
+      "freeHitBowler": 4
+    },
+    {
+      "card": 16,
+      "catchDroppedFielder": 6,
+      "catchDroppedKeeperBowler": 4,
+      "noFielderCatch": 6,
+      "noFielderRunOut": "L3",
+      "stumpingMissed": "B4",
+      "runOutHit": {
+        "fielder": 2,
+        "bowler": 1,
+        "keeper": 1
+      },
+      "runOutMissed": {
+        "fielder": 3,
+        "bowler": "L1",
+        "keeper": "B1"
+      },
+      "extrasPrinted": "L4",
+      "extrasAppNow": "DOT",
+      "freeHitOthers": 6,
+      "freeHitBowler": 6
+    }
+  ],
+  "fieldingCards": [
+    {
+      "id": 1,
+      "positionNumber": 1
+    },
+    {
+      "id": 2,
+      "positionNumber": 2
+    },
+    {
+      "id": 3,
+      "positionNumber": 3
+    },
+    {
+      "id": 4,
+      "positionNumber": 4
+    },
+    {
+      "id": 5,
+      "positionNumber": 5
+    },
+    {
+      "id": 6,
+      "positionNumber": 6
+    },
+    {
+      "id": 7,
+      "positionNumber": 7
+    },
+    {
+      "id": 8,
+      "positionNumber": 8
+    },
+    {
+      "id": 9,
+      "positionNumber": 9
+    },
+    {
+      "id": 10,
+      "positionNumber": 10
+    },
+    {
+      "id": 11,
+      "positionNumber": 11
+    },
+    {
+      "id": 12,
+      "positionNumber": 12
+    },
+    {
+      "id": 13,
+      "positionNumber": 13
+    },
+    {
+      "id": 14,
+      "positionNumber": 14
+    },
+    {
+      "id": 15,
+      "positionNumber": 15
+    },
+    {
+      "id": 16,
+      "positionNumber": 16
+    },
+    {
+      "id": 17,
+      "positionNumber": 17
+    },
+    {
+      "id": 18,
+      "positionNumber": 18
+    },
+    {
+      "id": 19,
+      "positionNumber": 19
+    },
+    {
+      "id": 20,
+      "positionNumber": 20
+    }
+  ],
+  "skillsCards": [
+    {
+      "card": 1,
+      "wkCatch": [
+        "Red",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red"
+      ],
+      "fldCatch": [
+        "Green",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Green"
+      ]
+    },
+    {
+      "card": 2,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Blue"
+      ]
+    },
+    {
+      "card": 3,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Green"
+      ]
+    },
+    {
+      "card": 4,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Green"
+      ]
+    },
+    {
+      "card": 5,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Green",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Green"
+      ]
+    },
+    {
+      "card": 6,
+      "wkCatch": [
+        "Red",
+        "Green"
+      ],
+      "wkStump": [
+        "Red",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Green",
+        "Blue"
+      ]
+    },
+    {
+      "card": 7,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Blue"
+      ]
+    },
+    {
+      "card": 8,
+      "wkCatch": [
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red"
+      ]
+    },
+    {
+      "card": 9,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Blue"
+      ]
+    },
+    {
+      "card": 10,
+      "wkCatch": [
+        "Red",
+        "Green"
+      ],
+      "wkStump": [
+        "Red",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red"
+      ]
+    },
+    {
+      "card": 11,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Green",
+        "Blue"
+      ]
+    },
+    {
+      "card": 12,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green"
+      ],
+      "wkRunOut": [
+        "Green"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red"
+      ]
+    },
+    {
+      "card": 13,
+      "wkCatch": [
+        "Red",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Blue"
+      ]
+    },
+    {
+      "card": 14,
+      "wkCatch": [
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red"
+      ]
+    },
+    {
+      "card": 15,
+      "wkCatch": [
+        "Red",
+        "Green"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": [
+        "Red"
+      ]
+    },
+    {
+      "card": 16,
+      "wkCatch": [
+        "Red",
+        "Green"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Green"
+      ],
+      "fldCatch": [
+        "Green",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Green",
+        "Blue"
+      ]
+    },
+    {
+      "card": 17,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": []
+    },
+    {
+      "card": 18,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Green"
+      ],
+      "fldRunOut": []
+    },
+    {
+      "card": 19,
+      "wkCatch": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red",
+        "Blue"
+      ],
+      "fldCatch": [
+        "Red",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Green",
+        "Blue"
+      ]
+    },
+    {
+      "card": 20,
+      "wkCatch": [
+        "Red",
+        "Blue"
+      ],
+      "wkStump": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "wkRunOut": [
+        "Red"
+      ],
+      "fldCatch": [
+        "Green",
+        "Blue"
+      ],
+      "fldRunOut": [
+        "Red",
+        "Green"
+      ]
+    }
+  ],
+  "powerCards": [
+    {
+      "id": 1,
+      "name": "Reroll",
+      "count": 2,
+      "usedBy": "BAT/BTBW/BTAL/WK Captain on batting, BW/BWAL Captain on bowling",
+      "desc": "Cancel his own roll and roll again — both dice, or only red, or only blue."
+    },
+    {
+      "id": 2,
+      "name": "Wonderful Shot",
+      "count": 2,
+      "usedBy": "BAT / BTBW / BTAL / WK Captain on strike",
+      "desc": "30 of 36 cells are 4 or 6. No wicket.",
+      "grid": [
+        [
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6"
+        ],
+        [
+          "4",
+          "6",
+          "1",
+          "4",
+          "6",
+          "4"
+        ],
+        [
+          "1",
+          "4",
+          "4",
+          "6",
+          "6",
+          "2"
+        ],
+        [
+          "6",
+          "6",
+          "4",
+          "4",
+          "6",
+          "2"
+        ],
+        [
+          "6",
+          "1",
+          "6",
+          "4",
+          "6",
+          "2"
+        ],
+        [
+          "4",
+          "6",
+          "4",
+          "4",
+          "6",
+          "4"
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Great Delivery",
+      "count": 2,
+      "usedBy": "BW / BWAL Captain bowling",
+      "desc": "22 of 36 cells are wickets (X 22, D 12, B 1, + 1).",
+      "grid": [
+        [
+          "X",
+          "D",
+          "X",
+          "X",
+          "D",
+          "X"
+        ],
+        [
+          "+",
+          "X",
+          "D",
+          "X",
+          "X",
+          "B"
+        ],
+        [
+          "X",
+          "X",
+          "D",
+          "D",
+          "X",
+          "X"
+        ],
+        [
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "X"
+        ],
+        [
+          "X",
+          "X",
+          "X",
+          "X",
+          "D",
+          "X"
+        ],
+        [
+          "X",
+          "X",
+          "X",
+          "X",
+          "X",
+          "D"
+        ]
+      ]
+    }
+  ]
+}

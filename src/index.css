@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-surface: #101410;
+    --color-surface-lowest: #0b0f0b;
+    --color-surface-low: #151914;
+    --color-surface-container: #191d18;
+    --color-surface-high: #232821;
+    --color-surface-highest: #2e342c;
+    --color-primary-neon: #ccff00;
+    --color-primary-container: #c3f400;
+    --color-on-surface: #e0e4dc;
+    --color-on-surface-variant: #9ba394;
+    --color-outline: #3d4538;
+    --color-error: #ff5252;
+  }
+
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #101410;
+    color: #e0e4dc;
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+/* Tactile 3D Dice styling from Google Stitch Design */
+.die-3d-red {
+  background: radial-gradient(130% 130% at 25% 25%, #ff4d6d 0%, #d61337 55%, #85001a 100%);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4), inset -2px -2px 4px rgba(0,0,0,0.5), 0 8px 18px rgba(214, 19, 55, 0.45);
+}
+
+.die-3d-blue {
+  background: radial-gradient(130% 130% at 25% 25%, #38bdf8 0%, #0284c7 55%, #034575 100%);
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4), inset -2px -2px 4px rgba(0,0,0,0.5), 0 8px 18px rgba(2, 132, 199, 0.45);
+}
+
+.die-pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.35), 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* Fluorescent pitch-pulse neon glows */
+.neon-glow {
+  box-shadow: 0 0 25px rgba(204, 255, 0, 0.28);
+}
+
+.neon-glow-sm {
+  box-shadow: 0 0 12px rgba(204, 255, 0, 0.22);
+}
+
+.neon-glow-red {
+  box-shadow: 0 0 25px rgba(255, 77, 109, 0.35);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+}
+
+/* Animations */
+@keyframes diceShake {
+  0% { transform: scale(0.9) rotate(0deg); }
+  20% { transform: scale(1.08) rotate(-14deg) translateY(-8px); }
+  40% { transform: scale(0.95) rotate(16deg) translateY(4px); }
+  60% { transform: scale(1.05) rotate(-10deg) translateY(-6px); }
+  80% { transform: scale(0.98) rotate(8deg) translateY(2px); }
+  100% { transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+.animate-dice-shake {
+  animation: diceShake 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes laserSweep {
+  0% { stroke-dashoffset: 600; opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.8; }
+}
+
+.animate-laser-sweep {
+  animation: laserSweep 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes pitchPulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(204, 255, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 18px rgba(204, 255, 0, 0.85)); }
+}
+
+.animate-pitch-pulse {
+  animation: pitchPulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Stitch Pitch Pulse Subtle Breathing Pulse for Active Game Elements */
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.35);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 0 18px 2px rgba(204, 255, 0, 0.45);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes subtlePulsePurple {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.35);
+  }
+  50% {
+    transform: scale(1.018);
+    box-shadow: 0 0 18px 2px rgba(168, 85, 247, 0.5);
+  }
+}
+
+.animate-subtle-pulse-purple {
+  animation: subtlePulsePurple 2.4s ease-in-out infinite;
+}
+
+@keyframes activeBeaconPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(204, 255, 0, 0.7);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.18);
+    box-shadow: 0 0 0 6px rgba(204, 255, 0, 0);
+  }
+}
+
+.animate-beacon-pulse {
+  animation: activeBeaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Entrance Transition for Match Views */
+@keyframes viewEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-view-entrance {
+  animation: viewEntrance 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Holographic Card Sheen */
+@keyframes cardSheenSweep {
+  0% {
+    background-position: -200% -200%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+.tactical-card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.tactical-card-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(204, 255, 0, 0.12) 50%,
+    rgba(255, 255, 255, 0.03) 60%,
+    transparent 80%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.tactical-card-sheen:hover::after {
+  opacity: 1;
+  animation: cardSheenSweep 1.8s ease-in-out infinite;
+}

@@ -1,0 +1,161 @@
+{
+  "dominationTable": {
+    "BW": {
+      "BW": "BWD3",
+      "BWAL": "BWD2",
+      "BTAL_WK": "BWD1",
+      "BAT_BTBW": "EQ"
+    },
+    "BWAL": {
+      "BW": "BWD2",
+      "BWAL": "BWD1",
+      "BTAL_WK": "EQ",
+      "BAT_BTBW": "BTD1"
+    },
+    "BTAL": {
+      "BW": "BWD1",
+      "BWAL": "EQ",
+      "BTAL_WK": "BTD1",
+      "BAT_BTBW": "BTD2"
+    },
+    "BTBW": {
+      "BW": "EQ",
+      "BWAL": "BTD1",
+      "BTAL_WK": "BTD2",
+      "BAT_BTBW": "BTD3"
+    }
+  },
+  "matchupGridB": {
+    "RF": {
+      "RHB": "NS",
+      "LHB": "LS"
+    },
+    "LF": {
+      "RHB": "LS",
+      "LHB": "NS"
+    },
+    "RFM": {
+      "RHB": "NS",
+      "LHB": "LS"
+    },
+    "LFM": {
+      "RHB": "LS",
+      "LHB": "NS"
+    },
+    "RM": {
+      "RHB": "HS/★",
+      "LHB": "NS"
+    },
+    "LM": {
+      "RHB": "NS",
+      "LHB": "HS/★"
+    },
+    "RO": {
+      "RHB": "HS/★",
+      "LHB": "LS"
+    },
+    "LO": {
+      "RHB": "LS",
+      "LHB": "HS/★"
+    },
+    "RL": {
+      "RHB": "LS",
+      "LHB": "HS/★"
+    },
+    "LC": {
+      "RHB": "HS/★",
+      "LHB": "LS"
+    }
+  },
+  "deathBowlersByTeam": {
+    "AUS": [
+      "Victor",
+      "Abhay"
+    ],
+    "SL": [
+      "Milindu",
+      "Naveen"
+    ],
+    "PAK": [
+      "Huzaifa",
+      "Faizan"
+    ],
+    "IND": [
+      "Ojas",
+      "Javed"
+    ],
+    "BAN": [
+      "Ashish"
+    ],
+    "ENG": [
+      "Eric"
+    ],
+    "SA": [
+      "Teboho"
+    ],
+    "NZ": [
+      "Ibrahim"
+    ],
+    "AFG": [
+      "Taimur"
+    ],
+    "WI": [
+      "Mohammad"
+    ]
+  },
+  "spinners": [
+    "RO",
+    "RL",
+    "LO",
+    "LC"
+  ],
+  "pacers": [
+    "RF",
+    "RFM",
+    "RM",
+    "LF",
+    "LFM",
+    "LM"
+  ],
+  "formats": {
+    "5_overs": {
+      "overs": 5,
+      "playersPerSide": 7,
+      "allOutWickets": 6,
+      "maxOversPerBowlerRule": "2 bowlers may bowl 2 overs, the rest 1",
+      "powerplayOvers": [
+        1
+      ],
+      "slogOvers": [
+        5
+      ],
+      "middleOvers": [
+        2,
+        3,
+        4
+      ]
+    },
+    "10_overs": {
+      "overs": 10,
+      "playersPerSide": 11,
+      "allOutWickets": 10,
+      "maxOversPerBowlerRule": "Max 2 overs each",
+      "powerplayOvers": [
+        1,
+        2
+      ],
+      "slogOvers": [
+        9,
+        10
+      ],
+      "middleOvers": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  }
+}

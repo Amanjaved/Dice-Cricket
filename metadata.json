@@ -1,0 +1,6 @@
+{
+  "name": "Dice Cricket King",
+  "description": "Dice Cricket King by Faiz Dice Games (© 2026 Tanweer Ahmad) - The complete dice-and-card cricket game featuring 12 master sheets across 3 grounds, 87 cards, 10 international teams, live scoring arena with Pitch View and Split layouts, DRS review, Powerplay & Slog, DPL auction, and tournament championship.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

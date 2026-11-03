@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#e0e4dc", "on-error": "#690005", "tertiary": "#ffffff", "surface-container-low": "#191d18", "secondary-fixed-dim": "#c0c9bc", "surface-container-lowest": "#0b0f0b", "on-secondary-container": "#b2bbae", "primary-fixed": "#c3f400", "outline-variant": "#444933", "tertiary-container": "#ffdad5", "secondary-container": "#434b41", "on-primary-fixed-variant": "#3c4d00", "on-surface-variant": "#c4c9ac", "error": "#ffb4ab", "on-tertiary": "#690003", "surface-container-high": "#272b26", "primary-container": "#c3f400", "inverse-on-surface": "#2d312d", "on-secondary-fixed-variant": "#41493f", "on-background": "#e0e4dc", "on-primary-container": "#556d00", "tertiary-fixed-dim": "#ffb4aa", "on-primary": "#283500", "surface-container": "#1d211c", "outline": "#8e9379", "secondary-fixed": "#dce5d7", "surface-dim": "#101410", "surface": "#101410", "on-tertiary-fixed-variant": "#930005", "on-error-container": "#ffdad6", "inverse-surface": "#e0e4dc", "inverse-primary": "#506600", "background": "#101410", "on-secondary": "#2a3329", "surface-tint": "#abd600", "on-tertiary-container": "#ca0a0f", "on-primary-fixed": "#161e00", "primary-fixed-dim": "#abd600", "tertiary-fixed": "#ffdad5", "error-container": "#93000a", "on-tertiary-fixed": "#410001", "surface-bright": "#363a35", "secondary": "#c0c9bc", "surface-variant": "#323631", "primary": "#ffffff", "on-secondary-fixed": "#161e15", "surface-container-highest": "#323631" }, borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.25rem", "margin-desktop": "2.5rem", "space-md": "0.875rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "gutter-desktop": "1.5rem" }, fontFamily: { "body-md": ["Outfit"], "headline-sm": ["Outfit"], "headline-lg": ["Outfit"], "headline-xl": ["Outfit"], "label-sm": ["Outfit"], "body-lg": ["Outfit"], "body-sm": ["Outfit"], "label-lg": ["Outfit"], "label-md": ["Outfit"], "headline-md": ["Outfit"], "score-display": ["Outfit"], "headline-lg-mobile": ["Outfit"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.025em", fontWeight: "700" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "700" }], "label-sm": ["10px", { lineHeight: "12px", letterSpacing: "0.06em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "600" }], "score-display": ["28px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-lg-mobile": ["26px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go Back" class="w-11 h-11 shrink-0 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-fixed transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate pr-space-xs">Wonderful Shot Power Card</h1></div><div class="shrink-0 flex items-center pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-fixed text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-space-lg pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-safe">
+<!-- Live Match Telemetry Ribbon -->
+<div class="flex items-center justify-between py-space-sm px-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error">WICKET FALLEN · 1.4 OV</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-0.5 rounded-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant">5-OVER BLITZ</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed">NSG PITCH</span>
+</div>
+</div>
+<!-- Dismissal Alert Banner -->
+<div class="bg-surface-container-high rounded-DEFAULT p-space-md mb-space-md relative overflow-hidden shadow-md">
+<div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none text-on-surface select-none">
+<span class="material-symbols-outlined text-[110px]">sports_cricket</span>
+</div>
+<div class="flex items-start justify-between gap-space-sm mb-space-xs relative z-10">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm tracking-wide">OUT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Malcolm</span>
+<span class="font-label-md text-label-md text-on-surface-variant">c &amp; b Imran</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-error">9 <span class="font-body-sm text-body-sm text-on-surface-variant">(5b)</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant relative z-10 pt-1">
+<span class="font-body-sm text-body-sm">FOW: <strong class="text-on-surface font-label-md text-label-md">12/2 in 1.4 ov</strong></span>
+<span class="font-body-sm text-body-sm">Target: <strong class="text-on-surface font-label-md text-label-md">58 (Req: 13.8 RPO)</strong></span>
+</div>
+</div>
+<!-- Lock Status Badge: Bowling on Hold -->
+<div class="bg-surface-container-lowest rounded-full p-space-xs px-space-md mb-space-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-6 h-6 rounded-full bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-[14px]">lock</span>
+</div>
+<p class="font-label-sm text-label-sm text-error truncate">
+        BOWLING ON HOLD · ROLLS LOCKED UNTIL BATSMAN ENTERS
+      </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0 pl-space-xs">RULE 19.7</span>
+</div>
+<!-- Modal Core: Batsman Walking In Container -->
+<div class="bg-surface-container rounded-DEFAULT p-space-md mb-space-md shadow-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed">Scheduled Entrance · No. 3</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">Incoming Batsman</h2>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high px-space-sm py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm text-on-surface">SLOG PHASE</span>
+</div>
+</div>
+<!-- Active Selection Showcase Card -->
+<div class="bg-surface-container-high rounded-DEFAULT p-space-md mb-space-md relative overflow-hidden">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm font-bold shadow-sm">
+            D
+          </div>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="selected-name">Declan</span>
+<span class="px-1.5 py-0.5 bg-surface-container-highest text-on-surface font-label-sm text-label-sm rounded">RHB</span>
+<span class="px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-bold">CAPTAIN</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="selected-role">BTBW · Batting Specialist · Star (0/0)</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm tracking-wider font-bold shadow-sm" id="finisher-badge">
+            SLG F
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Designated Role</span>
+</div>
+</div>
+<!-- Matchup Telemetry Grid -->
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-low p-space-sm rounded-DEFAULT mb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg Slog Rate</span>
+<span class="font-label-lg text-label-lg text-primary-fixed font-bold" id="telemetry-rate">4.3 r/roll</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Boundary %</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold" id="telemetry-boundary">77%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">NSG Pitch Index</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">NS +1.2</span>
+</div>
+</div>
+<!-- Matchup against Bowler -->
+<div class="flex items-center justify-between text-on-surface-variant bg-surface-container p-space-xs px-space-sm rounded-DEFAULT">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">sports_baseball</span>
+<span class="font-body-sm text-body-sm">vs Bowler Imran (RFM)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">RHB vs RFM · High Edge Risk</span>
+</div>
+</div>
+<!-- Section 19.7 Slog Finisher Multi-Choice Interactive Prompt -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+          Section 19.7 Rule: Who Goes In As Finisher?
+        </label>
+<span class="font-label-sm text-label-sm text-primary-fixed">3 Candidates Available</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+        Multiple eligible [F] batters detected. Designating the Finisher grants enhanced <strong class="text-primary-fixed">SLG F</strong> bonuses, while others revert to <strong class="text-on-surface">SLG R</strong>.
+      </p>
+<!-- Batter Candidate Radio Tiles -->
+<div class="flex flex-col gap-space-xs" id="batter-selector-group">
+<!-- Candidate 1: Declan (Default) -->
+<button class="w-full text-left p-space-sm rounded-DEFAULT bg-surface-container-high transition-all flex items-center justify-between shadow-sm" id="btn-declan" onclick="selectBatter('declan')" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-5 h-5 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0" id="check-declan">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Declan (C)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">No. 3 · RHB</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Current designated slot · BTBW</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-label-sm text-label-sm font-bold text-primary-fixed bg-surface-container px-2 py-0.5 rounded" id="role-tag-declan">SLG F (4.3 r/r)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Boundary 77%</span>
+</div>
+</button>
+<!-- Candidate 2: Alex -->
+<button class="w-full text-left p-space-sm rounded-DEFAULT bg-surface-container-low transition-all flex items-center justify-between" id="btn-alex" onclick="selectBatter('alex')" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-5 h-5 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0" id="check-alex">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Alex</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">No. 4 · LHB</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bench promotion · BAT</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded" id="role-tag-alex">SLG R (4.1 r/r)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Boundary 71%</span>
+</div>
+</button>
+<!-- Candidate 3: Ethan -->
+<button class="w-full text-left p-space-sm rounded-DEFAULT bg-surface-container-low transition-all flex items-center justify-between" id="btn-ethan" onclick="selectBatter('ethan')" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-5 h-5 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0" id="check-ethan">
+<span class="material-symbols-outlined text-[14px]">circle</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Ethan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">No. 5 · LHB</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bench promotion · BTAL</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded" id="role-tag-ethan">SLG R (4.2 r/r)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Boundary 74%</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Victor Reserve Callout -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-DEFAULT text-on-surface-variant">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">info</span>
+<span class="font-body-sm text-body-sm truncate">Victor (No. 6 · BWAL · LHB) held in reserves.</span>
+</div>
+<button class="text-primary-fixed font-label-sm text-label-sm shrink-0 underline" type="button">
+        Full Order
+      </button>
+</div>
+</div>
+<!-- Primary Confirmation Action (56px tall electric CTA) -->
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<button class="h-14 w-full bg-primary-fixed hover:bg-primary-fixed-dim active:scale-[0.98] transition-all rounded-full flex items-center justify-center gap-space-xs shadow-lg shadow-primary-fixed/20 text-on-primary-fixed font-label-lg text-label-lg font-bold tracking-wide" id="confirm-cta-button" onclick="confirmEntrance()" type="button">
+<span class="material-symbols-outlined text-[20px]">sports_cricket</span>
+<span id="confirm-cta-text">CONFIRM: DECLAN COMES IN AT NO. 3 (FINISHER)</span>
+</button>
+<button class="h-11 w-full bg-surface-container-high hover:bg-surface-bright active:scale-[0.99] transition-all rounded-full flex items-center justify-center gap-space-xs text-on-surface font-label-md text-label-md font-semibold" onclick="toggleTacticalReorder()" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+<span>Change Batting Order / Swap Incoming Batsman</span>
+</button>
+</div>
+<!-- Dynamic Feedback Confirmation Toast (hidden by default) -->
+<div class="hidden bg-primary-fixed text-on-primary-fixed p-space-md rounded-DEFAULT mb-space-md flex items-center gap-space-sm shadow-xl" id="confirmation-toast">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold">Batsman Walking Out to Crease</span>
+<span class="font-body-sm text-body-sm" id="toast-subtext">Declan is taking guard. Bowling &amp; dice rolls unlocked!</span>
+</div>
+</div>
+<script>
+    const batters = {
+      declan: {
+        name: "Declan",
+        number: "No. 3",
+        hand: "RHB",
+        badge: "CAPTAIN",
+        role: "BTBW · Batting Specialist · Star (0/0)",
+        rate: "4.3 r/roll",
+        boundary: "77%",
+        matchup: "RHB vs RFM · High Edge Risk",
+        fullRole: "FINISHER"
+      },
+      alex: {
+        name: "Alex",
+        number: "No. 4",
+        hand: "LHB",
+        badge: "TACTICIAN",
+        role: "BAT · Pure Batsman · Star (0/0)",
+        rate: "4.4 r/roll",
+        boundary: "79%",
+        matchup: "LHB vs RFM · Favorable Off-Side Angle",
+        fullRole: "FINISHER"
+      },
+      ethan: {
+        name: "Ethan",
+        number: "No. 5",
+        hand: "LHB",
+        badge: "ALL-ROUNDER",
+        role: "BTAL · Batting All-Rounder · Star (0/0)",
+        rate: "4.2 r/roll",
+        boundary: "75%",
+        matchup: "LHB vs RFM · Neutral NS Arc",
+        fullRole: "FINISHER"
+      }
+    };
+
+    let selectedBatterKey = "declan";
+
+    function selectBatter(key) {
+      selectedBatterKey = key;
+      const b = batters[key];
+
+      // Update showcase card
+      document.getElementById("selected-name").innerText = b.name;
+      document.getElementById("selected-role").innerText = b.role;
+      document.getElementById("telemetry-rate").innerText = b.rate;
+      document.getElementById("telemetry-boundary").innerText = b.boundary;
+
+      // Update selection radio cards styling
+      ['declan', 'alex', 'ethan'].forEach(k => {
+        const btn = document.getElementById('btn-' + k);
+        const chk = document.getElementById('check-' + k);
+        const tag = document.getElementById('role-tag-' + k);
+
+        if (k === key) {
+          btn.className = "w-full text-left p-space-sm rounded-DEFAULT bg-surface-container-high transition-all flex items-center justify-between shadow-sm";
+          chk.className = "w-5 h-5 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0";
+          chk.innerHTML = '<span class="material-symbols-outlined text-[14px] font-bold">check</span>';
+          tag.className = "font-label-sm text-label-sm font-bold text-primary-fixed bg-surface-container px-2 py-0.5 rounded";
+          tag.innerText = "SLG F (" + batters[k].rate + ")";
+        } else {
+          btn.className = "w-full text-left p-space-sm rounded-DEFAULT bg-surface-container-low transition-all flex items-center justify-between";
+          chk.className = "w-5 h-5 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0";
+          chk.innerHTML = '<span class="material-symbols-outlined text-[14px]">circle</span>';
+          tag.className = "font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded";
+          tag.innerText = "SLG R (4.1 r/r)";
+        }
+      });
+
+      // Update Primary CTA text
+      document.getElementById("confirm-cta-text").innerText = 
+        `CONFIRM: ${b.name.toUpperCase()} COMES IN AT ${b.number.toUpperCase()} (${b.fullRole})`;
+    }
+
+    function confirmEntrance() {
+      const b = batters[selectedBatterKey];
+      const toast = document.getElementById("confirmation-toast");
+      const sub = document.getElementById("toast-subtext");
+      const cta = document.getElementById("confirm-cta-button");
+
+      sub.innerText = `${b.name} is at the crease as designated Finisher. Rolls unlocked!`;
+      toast.classList.remove("hidden");
+      cta.classList.add("opacity-50", "pointer-events-none");
+
+      setTimeout(() => {
+        toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
+    }
+
+    function toggleTacticalReorder() {
+      // Microinteraction feedback
+      const nextKey = selectedBatterKey === 'declan' ? 'alex' : (selectedBatterKey === 'alex' ? 'ethan' : 'declan');
+      selectBatter(nextKey);
+    }
+  </script>
+</div></main></body></html>

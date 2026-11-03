@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#434b41", "surface-container": "#1d211c", "secondary-fixed": "#dce5d7", "inverse-surface": "#e0e4dc", "on-error": "#690005", "surface-tint": "#abd600", "error": "#ffb4ab", "surface-variant": "#323631", "on-secondary-fixed": "#161e15", "surface-container-low": "#191d18", "on-secondary-fixed-variant": "#41493f", "on-surface-variant": "#c4c9ac", "on-primary-fixed-variant": "#3c4d00", "outline-variant": "#444933", "background": "#101410", "surface-container-high": "#272b26", "on-primary-fixed": "#161e00", "on-tertiary-fixed-variant": "#930005", "inverse-on-surface": "#2d312d", "on-surface": "#e0e4dc", "on-tertiary-container": "#ca0a0f", "tertiary": "#ffffff", "secondary": "#c0c9bc", "surface-dim": "#101410", "primary-container": "#c3f400", "surface-container-lowest": "#0b0f0b", "on-primary-container": "#556d00", "surface-bright": "#363a35", "on-error-container": "#ffdad6", "on-background": "#e0e4dc", "outline": "#8e9379", "tertiary-fixed-dim": "#ffb4aa", "tertiary-fixed": "#ffdad5", "inverse-primary": "#506600", "on-tertiary": "#690003", "on-secondary-container": "#b2bbae", "surface-container-highest": "#323631", "on-tertiary-fixed": "#410001", "error-container": "#93000a", "on-primary": "#283500", "primary": "#ffffff", "tertiary-container": "#ffdad5", "secondary-fixed-dim": "#c0c9bc", "on-secondary": "#2a3329", "primary-fixed": "#c3f400", "primary-fixed-dim": "#abd600", "surface": "#101410" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.25rem", "margin": "1.25rem", "space-md": "0.875rem" }, "fontFamily": { "score-display": ["Outfit"], "headline-sm": ["Outfit"], "headline-lg": ["Outfit"], "headline-md": ["Outfit"], "body-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "headline-xl": ["Outfit"], "label-md": ["Outfit"], "label-sm": ["Outfit"], "body-md": ["Outfit"], "body-lg": ["Outfit"], "label-lg": ["Outfit"] }, "fontSize": { "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-fixed transition-colors active:scale-95" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse shrink-0"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed bg-surface-container px-space-xs py-0.5 rounded-full">AUS vs DLD</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Free Hit &amp; Extras Engine</h1></div></div><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Sound settings" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-fixed transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface pb-10">
+<!-- Top Hero Notification: Siren Alert for Free Hit -->
+<div class="px-margin pt-space-md">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-2xl">
+<!-- Animated Ambient Glow Pulse -->
+<div class="absolute -right-10 -top-10 w-36 h-36 rounded-full bg-primary-container/20 blur-2xl pointer-events-none animate-pulse"></div>
+<!-- Top Badges & Live Status -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm relative z-10">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 bg-on-tertiary-container/20 text-error px-space-xs py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            SIREN OVERSTEP
+          </span>
+<span class="bg-surface-variant text-on-surface-variant px-space-xs py-0.5 rounded-full font-label-sm text-label-sm">
+            OVER 2 · BALL 2.3
+          </span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary-fixed bg-surface-container-lowest px-space-xs py-0.5 rounded-full">
+<span>5-OVER BLITZ</span>
+</div>
+</div>
+<!-- Main Headline with Live Broadcast Styling -->
+<div class="relative z-10 space-y-1">
+<div class="flex items-center gap-space-xs text-primary-fixed">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed animate-bounce">warning</span>
+<h2 class="font-headline-sm text-headline-sm tracking-tight text-primary">
+            NO BALL CALLED! FREE HIT ACTIVATED
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Imran crossed return crease on delivery 2.3. Striker immune on next delivery!
+        </p>
+</div>
+<!-- Match Situation Telemetry Bar -->
+<div class="mt-space-md grid grid-cols-3 gap-space-xs bg-surface-container-lowest/80 rounded p-space-xs relative z-10">
+<div class="flex flex-col items-center justify-center p-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">TARGET</span>
+<span class="font-score-display text-score-display text-primary">58</span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-xs bg-surface-container rounded">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase">AUS SCORE</span>
+<div class="flex items-baseline gap-1">
+<span class="font-score-display text-score-display text-primary-fixed">18/2</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center p-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">REQUIRED</span>
+<span class="font-headline-sm text-headline-sm text-primary">40 <span class="font-body-sm text-body-sm text-on-surface-variant">/ 21b</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 10.1 APP ENGINE: FEWER EXTRAS ENGINE CARD -->
+<div class="px-margin mt-space-md">
+<div class="bg-surface-container rounded-xl p-space-md relative overflow-hidden">
+<!-- Top Header & Badge -->
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-primary">Section 10.1 Engine</span>
+</div>
+<span class="bg-primary-container text-on-primary-container px-space-xs py-0.5 rounded-full font-label-sm text-label-sm">
+          50% DOT CONVERSION
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+        Dynamic probability governor: When bowler rolls '+' on scoresheet, inflated extra runs are neutralized into real cricket realism.
+      </p>
+<!-- Side-by-side Telemetry Comparison -->
+<div class="grid grid-cols-2 gap-space-xs mb-space-md">
+<!-- Physical Board Game Card -->
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span class="font-label-sm text-label-sm uppercase">Printed Sheet</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">16/16 Cards yield extras. Outlier rolls like W+4 &amp; NB+6 trigger inflated totals.</p>
+</div>
+<div class="mt-space-sm pt-space-xs text-on-tertiary-container font-label-md text-label-md">
+            Avg 6.3 Extras / Inns
+          </div>
+</div>
+<!-- App Simulation Engine Card -->
+<div class="bg-surface-container-high p-space-sm rounded flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-primary-fixed mb-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span class="font-label-sm text-label-sm uppercase">App Engine 2026</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">8 of 16 Cards convert to legal DOT balls! Heavy penalties pruned.</p>
+</div>
+<div class="mt-space-sm pt-space-xs text-primary-fixed font-label-md text-label-md">
+            Avg 2.4 Extras (-62%)
+          </div>
+</div>
+</div>
+<!-- Quick Telemetry Metre -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">speed</span>
+<span class="font-body-sm text-body-sm text-on-surface">Run Inflation Suppressed</span>
+</div>
+<span class="font-label-md text-label-md text-primary-fixed bg-surface-container-high px-space-xs py-0.5 rounded-full">
+          -62% BALANCED PACE
+        </span>
+</div>
+</div>
+</div>
+<!-- THE DRAWN CARD INSPECTOR: ACTIVE CARD #7 -->
+<div class="px-margin mt-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">style</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Drawn Runs Card</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider bg-surface-container-high px-space-xs py-0.5 rounded-full">
+        Deck Blue · Slot #7
+      </span>
+</div>
+<!-- Realistic Tactile Bridge Card Component -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-xl overflow-hidden">
+<!-- Glow rim accent -->
+<div class="absolute inset-x-0 top-0 h-1 bg-primary-container"></div>
+<!-- Top Card Meta -->
+<div class="flex justify-between items-center pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm">
+            7
+          </div>
+<div>
+<div class="font-label-md text-label-md text-primary leading-none">BLUE DECK RUNS</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">EXTRA CARD GENERATOR</div>
+</div>
+</div>
+<span class="bg-surface-variant text-on-surface px-space-xs py-0.5 rounded font-label-sm text-label-sm">
+          DELIVERY 2.3 RESULT
+        </span>
+</div>
+<!-- Card Core Result Hero Box -->
+<div class="my-space-md bg-surface-container-high rounded p-space-md flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest mb-1">REGISTERED EXTRA</span>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">
+          NB + 1
+        </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          1 No Ball Penalty + 1 Run scored off edge · Ball does not count!
+        </p>
+<div class="mt-space-sm inline-flex items-center gap-1 bg-surface-container-lowest text-primary-fixed px-space-md py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+          +2 RUNS CREDITED TO AUSTRALIA
+        </div>
+</div>
+<!-- Free Hit Matrix Matrix on Card #7 -->
+<div class="bg-surface-container rounded p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ball 2.4 Free Hit Target Matrix (Card #7)</span>
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">info</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Others Column -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary-fixed">BAT / AL / WK</span>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary-container px-1 rounded">Declan</span>
+</div>
+<div class="mt-space-xs flex items-baseline justify-between">
+<span class="font-score-display text-score-display text-primary">4</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">BOUNDARY ⚡</span>
+</div>
+</div>
+<!-- Tailender Column -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">BW BATSMAN</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tail</span>
+</div>
+<div class="mt-space-xs flex items-baseline justify-between">
+<span class="font-score-display text-score-display text-on-surface-variant">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">DOT BALL</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1 text-center">
+          *Next ball outcome triggers directly via card resolution: Declan reads from BAT column!
+        </p>
+</div>
+</div>
+</div>
+<!-- FREE HIT STRIKER IMMUNITY & TACTICS PANEL -->
+<div class="px-margin mt-space-md">
+<div class="bg-surface-container rounded-xl p-space-md">
+<!-- Batter profile card header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-headline-sm text-headline-sm text-on-primary">
+            D
+          </div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary">Declan</span>
+<span class="bg-surface-variant text-on-surface px-space-xs py-0.5 rounded font-label-sm text-label-sm">C · Finisher</span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Left-Hand Bat · Strike Rate 178.4</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[24px]">verified_user</span>
+</div>
+<!-- Immunity Rules List Grid -->
+<div class="space-y-space-xs mt-space-xs">
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">
+          Delivery 2.4 Dismissal Rule Engine
+        </div>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Bowled</span>
+<span class="font-label-sm text-label-sm text-error bg-surface-container-high px-1.5 py-0.5 rounded">NOT OUT</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Caught</span>
+<span class="font-label-sm text-label-sm text-error bg-surface-container-high px-1.5 py-0.5 rounded">NOT OUT</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">LBW Leg Before</span>
+<span class="font-label-sm text-label-sm text-error bg-surface-container-high px-1.5 py-0.5 rounded">NOT OUT</span>
+</div>
+<div class="bg-surface-container-low p-space-xs rounded flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Stumped</span>
+<span class="font-label-sm text-label-sm text-error bg-surface-container-high px-1.5 py-0.5 rounded">NOT OUT</span>
+</div>
+</div>
+<!-- Run out rule alert -->
+<div class="bg-surface-container-lowest p-space-xs rounded flex items-center justify-between mt-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">electric_bolt</span>
+<span class="font-label-md text-label-md text-primary">Run Out (Physical Pinch)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-primary-container bg-primary-container px-2 py-0.5 rounded-full font-bold">
+            LEGAL DISMISSAL
+          </span>
+</div>
+</div>
+<!-- Tactical Coach Tip Card -->
+<div class="mt-space-md p-space-sm bg-surface-container-high rounded flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[20px] shrink-0">psychology</span>
+<div>
+<span class="font-label-md text-label-md text-primary-fixed block">Captain's Tactical Callout</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Declan can swing aggressively without hesitation. Even if Imran catches him off top edge, the runs completed count safely with zero wicket hazard!
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE EXTRAS REFERENCE & 16-CARD DECK INSPECTION -->
+<div class="px-margin mt-space-md">
+<div class="bg-surface-container rounded-xl p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">library_books</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Extras &amp; Balance Guide</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Section 10.0</span>
+</div>
+<!-- Interactive Tab Buttons -->
+<div class="flex gap-space-xs overflow-x-auto pb-space-xs" id="extras-tabs">
+<button class="extra-tab-btn active px-space-sm py-1 rounded-full font-label-md text-label-md bg-primary text-on-primary whitespace-nowrap transition-colors" id="tab-btn-wide" onclick="switchExtraTab('wide')" type="button">
+          Wide (W)
+        </button>
+<button class="extra-tab-btn px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant whitespace-nowrap transition-colors" id="tab-btn-noball" onclick="switchExtraTab('noball')" type="button">
+          No Ball (NB)
+        </button>
+<button class="extra-tab-btn px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant whitespace-nowrap transition-colors" id="tab-btn-byes" onclick="switchExtraTab('byes')" type="button">
+          Byes (B/L)
+        </button>
+<button class="extra-tab-btn px-space-sm py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant whitespace-nowrap transition-colors" id="tab-btn-dots" onclick="switchExtraTab('dots')" type="button">
+          Dot Engine (50%)
+        </button>
+</div>
+<!-- Tab Content Area -->
+<div class="mt-space-sm">
+<!-- Wide Pane -->
+<div class="extra-pane space-y-space-xs" id="pane-wide">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-primary">Wide (W / W+1 / W+2)</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">+1 Bowler Penalty</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Delivery does not count toward the 6-ball over limit. +1 run added to batting team total and credited against bowler's economy. Striker may run additional byes if ball passes wicketkeeper.
+            </p>
+</div>
+</div>
+<!-- No Ball Pane -->
+<div class="extra-pane hidden space-y-space-xs" id="pane-noball">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-primary">No Ball (NB / NB+1)</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">Free Hit Granted</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Awarded for front-foot overstep, return crease cut, or above-waist full toss. Delivery does not count toward the over. Next ball is strictly a Free Hit where striker can only be dismissed run out.
+            </p>
+</div>
+</div>
+<!-- Byes Pane -->
+<div class="extra-pane hidden space-y-space-xs" id="pane-byes">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-primary">Byes &amp; Leg Byes (B1, L1, L2)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Legal Ball Bowled</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Delivery COUNTS as a legal ball bowled (over advances). Runs are counted in the team score total under 'Extras' and not charged to the bowler's personal runs conceded ledger.
+            </p>
+</div>
+</div>
+<!-- Dot Conversion Pane -->
+<div class="extra-pane hidden space-y-space-xs" id="pane-dots">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-primary-fixed">8 Legal Dot Cards (Section 10.1)</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">1, 2, 4, 6, 8, 11, 14, 16</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              In Faize Dice Games App Simulation mode, drawing any of these 8 cards converts the delivery into a completely legal 0-run Dot Ball. Protects 5-over games from becoming pure free-throw contests!
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Deck Breakdown Grid -->
+<div class="mt-space-md pt-space-sm bg-surface-container-high rounded p-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider block mb-space-xs">
+          16-Card Blue Deck Composition Map
+        </span>
+<div class="grid grid-cols-8 gap-1 text-center font-label-sm text-label-sm">
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 1: Dot">1·•</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 2: Dot">2·•</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 3: W">3·W</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 4: Dot">4·•</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 5: W+1">5·W1</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 6: Dot">6·•</div>
+<div class="p-1 rounded bg-primary text-on-primary font-bold shadow" title="Card 7: NB+1 (Active)">7·NB</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 8: Dot">8·•</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 9: B1">9·B1</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 10: L1">10·L</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 11: Dot">11·•</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 12: W+2">12·W</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 13: L2">13·L</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 14: Dot">14·•</div>
+<div class="p-1 rounded bg-surface-variant text-on-surface" title="Card 15: NB">15·NB</div>
+<div class="p-1 rounded bg-primary-container text-on-primary-container" title="Card 16: Dot">16·•</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-space-xs">
+<span>• = 50% Dot Conversion (8 Cards)</span>
+<span class="text-primary-fixed">Card #7 Active Now</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STICKY ACTION DOCK -->
+<div class="mt-space-lg px-margin space-y-space-xs">
+<!-- Primary Hero CTA Button (56px) -->
+<button class="w-full h-14 rounded-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-lg active:scale-95 transition-transform hover:opacity-95" onclick="triggerFreeHitRoll()" type="button">
+<span class="material-symbols-outlined text-[24px]">sports_cricket</span>
+<span>PROCEED TO FREE HIT ROLL (BALL 2.4)</span>
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</button>
+<!-- Secondary Management Action Row -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="w-full py-space-sm rounded-full bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="inspectDeckModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">view_carousel</span>
+<span>Inspect 16 Cards</span>
+</button>
+<button class="w-full py-space-sm rounded-full bg-surface-container-high text-error font-label-lg text-label-lg flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="undoNoBall()" type="button">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+<span>Undo No Ball</span>
+</button>
+</div>
+<!-- Official Copyright Attribution Note -->
+<div class="pt-space-md text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Dice Cricket King Engine © 2026 Tanweer · Faiz Dice Games
+      </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+        Official Broadcast Rules Section 10 &amp; 10.1 Verified Match Telemetry
+      </p>
+</div>
+</div>
+</div>
+<script>
+  function switchExtraTab(tabName) {
+    const tabs = ['wide', 'noball', 'byes', 'dots'];
+    tabs.forEach(t => {
+      const pane = document.getElementById('pane-' + t);
+      const btn = document.getElementById('tab-btn-' + t);
+      if (pane && btn) {
+        if (t === tabName) {
+          pane.classList.remove('hidden');
+          btn.classList.add('bg-primary', 'text-on-primary');
+          btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        } else {
+          pane.classList.add('hidden');
+          btn.classList.remove('bg-primary', 'text-on-primary');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        }
+      }
+    });
+  }
+
+  function triggerFreeHitRoll() {
+    alert("Free Hit Initiated! Striker Declan has complete dismissal immunity (except Run Out). Rolling Dice Cricket King dice for Ball 2.4...");
+  }
+
+  function inspectDeckModal() {
+    switchExtraTab('dots');
+  }
+
+  function undoNoBall() {
+    if (confirm("Roll back delivery 2.3 and remove NB+1 penalty?")) {
+      history.back();
+    }
+  }
+</script></main></body></html>

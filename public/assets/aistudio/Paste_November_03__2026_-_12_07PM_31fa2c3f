@@ -1,0 +1,223 @@
+You are a senior Android engineer + game-systems analyst. This folder contains everything needed to build a complete, working, offline Android app of the dice-and-card cricket game Dice Cricket King (Faiz Dice Games, © 2026 Tanweer Ahmad).
+
+The game already exists as a web app; its full behaviour is written down in the documentation file. Your job:
+
+Phase A — Analyse every file (docs, PDFs, Stitch Design).
+Phase B — Plan (write the plan to disk).
+Phase C — Build the full Android app, same-to-same: every rule, sheet, card, team, player, screen and feature — using the Stitch Design as the UI.
+
+Do the phases in order. Never skip A and B. Never invent rules or numbers — everything comes from the files. Where something is missing, log it and choose the most literal, faithful option.
+
+0. Folder layout (what you have)
+
+Workspace root is Dice king Stitch (folder names contain spaces — quote paths in every command).
+
+Dice king Stitch/
+└── assets/
+    ├── Dice_Cricket_King_Complete_Documentation.md        ← PRIMARY SPEC (app behaviour + rules, 31 sections)
+    ├── Dice_Cricket_King_Rule_Book_A4.pdf                 ← printed rule book (11 pages)
+    ├── Dice_Cricket_Master_Sheets_NORMAL_Scoring_A4.pdf   ← NSG, 4 sheets
+    ├── Dice_Cricket_Master_Sheets_HIGH_Scoring_A4.pdf     ← HSG, 4 sheets
+    ├── Dice_Cricket_Master_Sheets_LOW_Scoring_A4.pdf      ← LSG, 4 sheets
+    ├── Dice_Cricket_Players_Database_A4-1.pdf             ← 10 teams × 20 players
+    ├── Dice_Cricket_87_Cards_A4.pdf                       ← 87 cards
+    └── stitch design/                                     ← the Stitch export
+        └── (stitch_dice_cricket_king_android_app/ — may or may not be nested; locate the folder that contains `pitch_pulse/DESIGN.md` and call it STITCH_ROOT)
+            ├── pitch_pulse/DESIGN.md                      ← design tokens (colours, type, radius, spacing)
+            ├── dice_cricket_king_complete_documentation.md ← copy of the documentation (diff against assets/…md; if they differ, list differences in docs/CONFLICTS.md and prefer the newer content)
+            ├── 40 screen folders, each with screen.png (visual) + code.html (Tailwind/HTML markup)
+            └── image.png/screen.png                        ← NOT an app screen: a football-app mood board (lime-on-black style reference). Use it only as a vibe reference; never copy its football content, logos or photos.
+
+The pre-existing web app's behaviour is written in the documentation md. The Stitch screens are sample-data mockups of the target Android UI.
+
+Source-of-truth order (when sources disagree)
+Documentation md — how the app behaves (it includes deliberate app-only changes, e.g. fewer extras, star dominance, form stars).
+Rule Book PDF — printed rules.
+Sheets / Cards / Players PDFs — raw cell and card data (verify visually).
+Stitch Design — layout, look and feel, navigation. It uses sample data (IND vs AUS/PAK etc.) — never hard-code that data; bind real data.
+
+Record every disagreement in docs/CONFLICTS.md with the decision taken, then continue without stopping.
+
+PHASE A — ANALYSIS (write results into docs/)
+A1. Read everything completely
+Read the whole documentation md first (all 31 sections). Then the Rule Book, then the other PDFs, then every one of the 40 Stitch screens (screen.png + code.html) and DESIGN.md.
+For PDFs with sheets/cards, render pages to images at high DPI and verify visually. Colours and symbols (X, 0, ball icon, +, run numbers, 4/6, red/green/blue skill dots, ★ markers) are lost or garbled by text extraction.
+A2. Extract all data to JSON → app/src/main/assets/data/
+
+Prefer the md's tables where they exist (they are already clean); cross-check against the PDFs.
+
+Dataset	Primary source	Cross-check
+Sheets — only sheet set 2 (the printed v2 sheets = these PDFs). 3 grounds × 4 sheets = 12 sheets, each a 6×6 grid (red die = row A–F, blue die = column 1–6).	PDFs (render and read)	Rule Book pages 8–9 + md §28 tables
+Players — 10 teams × 20 players (200): number, name, role, hand, bowl style, fielding skills (catch/run-out colours), keeping skills (catch/run-out/stumping), marks (C, F, O, ★ with listed runs, D), team colour hex, printed stars, Suggested XI order, Suggested 7.	md §15–16	Players PDF (verify colours)
+Wicket cards (25)	Cards PDF + md §9	counts
+Fielding cards (20)	Cards PDF	1–20 = squad number
+Skills cards (20) — 5 rows each: keeper catch / keeper stumping / keeper run-out / fielder catch / fielder run-out; each row says which of Red/Green/Blue succeed	md §9.3 table	Cards PDF
+Runs cards (16) — all columns: catch-dropped (fielder; keeper/bowler), no-fielder (catch; run-out), stumping-missed, run-out HIT (fielder·bowler·keeper), run-out MISSED (fielder·bowler·keeper), extras (printed), extras (app-now), free-hit others, free-hit BW batsman	md §10 table	Cards PDF
+Power cards (6) — 2 Reroll, 2 Wonderful Shot (6×6 grid; 30/36 are 4 or 6; counts 6×18, 4×12, 2×3, 1×3; no wicket), 2 Great Delivery (6×6 grid; X 22, D 12, B 1, + 1)	Cards PDF	md §11
+Rules data — formats, matchup grid (bowler style × RHB/LHB → HS/★ | NS | LS), domination table (BW/BWAL/BTAL/BTBW × batsman type → BWD3…BTD3), DB list per team, wicket short forms	Rule Book + md §3,6,7,8,12	—
+Row F wicket codes (BLD, LBW, HW, CB, ST, C&B, CT, R/O)	md §8.1	sheet PDFs
+
+Sheet cell model. A cell is either forAll(result) or a map of lines → result.
+
+Master Bowling lines (rows A–E): BWD3, BWD2, BWD1, EQ, BTD1, BTD2, BTD3
+Master Batting lines: HS/★, NS, LS, BWAL/BW
+Powerplay & Slog Bowling lines: PWP:PC, PWP:SP, SLG:PC, SLG:SP, SLG:DB
+Powerplay & Slog Batting lines: PWPO, PWPR, SLG F, SLG R, BW
+Row F (purple) per sheet: Master Bowling → three lists 5★/4★/3★ (chosen by star dominance, see §C1); Master Batting → by bowler type (v BW / v BWAL / v BTAL / v BTBW); PP&Slog Bowling → by bowling-style group (LF/LFM, RF/RFM, RM/LM, RO/RL, LO/LC) returning dot / ball / wicket code; PP&Slog Batting → by batsman (★, BW, BWAL, REST).
+Result types: WICKET, DOT, BALL, EXTRA(+), RUNS(1|2|3), FOUR, SIX, WICKET_CODE(x).
+
+Mandatory validation (automated tests):
+
+12 sheets × 36 cells; every non-forAll cell has all its lines; deck sizes 25 / 16 / 20 / 20 / 6 = 87; 10 teams × 20 players with exactly one captain per team.
+Recompute the Rule Book / md §28 line statistics (runs per batting roll, % of 4/6, dot %, wicket % for rows A–E, for every line on every ground) from your JSON. They must match the published tables within rounding. If a line doesn't match, re-read that cell from the rendered image until it does.
+A3. Write the analysis documents
+docs/ANALYSIS.md — complete spec in structured form, covering every md section 1–27: ball-resolution algorithm; batting/bowling line-selection decision trees for Middle / Powerplay / Slog; wicket flow (Wicket card → Fielding card → Skills card → Runs card), kindFor(card, bowlingStyle); extras and Free Hit; power cards and DRS; Finisher/Star/Opener/DB/BW-batsman/keeper rules; stars, form stars, star dominance; Super Over; tournaments; stats/rankings formulas; DPL auction; custom teams; backup/restore; Customise.
+docs/DATA_MODEL.md — entities, JSON schemas, Room schema.
+docs/AMBIGUITIES.md — every gap and the decision taken (e.g. strike rotation, over-end, how a Fielding number maps when the player isn't in the XI, DPL pricing formula, auction seed algorithm, rating formula constants not stated in md).
+docs/CONFLICTS.md — source disagreements (known ones to resolve: md §28 app simulation averages vs Rule Book printed ranges; md Customise "Classic Maroon default" vs Stitch "Pitch Pulse" dark-lime theme; md bottom bar "Home / DPL / Rankings / Stats" vs Stitch bottom bar).
+A4. Study the Stitch Design → docs/DESIGN_MAP.md
+
+Map each of the 40 screens to its app feature and md section; extract per screen: layout, components, states, data bindings, navigation links, exact copy. Several screens are state snapshots of the same screen (e.g. live scoring at ball 1.5 / 2.1, DRS appeal vs overturned, draw-by-slips in progress vs concluded) — build them as one screen with multiple states, not separate screens.
+
+Stitch folder	Feature / md section
+12_master_sheets_viewer_pitch_pulse	Sheets page: 12 sheets + power-card grids (§27)
+5_over_match_setup_dld_vs_aus	New match setup, 5-over / 7-a-side flow: format cards, star-dominance banner ("5★ unlocked"), custom team validation ("Saved to Custom Teams roster", 7-player squad validated) (§18, §23)
+87_cards_deck_inspection_dice_cricket_king	Cards browser, 87 cards (§2.2)
+add_player_granular_form_section_23	Add Player form (§23)
+ball_1.5_imran_to_declan_live_scoring_arena	Live scoring mid-over state: target/req rpo/CRR, over chips (Sgl · DRS · ★ · POW · W), "Declan confirmed at No. 3 (Finisher) · Strike rotated", At-the-crease panel (§19.1, §19.5, §19.10)
+ball_2.1_imran_to_malcolm_live_scoring_arena	Live scoring next-ball state (§19.5)
+ball_2.2_decision_overturned_haden_not_out_aus_vs_dld	DRS verdict: decision overturned → NOT OUT, becomes dot ball (§11)
+ball_2.2_drs_1_die_review_appeal_aus_vs_dld	DRS 1-die review appeal screen (§11)
+ball_by_ball_commentary_hindi_feed_aus_vs_dld	Ball-by-ball tab: Over summary, filters (All Balls · Boundaries · Wickets · DRS & Reviews · Power Cards), English/हिन्दी toggle with spoken Hindi commentary on/off (§20)
+boundary_animation_four_six_pitch_view	FOUR / SIX animations (§19.11)
+custom_team_player_builder_section_23	Add team / custom team (§23)
+dpl_auction_franchise_hub_pitch_pulse	DPL franchises + auction (§24)
+four_rope_bounce_animation_pitch_view_ball_1.3	FOUR rope-bounce animation (§19.11)
+free_hit_extras_engine_aus_vs_dld	No-ball → Free Hit, Runs-card extras engine, printed vs app engine (6.3 → 2.4 extras/inn), 16-card blue deck map, free-hit target matrix (BAT/AL/WK vs BW batsman), dismissal rules on free hit, Inspect 16 Cards, Undo No Ball (§10, §10.1)
+grand_final_preview_toss_ind_vs_aus	Pre-match preview + toss reveal (§18)
+great_delivery_bowling_power_card	Great Delivery activation: 36-cell bowling matrix, 1 of 2 left (§11, §27)
+head_to_head_11_playing_11_squad_comparison_ind_vs_aus	Playing-XI selection / squad comparison, markers C F O ★ D (§18, §16)
+home_dice_cricket_king_pitch_pulse	Home: resume live match, Quick Play (5 ov / 10 ov), ground chips, recent matches, Vault & Tools, backup, sound toggle (§17)
+live_scoring_arena_ind_vs_pak_pitch_pulse	Live scoring, Split layout (§19)
+live_scoring_arena_pitch_view_pitch_pulse	Live scoring, Pitch View layout (§19.4)
+match_scorecard_pitch_pulse	Scorecard tab (§20)
+match_scorecard_summary_ind_vs_pak	Summary tab (§20)
+match_summary_worm_chart_ind_vs_pak	Summary worm / run chart (§20)
+new_match_setup_toss_pitch_pulse	New match setup + toss, 10-over flow (§18)
+out_animation_drs_1_die_review_modal_pitch_pulse	OUT animation + DRS review modal (§11, §19.11)
+over_1_complete_australia_16_2_aus_vs_dld	"Over N complete" card with over progression and next-over button (§19.8)
+over_2_choose_bowler_tactical_matchup_modal	Choose-bowler modal with tactical matchup preview: max 2 overs, no back-to-back (locked), Confirm/Clear (§19.6)
+print_ready_rule_book_hub	Print-Ready & Rule Book Hub: physical-game files (12 sheets, 87 cards, 11-page rule book), export presets (e.g. Print Shop CMYK 3 mm bleed, Home Office A4), download/share (§29)
+roster_7_20_custom_team_builder	Squad roster builder 7 / 20 (§23)
+stats_official_rankings_pitch_pulse	Stats + Rankings (§22)
+teams_players_database_pitch_pulse	Teams page / Players Database / form stars (§15, §23)
+tournament_fixtures_results_world_cup_2026	Fixtures & results (§21)
+tournament_fixtures_schedule_world_cup_2026	Fixtures schedule: 10 nations, 2 groups of 5, 20 group + 2 SF + 1 final = 23 matches, Set 2 sheets, group star balance (§21)
+tournament_group_draw_by_slips	Group draw by slips ceremony — in progress ("7/10 drawn", slip reveal, assigned group) (§21)
+tournament_groups_complete_draw_concluded	Group draw by slips — concluded, all 10 teams placed (§21)
+tournament_points_table_cap_standings_world_cup_2026	Group standings (P W L Pts NRR, Q/SF-zone cutoff), caps, knockout race (§21)
+tournament_points_table_caps_orange_purple	Points table, NRR, Orange/Purple caps, awards (§21)
+tournaments_matches_hub_pitch_pulse	Tournaments & matches hub (§21)
+wicket_new_batsman_walking_in_section_19.7	Wicket card + new-batsman card (rule 19.7): rolls locked until batsman enters, Finisher/Slog info, Confirm (§19.7)
+wonderful_shot_power_card_australia_aus_vs_dld	Wonderful Shot activation: 30/36 grid, 83.3% boundaries, bypasses batting sheet (§11)
+
+Features in the md with no Stitch screen (Customise page, Tie / Super Over setup & banners, Undo / Custom-ball / Batting-order sheets, Backup / Restore / Reset, Form-stars table, Tournament creation wizard, DPL trades / retention / mini-auction, Delete confirmations, Rule Book reading screen) → design them yourself in the same Pitch Pulse language and list them in DESIGN_MAP.md.
+
+Stitch chrome not in the md (profile "Tanweer · PRO", notification bell, search bar, "Faiz Sound Engine"): implement as light, local features — profile = local display name + avatar; "PRO" badge is cosmetic (no billing, no paywall); bell = local reminders (weekly backup reminder, match in progress); search = filter teams/players/tournaments/matches locally; sound = synthesized/royalty-free effects (dice roll, crowd cheer, boundary) with on/off toggle. Spoken Hindi commentary (the "हिन्दी कमेंट्री चालू 🔊" toggle) = Android TextToSpeech in the hi-IN locale, with a graceful fallback if the voice isn't installed. Flags/emoji and any real-world crests/photos in the mockups → use generated emblems, team-colour discs with the team code, or simple built-in emoji only; no copyrighted images.
+
+Sample data in the mockups is not data. Names like "Delhi Dynamos (DLD)", "Imran", "Kabir", "Farhan", "World Cup 2026", scores, targets, "42.8 MB zip" are placeholders (DLD is simply an example of a custom team). Bind real data; never hard-code.
+
+PHASE B — PLAN (docs/PLAN.md)
+
+Write architecture, package layout, milestones with acceptance criteria, test strategy, risks. Create docs/PROGRESS.md and update it after every milestone (so work can resume if interrupted). Then continue straight to Phase C — do not wait for approval.
+
+Stack: Kotlin · Jetpack Compose + Material 3 · MVVM/MVI · pure-Kotlin engine module with zero Android dependencies · Room (matches, tournaments, teams, players, DPL seasons, stats) · kotlinx.serialization (assets + backup JSON) · Hilt (or manual DI) · Coroutines/Flow · min SDK 26 · fully offline · phone first, tablet-friendly (the md's "large screen top menu" becomes a navigation rail on wide screens).
+
+Suggested milestones: M0 project + theme + fonts · M1 data assets + validation tests · M2 engine + unit tests + simulation · M3 persistence · M4 Home/Teams/Sheets/Cards/Rule Book browsers · M5 match setup + toss · M6 live scoring (Split) + all wicket/extras flows · M7 Pitch View, Face-to-face, animations, DRS, power cards · M8 Scorecard/Summary/Ball-by-ball/Super Over · M9 Tournaments + Stats + Rankings · M10 Custom teams + DPL · M11 Customise/Backup/Restore/Reset/polish · M12 full QA + COVERAGE.md.
+
+PHASE C — BUILD (every feature)
+C1. Game engine (pure Kotlin, deterministic with seeded RNG, 100% unit-tested)
+
+Formats. 5 overs: 7-a-side, all out at 6 wickets, 2 bowlers may bowl 2 overs and the rest 1, Powerplay = over 1, Slog = over 5. 10 overs: 11-a-side, all out at 10, max 2 overs per bowler, Powerplay = overs 1–2, Slog = overs 9–10. All other overs = Middle. No bowler bowls two overs in a row. If the XI has no WK, the last player in the XI keeps.
+
+Ball pipeline. (1) Bowling roll (red die = row, blue = column) on the right bowling sheet and line → (2) result: 0 dot · X wicket card · + extra (draw Runs card) · Ball → (3) batting roll on the right batting sheet and line → 0/1/2/3/4/6 or X. Row F can return a wicket code directly (no Wicket card drawn). A FOR ALL cell is identical for every line.
+
+Sheet selection: Middle overs → Master Bowling + Master Batting; Powerplay and Slog → Powerplay & Slog Bowling + Batting. Ground (HSG/NSG/LSG) chosen per match (each tournament fixture has its own ground).
+
+Bowling line (Middle): from bowler type × batsman type via the domination table (BW/BWAL/BTAL/BTBW bowler vs BW/BWAL/BTAL-WK/BAT-BTBW batsman → BWD3, BWD2, BWD1, EQ, BTD1, BTD2, BTD3). Batting type mapping: BTBW & BAT → "BT/BTBW"; BTAL & WK → "BTAL/WK"; BWAL → "BWAL"; BW → "BW". BAT and WK do not bowl. Bowling line (PP/Slog): PWP:PC / PWP:SP (pacer/spinner in Powerplay), SLG:PC / SLG:SP, SLG:DB for a death bowler (D mark) in the Slog. Pacers: RF RFM RM LF LFM LM. Spinners: RO RL LO LC. Batting line (Middle): ★ Star past his listed runs → HS/★; BWAL or BW batsman → BWAL/BW; everyone else → HS/★, NS or LS from the matchup grid (bowler style × batsman hand). Batting line (PP/Slog): PWPO openers (O) in Powerplay · PWPR everyone else in Powerplay · SLG F the one Finisher in Slog · SLG R everyone else in Slog · BW for a BW batsman in any of these overs.
+
+Row F rules:
+
+Master Bowling row F — star dominance (set 2): bowling team has MORE stars than batting team → 5★ list; equal stars → middle 4★ list; FEWER → 3★ list. Stars are the match's snapshot stars (see below). Show the label "Bowling team has MORE ★ / SAME ★ / FEWER ★ than the batting team" and the line "★ IND 5★ v PAK 5★ · equal stars: even match".
+Master Batting row F — by bowler type. PP&Slog Bowling row F — by bowling-style group. PP&Slog Batting row F — by batsman (★ / BW / BWAL / REST).
+Wicket codes: BLD, LBW, HW = out immediately (LBW can be reviewed); CB, ST, C&B = fielder known → draw Skills card only; CT, R/O = Fielding card then Skills card. No Wicket card is drawn when row F names the wicket; log "Row F: X".
+
+Special players:
+
+Star ★: once past his listed runs → HS/★ (Middle) and ★ on row F (PP/Slog).
+Finisher (F): only one F batsman acts as Finisher, only in the Slog. Default = first F batsman in the batting order who isn't out; a scorer-chosen Finisher always wins. In the Slog, when a new batsman is about to come in, the Finisher isn't in yet and ≥2 F batsmen are available → ask "Who goes in as the Finisher?"; anyone not picked reads SLG R. Before the Slog he bats by his normal type.
+Death bowler (D): SLG:DB line in Slog. Captain (C): holds power cards, one per team. Opener (O): 3 per team.
+"At the crease" sheet roles per batsman: Auto · Ignore Star/Opener/Finisher · Treat as Finisher · Force Star ★.
+
+Wicket system. X → draw Wicket card → how out. Kinds: lbw, bowled, caught, caughtBehind, stumped, caughtAndBowled, runOutStriker, runOutNonStriker (non-striker out), hitWicket (only via row-F HW or Custom ball; no card for it). kindFor(card, bowlingStyle): caught-behind cards apply to pacers (LF, RF, LFM, RFM); on other styles the same card reads differently — reconstruct from md §9.2 and the Wicket-cards PDF. Fielder's chance → Fielding card (1–20 = squad number); number not in the Playing XI → "No fielder" (chance goes begging). If the Fielding card names the keeper he counts as keeper; names the bowler → counts as bowler. Skills card: fielder colour (Red best / Green good / Blue average) decides taken vs missed per the 5-row table. Missed chance (catch dropped, stumping missed, run-out miss, no fielder) → draw Runs card. Run-out direct hit: Runs card also gives runs completed before the dismissal.
+
+Extras (app rule, md §10.1). When + comes up, draw a Runs card and use the "Extras (app now)" column: 8 of 16 cards give a plain dot ball (no extra, legal ball); the other 8 give W, W+1, W+2, NB, NB+1, B1, L1, L2 (use the app-now column exactly as printed in md). Wide/no-ball are not legal deliveries. No-ball → next ball is a Free Hit (banner e.g. "NO BALL CALLED! FREE HIT ACTIVATED"). Per md §10 and the Stitch Free Hit & Extras Engine screen: on a Free Hit the app draws a Runs card ("Proceed to Free Hit roll") and that card's Free-hit column resolves the ball directly — the "Free-hit target matrix" shows two values, one for BAT/AL/WK batsmen ("others" column) and one for a BW batsman (own column); runs may be 0–6, no bowling/batting sheet roll. The Stitch screen states that on a free hit Bowled, Caught, LBW and Stumped are NOT OUT and Run out remains a legal dismissal; the md does not say how a run-out arises when a card resolves the ball, so implement: no wicket from the card itself, plus a "Run out on free hit" action available through Custom ball. Log this interpretation in docs/AMBIGUITIES.md. The screen also shows: printed-sheet extras ("16/16 cards yield extras", avg 6.3 extras/innings) vs App engine 2026 (8 of 16 convert to legal dot balls, avg 2.4 extras/innings, −62%); a 16-card blue-deck composition map (dot-conversion cards marked), the drawn card (e.g. "NB+1 — 1 No Ball penalty + 1 run, ball does not count, +2 runs credited"), "Inspect 16 Cards" and "Undo No Ball" buttons, and an "Extras & Balance Guide" (Wide / No Ball / Byes-Leg byes / Dot engine tabs). Show an "Extras help" card. Message: "Extra? Draw a runs card: a wide, no ball, bye or leg bye, or just a dot ball."
+
+Power cards & DRS (md §11). Only captains. Reroll ×2 (one per captain): cancel his own roll and roll again — both dice, or red only, or blue only (Half Reroll, kept die locked); a BW/BWAL captain's Reroll only on the bowling sheet, everyone else's on the batting sheet. Wonderful Shot ×2: BAT/BTBW/BTAL/WK captain while he is on strike, cancels batting roll and rolls the card grid. Great Delivery ×2: BW/BWAL captain while he is bowling, cancels bowling roll and rolls the grid (B → batting roll, + → extra). Played straight after the roll, before anything else; a team never rerolls the other team's roll; allowed on the last ball of an over and after an undo; none in a Super Over. DRS: batting captain given out LBW or caught-behind (also a row-F LBW) may spend his Reroll; roll one die: 5–6 = not out (dot ball). New matches don't give the toss winner an extra Reroll.
+
+Stars. Printed stars: 5★ IND PAK SL AUS; 4★ BAN ENG SA NZ; 3★ AFG WI. Form stars (per format, 5-over and 10-over separate): teams with ≥2 completed matches in that format are ranked by win % (tie = half win), tie-breaks NRR → printed stars → team code; rank 1–4 = 5★, 5–8 = 4★, 9+ = 3★; <2 matches keep printed stars; NRR counts an all-out innings as the full overs quota; Super Overs not counted. At match start both teams' stars are snapshotted into the match and never change mid-match. Show form stars in match setup and a Form-stars table on the Teams page (printed, current, rank, matches, wins, win %, NRR, ▲▼ movement).
+
+Innings / match. Over limits, strike rotation, innings break banner ("Start 2nd innings"), target, CRR, RRR, "Need X off Y", result (win by runs/wickets, tie), 🏆 win banner → "Back to tournament" / "New match". Super Over: each side nominates 3 batsmen + 1 bowler, one over, Slog sheets, 2 wickets end it, no power cards, same sheet set/ground; tied again → another Super Over with players from the last one sitting out; knockout needs a winner (as many as it takes); league/friendly may "Leave it as a tie"; app says who bats first; each Super Over shown separately in Scorecard/Summary/Ball-by-ball.
+
+Decks. Physical-deck behaviour: draw without replacement from the finite deck and reshuffle when exhausted (setting: infinite/with-replacement mode). No card shows a "No. N" number — the UI must not reveal card order/number (fielding position numbers are card content and stay).
+
+Commentary. Per-ball commentary generator in English and Hindi (toggle). Keep all strings in resources.
+
+C2. App features — all must work
+
+Navigation (follow Stitch): bottom bar on phones (Home · Matches · Tournaments · Rankings … plus access to Stats, Teams, DPL, Sheets, Customise via Home tiles / "More"); navigation rail or top menu on tablets. Footer/About: "© 2026 Tanweer Ahmad · Faiz Dice Games".
+
+Home (§17): resume last 3 in-progress matches (each with Delete), Quick Play (5 ov 7-a-side / 10 ov XI) with ground chips HSG red · NSG green · LSG yellow, "New tournament", recent matches, tiles for Matches / Tournaments / Teams / Sheets / Customise, Backup section.
+New match setup (§18): overs 5/10 → ground → pick two teams (with form stars) → Playing XI (7 or 11; default Suggested 7 / Suggested XI; changes only from the bench) → batting order → captain → toss (winner chooses bat/bowl); markers C F O ★ D; toss line + star line on match page; validation hints from Rule Book "balanced team" guide (openers, star, WK, Finisher, BTAL/BWAL, enough bowlers & ≥1–2 DBs; never two keepers unless one bats top order) as warnings, not blocks.
+Live scoring (§19) — every part: top bar with breadcrumb and Delete (confirmation; tournament fixture becomes unplayed again and dependent later fixtures are cleared; "match only" vs "with all its stats"); scoreboard (team, stars, score/wkts, overs, CRR, RRR, need X off Y, target, first-innings score, toss line, star line); tabs Live · Scorecard · Summary · Ball by ball; Scorer Auto / Manual (Manual: user taps the sheet cell their physical dice landed on; Half Reroll keeps the locked die; app still draws Wicket/Fielding/Skills/Runs/Extras/Free-hit cards itself); layouts Split / Pitch View / Face-to-face (bowling side rotated 180°), bowling block Left/Right; callout text ("It's a ball! Roll the shot on …", "It's an X! Draw a wicket card", "Catch chance for …: Red at catch. Draw a skill card", "Dropped by …! Draw a runs card", "Free hit …", "OUT! …", "Dot ball to …", "Next ball: …"); card-draw animations; flags explaining why a sheet/line was chosen ("★ Star column", "Slog overs · Finisher", "Powerplay · Opener", "BW batsman"); Power-card button and Review (DRS) button; draw buttons; current sheet grid with the last roll highlighted (faded bowling sheet underneath during the batting roll; on a phone the sheet comes after over chips and batters, in Manual it comes first); bowler preview at over start (rule text "Max 2 overs each"/7-a-side rule + "Not two overs in a row", figures, "Quota done"/"Bowled last over", tap to preview bowling line and batting matchup line for striker and non-striker, Confirm/Clear); new-batsman card (shown ~1 s after the wicket display, roll buttons disabled until "Confirm: [name] comes in at No. N", dropdown to change, Finisher question inside it, asked once per new batsman, openers never asked); "Over N complete" card (~0.75 s after the last ball, with that over's balls and "Start the next over · choose the bowler"; new batsman must be confirmed first; power cards/DRS still playable); Stitch states to reproduce: live-state strip (target, req. rpo, CRR, "Over N · Powerplay", "X req off Y balls"), over chips with tags (Sgl · DRS · ★ · POW · W), status line ("Declan confirmed at No. 3 (Finisher) · Strike rotated · Ready for Ball 1.5"), DRS appeal → 1-die verdict → "Decision overturned · NOT OUT · becomes dot ball", Wonderful Shot / Great Delivery activation screens ("1 of 2 left", 36-cell matrix, "bypasses standard grid"), wicket + new-batsman card with "BOWLING ON HOLD · ROLLS LOCKED UNTIL BATSMAN ENTERS" and incoming-batsman info (role, avg slog rate, boundary %), Over-complete summary screen, choose-bowler tactical-matchup modal (locked back-to-back bowler; preview of bowling and batting lines); action line: Undo · Custom ball (incl. Hit wicket) · Batting order (not in Super Over) · Swap strike (between balls only) · Bowling left/right · Face-to-face · Customise; right-hand/secondary panels: Over N chips, Power cards left (both teams), At the crease (striker ▶ / non-striker, number, type, hand, SR, 4s, 6s, "Star at", sheet-role dropdown, Extras, Next in). Keyboard Space shortcut → map to volume/hardware-key or a large "Next roll" FAB.
+Animations (§19.11, switchable): Split/Face-to-face: FOUR pops, SIX pops and glows, wicket shakes with red flash. Pitch View: FOUR — ball runs along grass from the striker's end to the rope, bumps and bounces back slightly, rope glows, green "FOUR!"; SIX — ball grows as it rises over the rope, golden "SIX!"; OUT — stumps shake, red "OUT!". Ground cut into 12 zones all round, order shuffled each innings, ±12° jitter per ball. Honour system "reduce motion". The eight wicket scenes and the 1/2/3-run animation are excluded from the md (not yet designed) — add simple placeholders only.
+Scorecard / Summary / Ball by ball (§20): both innings (batsmen with how-out, bowlers, extras, fall of wickets), match start/end time, separate scorecard per Super Over, Share as image / PDF, summary with worm/run chart (per Stitch), ball-by-ball tab per the Stitch Hindi feed: Over summary header, filters (All Balls · Boundaries 4s & 6s · Wickets · DRS & Reviews · Power Cards), English / हिन्दी toggle, optional spoken Hindi commentary (TextToSpeech).
+Tournaments (§21): create (name, overs 5/10, teams, type e.g. groups + knockout, number of groups, qualifiers per group; each fixture has its own ground); group formation Auto (seeded by pick order) / Manual / Draw by slips (incomplete manual → Auto) — the slips draw is an animated ceremony per the two Stitch draw screens ("Crystal Chamber" bowl, slip reveal, assigned group/slot, progress "7/10 drawn", final "all 10 slips placed"); star-balanced groups ("Star Sync Balance"); fixture schedule screen with match numbers and stage counts (e.g. 10 teams · 2 groups of 5 · top 2 qualify · 20 group + 2 semi-finals + 1 final); standings table P W L Pts NRR with qualification markers and cutoff line; fixtures with match number and time; points table with NRR; knockouts; Caps & awards (Orange cap = most runs, Purple cap = most wickets, other awards); Player rating; champion after final; MVP points; Home shows running/finished counts.
+Stats & Rankings (§22): player and team stats for 5 and 10 overs separately with ground filter, records, MVP points, ratings (top 10 highlighted per format); Rankings page: Top 10 batsmen / bowlers / all-rounders / teams, per format, all grounds or one ground. Formulas: innings points compared with format+ground average, older innings ×0.9, average player ≈ 500, reliability ramps to 5 innings, min 2 innings to be listed, all-rounder = batting × bowling / 1000, team ranking adds 20% squad (stars) strength, teams with no matches faded. Any constant not given → decide, document in AMBIGUITIES.
+Teams & Players (§15, §23): Players Database (10 printed teams, each team card with colour, stars, captain, star players "@ N runs", full squad with every attribute, skill-colour dots exactly as printed, records, player profile), Form-stars table; Add team (name, code, stars 3/4/5, colour from 14 suggestions, logo preset or own picture; printed teams keep name/stars/colour, only logo changes and players can be added); Add Player (name ≤24 letters, no duplicate in squad; role; hand; bowling style required for bowling roles; fielding skills; keeping skills required for WK; star runs 1–200; Finisher/Death bowler/Opener/Captain flags); one captain per team (new captain removes old); squad numbers never reused, even for released players; new players on printed teams get numbers after 20; a team used in saved matches can't be deleted. Roster builder 7/20 per Stitch.
+DPL — Dice Premier League (§24): create franchise teams, new season (works for 2–10 franchises), Delete-team mode (🗑 on each team, "Done"; confirmation; teams in a season/saved match/tournament can't be deleted). Auction: points not money, 50,000 points per team, pool ≈200 players, squads ≈18–20, seeded (same seed → same result; season stores seed + cursor), Auto bidding and Manual bidding, squad-needs shown per lot, role balance: BW+BWAL ≥ 40% (min 8, max 10), batting group (BAT/BTBW/BTAL/WK) ≤ 11, keeper slot always reserved. Next season: trades (swap players), retention (up to 4 per team at fair value), mini-auction for the rest, released players leave the squad (saved matches keep their names/numbers; never picked again), status like "Trades & retention".
+Sheets page (§27): all 12 sheets by ground, "Roll this sheet" with both dice, MasterGrid (every cell's lines, FOR ALL cell, purple row F), Wonderful Shot & Great Delivery grids, "Which sheet?" rules and Power-card rules. Sheet fonts: IBM Plex Sans Condensed / IBM Plex Sans.
+Cards browser: all 87 cards by deck with exact printed content.
+Print-Ready & Rule Book Hub (§29, Stitch print_ready_rule_book_hub): bundle the six source PDFs (rule book, 3 sheet sets, cards, players DB) as app assets and let the user view, share and print them via Android's print/share framework; show export presets from the screen (e.g. A4 home print, print-shop bleed) — if a preset needs a file that can't be honestly generated offline, show it as disabled with an explanation rather than faking a download or size. Rule Book screen: the 11 pages as native, searchable in-app help (incl. strategy, game plan by ground, analysis tables, balanced-team plan, DB list).
+Customise (§25): 6 colour themes (Classic Maroon, Night Stadium, Pitch Green, Super League, Ocean Breeze, Retro Scoreboard) implemented as token sets — default = Pitch Pulse (Stitch); outcome and dice colours keep printed meaning in every theme; scoring layout (Split/Pitch View/Face-to-face), bowling block L/R, animations on/off, scorer Auto/Manual, Back to default; carry over legacy choices. Plus sound/haptics, deck mode, language EN/HI.
+Data (§26): everything stored locally (Room). Backup → JSON file dice-cricket-backup-<date>.json via Storage Access Framework; Restore ("Restored N matches and M tournaments"); weekly backup reminder ("Last backup: … days ago") and optional auto-backup weekly; Reset with confirmation. Autosave every ball; Resume; Undo restores dice, decks, cards drawn, power-card state and all stats.
+Safety/edge cases: deleting rules per §19.1/§23/§24; confirmations on destructive actions; process-death safe state restoration mid-match.
+
+Out of scope (md §30 Future plans — but keep engine/sheet-set pluggable so they can be added): online multiplayer, Play Store listing, T20 set, ODI set.
+
+C3. Design implementation
+Implement the Stitch Design exactly: read each screen.png for the visual and each code.html for exact structure, spacing, Tailwind colour classes, icons and copy. Convert into reusable Compose components and a theme (Color.kt, Type.kt, Shape.kt, Theme.kt) from STITCH_ROOT/pitch_pulse/DESIGN.md (dark forest-charcoal surfaces 
+#101410…, electric-lime primary container 
+#c3f400, Outfit typeface, radii sm 0.5rem / default 1rem / md 1.5rem / lg 2rem / xl 3rem, 1rem gutter, 1.25rem margin). Bundle fonts (Outfit, IBM Plex Sans, IBM Plex Sans Condensed) as app resources so it works offline.
+DESIGN.md marketing text mentions football and streaming — ignore the copy; this is a cricket dice game.
+Preserve sheet/outcome colour semantics: X wicket red, 0 dot grey, + extra green, 1·2·3 outlined, FOUR orange, SIX dark maroon, ball icon red; purple row F; ground colours HSG red / NSG green / LSG yellow-gold; skill dots Red/Green/Blue.
+Replace all sample data in screens with live data bindings. Make every button in the design functional or remove it deliberately and log it.
+C4. Quality bar — do not say "done" until all pass
+./gradlew assembleDebug and ./gradlew test pass with zero failures; no crashes on a full 5-over and a full 10-over match on each ground in both Auto and Manual modes, including a Super Over and a tournament run-through.
+Data tests: 12×36 cells, 87 cards by deck, 200 players, line statistics equal to the published tables (md §28 / Rule Book pp. 8–9).
+Engine tests: one or more per line-selection branch, per dismissal kind, per row-F code, per extra kind, Free Hit, per power card, Half Reroll, DRS (incl. row-F LBW), Finisher selection/override, star dominance (more/equal/fewer), star snapshot, form-star ranking, over-limit and no-consecutive-over rules, all-out at 6/10, Super Over (incl. tie → next Super Over, players sitting out), undo.
+Simulation test: 10,000 innings per ground per format with equal stars. md §28 app simulation (IND v PAK) says 5 overs: HSG ≈104 · NSG ≈89 · LSG ≈64; 10 overs: HSG ≈203 · NSG ≈164 · LSG ≈113. Rule Book printed ranges are lower (5 ov: HSG 75–110, NSG 56–80, LSG 30–54; 10 ov: 170–225 / 130–170 / 75–115). Report your results against both in docs/SIMULATION.md, explain any gap, and treat a result more than ~10% away from the md app-simulation figures as a bug to investigate.
+No hard-coded game numbers in Kotlin — everything from JSON assets (except UI constants).
+Lint/ktlint clean enough that the build is warning-free where practical; accessibility: content descriptions, 48dp touch targets, reduce-motion honoured.
+C5. Deliverables
+Android Studio project Dice king Stitch/DiceCricketKing/ (next to assets/) (builds from clean checkout).
+Dice king Stitch/docs/: ANALYSIS, DATA_MODEL, AMBIGUITIES, CONFLICTS, DESIGN_MAP, PLAN, PROGRESS, SIMULATION.
+README.md with build/run instructions + path to the debug APK.
+docs/COVERAGE.md — a checklist with one row per md section (1–27) and per Rule Book rule and per Stitch screen, mapped to the implementing code and the test, status ✅ / ⚠️ / ❌ with an explanation for anything not ✅.
+Working rules
+Never guess a sheet cell, card or player attribute. Zoom/re-render at higher DPI until certain.
+Work milestone by milestone; after each, run the tests, update docs/PROGRESS.md, then continue.
+Don't stop to ask questions; log assumptions in docs/AMBIGUITIES.md and keep going.
+Keep the credit "© 2026 Tanweer Ahmad · Faiz Dice Games" visible in About/Home footer. Do not use third-party copyrighted audio/images/logos (e.g. real team crests, real player photos); use generated emblems/initials.
+
+Start now with Phase A1: read assets/Dice_Cricket_King_Complete_Documentation.md end to end, then assets/Dice_Cricket_King_Rule_Book_A4.pdf, then the other PDFs, then the 40 screens in assets/stitch design/.

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#c4c9ac", "outline-variant": "#444933", "on-surface": "#e0e4dc", "background": "#101410", "surface-variant": "#323631", "surface-tint": "#abd600", "on-tertiary-fixed-variant": "#930005", "on-primary-container": "#556d00", "primary-fixed-dim": "#abd600", "surface-dim": "#101410", "inverse-on-surface": "#2d312d", "on-background": "#e0e4dc", "surface-container-highest": "#323631", "tertiary": "#ffffff", "primary-container": "#c3f400", "surface": "#101410", "secondary-fixed": "#dce5d7", "on-primary": "#283500", "on-primary-fixed": "#161e00", "primary-fixed": "#c3f400", "on-tertiary-container": "#ca0a0f", "on-secondary-container": "#b2bbae", "secondary": "#c0c9bc", "tertiary-fixed": "#ffdad5", "on-secondary": "#2a3329", "secondary-container": "#434b41", "on-secondary-fixed": "#161e15", "error-container": "#93000a", "inverse-surface": "#e0e4dc", "surface-container-low": "#191d18", "on-primary-fixed-variant": "#3c4d00", "outline": "#8e9379", "surface-container": "#1d211c", "primary": "#ffffff", "on-error": "#690005", "on-tertiary-fixed": "#410001", "on-error-container": "#ffdad6", "surface-bright": "#363a35", "tertiary-fixed-dim": "#ffb4aa", "inverse-primary": "#506600", "on-secondary-fixed-variant": "#41493f", "surface-container-high": "#272b26", "error": "#ffb4ab", "secondary-fixed-dim": "#c0c9bc", "on-tertiary": "#690003", "tertiary-container": "#ffdad5", "surface-container-lowest": "#0b0f0b" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-md": "0.875rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "margin": "1.25rem", "space-xs": "0.25rem", "space-lg": "1.25rem" }, "fontFamily": { "body-md": ["Outfit"], "headline-lg-mobile": ["Outfit"], "headline-lg": ["Outfit"], "label-sm": ["Outfit"], "score-display": ["Outfit"], "label-lg": ["Outfit"], "body-sm": ["Outfit"], "headline-sm": ["Outfit"], "headline-xl": ["Outfit"], "body-lg": ["Outfit"], "label-md": ["Outfit"], "headline-md": ["Outfit"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] -ml-space-xs flex items-center justify-center text-on-surface hover:text-primary-container transition-colors rounded-full" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0 flex-1 pr-space-xs"><div class="flex items-center gap-space-xs"><h1 class="text-label-lg font-label-lg text-on-surface truncate">Over Summary Details</h1></div><div class="flex items-center gap-space-xs mt-0.5"><span class="px-space-xs py-0.5 bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider rounded-full font-bold leading-none">Over 1 Complete</span><span class="px-space-xs py-0.5 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full leading-none">TGT: 48</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(195,244,0,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface pb-safe flex-1"><div class="flex flex-col w-full">
+<div class="flex flex-col w-full px-margin space-y-space-md py-space-sm pb-space-xl">
+<!-- Celebration & Ball 1.6 Climax Flash -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-high p-space-md shadow-md">
+<div class="absolute -right-6 -top-6 w-28 h-28 bg-primary-container/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm shrink-0 shadow-sm">
+            4
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-surface-tint uppercase tracking-wider">Ball 1.6 Climax</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Declan cracks 4 to deep mid-wicket!</span>
+</div>
+</div>
+<span class="px-space-sm py-1 bg-surface-container-lowest text-surface-tint font-label-sm text-label-sm rounded-full shrink-0 uppercase tracking-widest font-bold">Over Finished</span>
+</div>
+</div>
+<!-- 1. Top Match Status & Scoreboard Card -->
+<div class="relative flex flex-col rounded-lg bg-surface-container p-space-lg shadow-xl overflow-hidden space-y-space-md">
+<div class="absolute top-0 right-0 w-44 h-44 bg-surface-tint/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Match Metadata Header -->
+<div class="flex items-center justify-between border-none">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-surface-tint">electric_bolt</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Powerplay Over 1 Complete · 5-Over Blitz</span>
+</div>
+<div class="flex items-center gap-1.5 px-space-xs py-0.5 rounded-full bg-surface-container-highest">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase">NSG Flat Pitch</span>
+</div>
+</div>
+<!-- Core Score & Equation -->
+<div class="flex items-end justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">16<span class="text-on-surface-variant">/2</span></span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">(1.0 / 5.0 ov)</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary mt-0.5">Australia Blitz need <strong class="text-primary font-bold">42 runs</strong> off <strong class="text-primary font-bold">24 balls</strong></span>
+</div>
+<div class="flex flex-col items-end gap-1.5 shrink-0">
+<div class="px-space-sm py-1 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(195,244,0,0.35)] flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+<span>TARGET 58</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-surface-tint font-bold">CRR 16.00</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-error font-bold">RRR 10.50</span>
+</div>
+</div>
+</div>
+<!-- 6-Ball Timeline Stream (Over 1 Progression) -->
+<div class="flex flex-col space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span>Over 1 Progression (Legal Deliveries 6/6)</span>
+<span class="text-surface-tint">10 Prior Runs + 6 This Over</span>
+</div>
+<div class="grid grid-cols-6 gap-space-xs pt-1">
+<!-- 1.1 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight font-bold">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant scale-90">1.1</span>
+<span class="font-label-sm text-label-sm text-secondary truncate w-full mt-0.5">Single</span>
+</div>
+<!-- 1.2 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant leading-tight font-bold">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant scale-90">1.2</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim truncate w-full mt-0.5">DRS ✓</span>
+</div>
+<!-- 1.3 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-surface-container-high text-center">
+<div class="flex items-center justify-center gap-0.5">
+<span class="material-symbols-outlined text-[12px] text-surface-tint">star</span>
+<span class="font-headline-sm text-headline-sm text-surface-tint leading-tight font-bold">1</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant scale-90">1.3</span>
+<span class="font-label-sm text-label-sm text-surface-tint truncate w-full mt-0.5">POW</span>
+</div>
+<!-- 1.4 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-error-container text-center shadow-inner">
+<span class="font-headline-sm text-headline-sm text-on-error-container leading-tight font-bold">W</span>
+<span class="font-label-sm text-label-sm text-on-error-container/80 scale-90">1.4</span>
+<span class="font-label-sm text-label-sm text-on-error-container truncate w-full mt-0.5">Malcolm</span>
+</div>
+<!-- 1.5 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant leading-tight font-bold">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant scale-90">1.5</span>
+<span class="font-label-sm text-label-sm text-secondary truncate w-full mt-0.5">Declan</span>
+</div>
+<!-- 1.6 -->
+<div class="flex flex-col items-center justify-center p-1.5 rounded bg-primary-container text-on-primary text-center shadow-[0_0_12px_rgba(195,244,0,0.4)]">
+<span class="font-headline-sm text-headline-sm leading-tight font-bold">4</span>
+<span class="font-label-sm text-label-sm opacity-80 scale-90">1.6</span>
+<span class="font-label-sm text-label-sm font-bold truncate w-full mt-0.5">FOUR!</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Over 1 Complete Interstitial Card (Section 19.8) -->
+<div class="flex flex-col rounded-lg bg-surface-container-low p-space-md space-y-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-surface-tint text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Section 19.8 End of Over Review</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">PP1 Concluded</span>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-4 gap-space-xs text-center">
+<div class="p-space-xs rounded bg-surface-container flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-surface-tint font-bold">16</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Runs Total</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-error font-bold">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wicket</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">2</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dots</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Boundary</span>
+</div>
+</div>
+<!-- Bowler Performance & Rule Quota Notice -->
+<div class="flex flex-col rounded-DEFAULT bg-surface-container p-space-md space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-surface-variant flex items-center justify-center shrink-0 text-on-surface font-label-lg">
+              IM
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Imran</span>
+<span class="px-1 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm uppercase">DLD · RFM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Dismissed Malcolm c&amp;b</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">1.0 - 0 - 6 - 1</span>
+<div class="font-label-sm text-label-sm text-secondary">Econ: 6.00</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-surface-tint shrink-0 mt-0.5">info</span>
+<span>Quota: <strong class="text-on-surface font-medium">1 of 2 overs bowled</strong>. Imran cannot bowl Over 2 consecutively as per Rule 16 restriction.</span>
+</div>
+</div>
+</div>
+<!-- 3. Batters at the Crease (End of Over 1 Strike Rotation) -->
+<div class="flex flex-col rounded-lg bg-surface-container p-space-md space-y-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">sync_alt</span>
+<span class="font-label-lg text-label-lg text-on-surface">Crease Status (Automatic Strike Rotation)</span>
+</div>
+<div class="px-space-xs py-0.5 rounded-full bg-surface-container-highest text-surface-tint font-label-sm text-label-sm font-semibold">
+          Partnership: 4 (2b)
+        </div>
+</div>
+<div class="space-y-space-xs">
+<!-- New Striker: Haden (Rotated into strike at over end) -->
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-container-high">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] text-primary-container shrink-0">sports_cricket</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate">Haden</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">ON STRIKE</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">WK · LHB · Anchor · Taking strike for Over 2</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2*</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">(3b)</span>
+</div>
+</div>
+<!-- Non-Striker: Declan (Hit the boundary on 1.6) -->
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant shrink-0">person</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Declan (C)</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm">NON-STRIKER</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Finisher · RHB · 1x4</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">4*</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">(2b, 1x4)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Tactical Callout & Next Over Preparation -->
+<div class="flex flex-col rounded-lg bg-surface-container-high p-space-md space-y-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-surface-tint">strategy</span>
+<span class="font-label-lg text-label-lg text-on-surface">Rule 3 &amp; 16: Bowler Transition</span>
+</div>
+<span class="text-secondary font-label-sm text-label-sm">Over 2 of 5</span>
+</div>
+<!-- Eligibility Chips -->
+<div class="flex flex-col space-y-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Eligible Delhi Dynamos bowlers with quota:</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="flex items-center gap-space-xs p-2 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Victor (LF)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 overs left</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-2 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Harrison (RL)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 overs left</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-2 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Abhay (RFM)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 overs left</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-2 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Scott (LO)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 overs left</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Power Cards Status Indicator -->
+<div class="flex flex-col rounded bg-surface-container p-space-sm space-y-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tactical Assets Available</span>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<span class="text-on-surface">AUS: <strong class="text-surface-tint">1x Wonderful Shot</strong> · 0 DRS</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface">DLD: <strong class="text-secondary">2x Great Delivery</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. Interactive Action Buttons -->
+<div class="flex flex-col space-y-space-sm pt-space-xs">
+<!-- 56px Glowing Electric Lime Primary CTA -->
+<button class="w-full h-14 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm shadow-[0_8px_30px_rgba(204,255,0,0.3)] active:scale-[0.98] transition-transform select-none" id="btn-start-over-2" type="button">
+<span>START OVER 2 · CHOOSE BOWLER</span>
+<span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+</button>
+<!-- Secondary Dual Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-11 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-surface-tint">analytics</span>
+<span>Full Scorecard</span>
+</button>
+<button class="h-11 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-[0.98]" id="btn-undo-ball" type="button">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+<span>Undo Ball 1.6</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const startBtn = document.getElementById('btn-start-over-2');
+    const undoBtn = document.getElementById('btn-undo-ball');
+
+    if (startBtn) {
+      startBtn.addEventListener('click', function() {
+        startBtn.classList.add('brightness-125');
+        setTimeout(() => {
+          startBtn.classList.remove('brightness-125');
+        }, 180);
+      });
+    }
+
+    if (undoBtn) {
+      undoBtn.addEventListener('click', function() {
+        if (confirm('Revert ball 1.6 (Declan 4)? Score will return to 12/2 (0.5 ov).')) {
+          console.log('Action: Undo Ball 1.6 triggered');
+        }
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#434b41", "surface-container": "#1d211c", "secondary-fixed": "#dce5d7", "inverse-surface": "#e0e4dc", "on-error": "#690005", "surface-tint": "#abd600", "error": "#ffb4ab", "surface-variant": "#323631", "on-secondary-fixed": "#161e15", "surface-container-low": "#191d18", "on-secondary-fixed-variant": "#41493f", "on-surface-variant": "#c4c9ac", "on-primary-fixed-variant": "#3c4d00", "outline-variant": "#444933", "background": "#101410", "surface-container-high": "#272b26", "on-primary-fixed": "#161e00", "on-tertiary-fixed-variant": "#930005", "inverse-on-surface": "#2d312d", "on-surface": "#e0e4dc", "on-tertiary-container": "#ca0a0f", "tertiary": "#ffffff", "secondary": "#c0c9bc", "surface-dim": "#101410", "primary-container": "#c3f400", "surface-container-lowest": "#0b0f0b", "on-primary-container": "#556d00", "surface-bright": "#363a35", "on-error-container": "#ffdad6", "on-background": "#e0e4dc", "outline": "#8e9379", "tertiary-fixed-dim": "#ffb4aa", "tertiary-fixed": "#ffdad5", "inverse-primary": "#506600", "on-tertiary": "#690003", "on-secondary-container": "#b2bbae", "surface-container-highest": "#323631", "on-tertiary-fixed": "#410001", "error-container": "#93000a", "on-primary": "#283500", "primary": "#ffffff", "tertiary-container": "#ffdad5", "secondary-fixed-dim": "#c0c9bc", "on-secondary": "#2a3329", "primary-fixed": "#c3f400", "primary-fixed-dim": "#abd600", "surface": "#101410" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "margin-desktop": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-lg": "1.25rem", "margin": "1.25rem", "space-md": "0.875rem" }, "fontFamily": { "score-display": ["Outfit"], "headline-sm": ["Outfit"], "headline-lg": ["Outfit"], "headline-md": ["Outfit"], "body-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "headline-xl": ["Outfit"], "label-md": ["Outfit"], "label-sm": ["Outfit"], "body-md": ["Outfit"], "body-lg": ["Outfit"], "label-lg": ["Outfit"] }, "fontSize": { "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-fixed transition-colors active:scale-95 shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse shrink-0"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed bg-surface-container px-space-xs py-0.5 rounded-full truncate">DICE CRICKET KING</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Tournament Group Draw By Slips</h1></div></div><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Sound settings" class="w-11 h-11 flex items-center justify-center rounded-full bg-surface-container-high/80 text-on-surface hover:text-primary-fixed transition-colors active:scale-95" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface pb-safe">
+<!-- Subtle Ambient Stadium Halo (Non-overflowing) -->
+<div class="relative w-full px-margin pt-space-md flex flex-col gap-space-md">
+<!-- 1. Tournament Header & Format Banner -->
+<section class="bg-surface-container-low rounded-lg p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-primary-fixed/5 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed bg-surface-container px-space-xs py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping"></span> Live Broadcast
+        </span>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stadium</span> Melbourne Arena
+        </span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">World Cup 2026</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Group Stage Official Draw Ceremony · 10 Teams · 2 Groups of 5 · Top 2 Advance</p>
+</div>
+<!-- Method Selector Pills -->
+<div class="flex items-center gap-space-xs pt-space-xs overflow-x-auto no-scrollbar">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors whitespace-nowrap active:scale-95" type="button">
+          Auto Seeded
+        </button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors whitespace-nowrap active:scale-95" type="button">
+          Manual Choice
+        </button>
+<button class="px-space-md py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center gap-1 shadow-[0_0_16px_rgba(195,244,0,0.35)] whitespace-nowrap active:scale-95" type="button">
+<span>Draw by Slips 🎟️</span>
+</button>
+</div>
+</section>
+<!-- 2. Interactive Digital Bowl Stage & Active Slip -->
+<section class="bg-surface-container rounded-lg p-space-md shadow-xl flex flex-col gap-space-md relative overflow-hidden">
+<!-- Glow under bowl -->
+<div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary-fixed/10 via-transparent to-transparent pointer-events-none"></div>
+<!-- Bowl Header / Telemetry Count -->
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">casino</span>
+<span class="font-label-lg text-label-lg text-on-surface">The Crystal Chamber</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase px-space-xs py-1 rounded-full bg-surface-container-high text-primary-fixed">
+          7/10 Drawn · 3 In Bowl
+        </span>
+</div>
+<!-- Glass Bowl Chamber Visualization -->
+<div class="relative w-full h-36 rounded-lg bg-surface-container-lowest/80 flex items-center justify-center overflow-hidden shadow-inner">
+<!-- Stadium spotlight arc -->
+<div class="absolute inset-0 bg-radial from-primary-fixed/15 via-transparent to-transparent opacity-70"></div>
+<!-- Background Glass Bowl Silhouette & Unopened Slips -->
+<div class="relative w-44 h-24 rounded-b-full bg-surface-variant/40 flex items-end justify-center pb-2 shadow-[0_8px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+<!-- Rim Light Glow -->
+<div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-80"></div>
+<!-- Golden / White Folded Slips inside bowl -->
+<div class="flex items-center gap-1.5 mb-2">
+<div class="w-8 h-5 rounded-sm bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center justify-center transform -rotate-12 shadow-md">
+<span class="opacity-70 text-[9px] font-bold">#8</span>
+</div>
+<div class="w-9 h-5 rounded-sm bg-surface-bright text-primary-fixed font-label-sm text-label-sm flex items-center justify-center transform rotate-6 shadow-md">
+<span class="text-[9px] font-bold">#9</span>
+</div>
+<div class="w-8 h-5 rounded-sm bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-sm text-label-sm flex items-center justify-center transform -rotate-6 shadow-md">
+<span class="opacity-70 text-[9px] font-bold">#10</span>
+</div>
+</div>
+</div>
+<!-- Floating Particles / Confetti Sparkles -->
+<div class="absolute top-3 left-6 text-primary-fixed opacity-70 animate-bounce">
+<span class="material-symbols-outlined text-[16px]">arrow_back_ios_new</span>
+</div>
+<div class="absolute bottom-4 right-8 text-primary-fixed opacity-50">
+<span class="material-symbols-outlined text-[14px]">magic_button</span>
+</div>
+</div>
+<!-- Central Active Unfolding Slip Card -->
+<div class="bg-surface-container-high rounded-lg p-space-md flex flex-col gap-space-sm relative shadow-md transition-all duration-300" id="activeSlipContainer">
+<!-- Folded Badge Ribbon -->
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wide bg-primary-fixed/20 text-primary-fixed px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Just Unfolded
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">SLIP #7 OF 10</span>
+</div>
+<!-- Team Revealed -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-[24px] shadow-sm shrink-0">
+              🇦🇺
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">AUSTRALIA</span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">AUS</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Declan (Captain)</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="flex text-primary-fixed text-label-sm">
+              ★★★★★
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tier 1 Seed</span>
+</div>
+</div>
+<!-- Destination Allocation Pill -->
+<div class="w-full bg-primary-fixed/15 py-1.5 px-space-sm rounded-full flex items-center justify-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="font-label-md text-label-md text-primary-fixed font-bold tracking-wide">
+            ASSIGNED TO GROUP B · SLOT 4
+          </span>
+</div>
+<!-- Tap to Draw Next Micro-Action Button -->
+<button class="w-full mt-space-xs py-3 px-space-md rounded-full bg-surface-bright text-on-surface hover:text-primary-fixed font-label-lg text-label-lg flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-md" id="drawNextBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+<span>Tap to Draw Next Slip (3 Left) 🎲</span>
+</button>
+</div>
+</section>
+<!-- 4. Remaining Slips In Pot Pills -->
+<section class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Still In Pot (Unrevealed)</span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-semibold">3 Spheres</span>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap pt-1">
+<div class="px-space-md py-1.5 rounded-full bg-surface-container flex items-center gap-1.5 text-on-surface">
+<span class="text-sm">🇧🇩</span>
+<span class="font-label-md text-label-md font-semibold">BAN</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★</span>
+</div>
+<div class="px-space-md py-1.5 rounded-full bg-surface-container flex items-center gap-1.5 text-on-surface">
+<span class="text-sm">🏝️</span>
+<span class="font-label-md text-label-md font-semibold">WI</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★</span>
+</div>
+<div class="px-space-md py-1.5 rounded-full bg-surface-container flex items-center gap-1.5 text-on-surface">
+<span class="text-sm">🛡️</span>
+<span class="font-label-md text-label-md font-semibold">DLD</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Custom</span>
+</div>
+</div>
+</section>
+<!-- 5. Star Balance Index Telemetry -->
+<section class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">balance</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Group Balance Index</span>
+</div>
+<span class="font-label-md text-label-md text-primary-fixed font-bold">98% Synced</span>
+</div>
+<!-- Meter Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden flex">
+<div class="bg-primary-fixed h-full" style="width: 48.6%;"></div>
+<div class="bg-primary-container h-full" style="width: 51.4%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-0.5">
+<span>Group A: 17★ (Avg 4.25)</span>
+<span>Group B: 18★ (Avg 4.50)</span>
+</div>
+</section>
+<!-- 3. Real-Time Group Standings Grid (Group A & Group B Stacked Cards) -->
+<div class="flex flex-col gap-space-md">
+<!-- Group A Card -->
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-primary-fixed font-headline-sm text-headline-sm flex items-center justify-center">A</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Group A</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pool of Champions</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface">
+            4/5 Filled
+          </span>
+</div>
+<!-- Team Row List -->
+<div class="flex flex-col gap-1.5">
+<!-- 1. IND -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#1</span>
+<span class="text-base shrink-0">🇮🇳</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">IND · India</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Debashish</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★★</span>
+</div>
+<!-- 2. PAK -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#2</span>
+<span class="text-base shrink-0">🇵🇰</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">PAK · Pakistan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Daniyal</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★★</span>
+</div>
+<!-- 3. SA -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#3</span>
+<span class="text-base shrink-0">🇿🇦</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">SA · South Africa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Siyabonga</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★</span>
+</div>
+<!-- 4. AFG -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#4</span>
+<span class="text-base shrink-0">🇦🇫</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">AFG · Afghanistan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Reza</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★</span>
+</div>
+<!-- 5. Empty Slot -->
+<div class="bg-surface-container-lowest/60 px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/50 w-4">#5</span>
+<span class="material-symbols-outlined text-[18px] text-primary-fixed animate-pulse">hourglass_empty</span>
+<span class="font-label-md text-label-md text-on-surface-variant italic">Empty Slot 5 · Awaiting Slip</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed/60">POT TBD</span>
+</div>
+</div>
+</div>
+<!-- Group B Card -->
+<div class="bg-surface-container rounded-lg p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex items-center justify-center font-bold">B</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Group B</span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-semibold">Latest Assignment Updated</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-primary-fixed/20 text-primary-fixed font-bold">
+            4/5 Filled
+          </span>
+</div>
+<!-- Team Row List -->
+<div class="flex flex-col gap-1.5">
+<!-- 1. SL -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#1</span>
+<span class="text-base shrink-0">🇱🇰</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">SL · Sri Lanka</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Sanjeeva</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★★</span>
+</div>
+<!-- 2. ENG -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#2</span>
+<span class="text-base shrink-0">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">ENG · England</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Joshua</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★</span>
+</div>
+<!-- 3. NZ -->
+<div class="bg-surface-container-low px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-4">#3</span>
+<span class="text-base shrink-0">🇳🇿</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">NZ · New Zealand</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">David</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed">★★★★</span>
+</div>
+<!-- 4. AUS (Highlighted: Just Drawn) -->
+<div class="bg-surface-bright px-space-sm py-2 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold w-4">#4</span>
+<span class="text-base shrink-0">🇦🇺</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-primary-fixed font-bold truncate">AUS · Australia</span>
+<span class="bg-primary-fixed text-on-primary-fixed text-[9px] px-1 py-0.2 rounded-full font-bold uppercase">New</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface truncate">Declan</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">★★★★★</span>
+</div>
+<!-- 5. Empty Slot -->
+<div class="bg-surface-container-lowest/60 px-space-sm py-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/50 w-4">#5</span>
+<span class="material-symbols-outlined text-[18px] text-primary-fixed animate-pulse">hourglass_empty</span>
+<span class="font-label-md text-label-md text-on-surface-variant italic">Empty Slot 5 · Awaiting Slip</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed/60">POT TBD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Sticky Bottom Action Dock -->
+<section class="sticky bottom-2 z-40 bg-surface-container-high/95 backdrop-blur-xl p-space-sm rounded-xl shadow-[0_12px_36px_rgba(0,0,0,0.8)] flex flex-col gap-space-xs mt-space-sm">
+<!-- 56px CTA Hero -->
+<button class="w-full h-14 bg-primary-fixed text-on-primary-fixed rounded-full font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(195,244,0,0.3)] hover:brightness-105 active:scale-98 transition-all" id="autoDrawBtn" type="button">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+<span>AUTO-DRAW REMAINING 3 SLIPS</span>
+</button>
+<!-- Secondary Dual Action Row -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2.5 px-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-bright flex items-center justify-center gap-1 active:scale-95 transition-all" id="resetBowlBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset Draw Bowl</span>
+</button>
+<button class="py-2.5 px-space-xs rounded-full bg-surface-container text-primary-fixed font-label-md text-label-md hover:bg-surface-bright flex items-center justify-center gap-1 active:scale-95 transition-all" id="confirmScheduleBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">event_available</span>
+<span>Confirm Schedule</span>
+</button>
+</div>
+</section>
+<!-- 7. Footer Official Endorsement -->
+<footer class="pt-space-xs pb-space-lg flex flex-col items-center justify-center text-center gap-1">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">verified</span>
+<span>Official ICC-Format Slip Ceremony</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70">
+        © 2026 Tanweer · Faiz Dice Games. Certified Random Seeding.
+      </p>
+</footer>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    (function() {
+      const drawNextBtn = document.getElementById('drawNextBtn');
+      const autoDrawBtn = document.getElementById('autoDrawBtn');
+      const resetBowlBtn = document.getElementById('resetBowlBtn');
+      const card = document.getElementById('activeSlipContainer');
+
+      if (drawNextBtn && card) {
+        drawNextBtn.addEventListener('click', () => {
+          card.classList.add('scale-95', 'opacity-70');
+          setTimeout(() => {
+            card.classList.remove('scale-95', 'opacity-70');
+            drawNextBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">cached</span> Drawing Sphere...';
+            setTimeout(() => {
+              drawNextBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">touch_app</span> Tap to Draw Next Slip (2 Left) 🎲';
+            }, 600);
+          }, 200);
+        });
+      }
+
+      if (autoDrawBtn) {
+        autoDrawBtn.addEventListener('click', () => {
+          autoDrawBtn.classList.add('scale-98');
+          autoDrawBtn.innerHTML = '<span class="material-symbols-outlined text-[24px] animate-spin">sync</span><span>SIMULATING REMAINING SLIPS...</span>';
+          setTimeout(() => {
+            autoDrawBtn.classList.remove('scale-98');
+            autoDrawBtn.innerHTML = '<span class="material-symbols-outlined text-[24px]">done_all</span><span>ALL 10 TEAMS DRAWN!</span>';
+          }, 900);
+        });
+      }
+
+      if (resetBowlBtn) {
+        resetBowlBtn.addEventListener('click', () => {
+          if (confirm('Reset tournament bowl and re-pack all 10 team slips?')) {
+            window.location.reload();
+          }
+        });
+      }
+    })();
+  </script>
+</div></main></body></html>

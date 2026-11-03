@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#101410;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary": "#690003", "surface-variant": "#323631", "surface-container": "#1d211c", "surface-container-lowest": "#0b0f0b", "primary-container": "#c3f400", "inverse-on-surface": "#2d312d", "secondary-fixed-dim": "#c0c9bc", "tertiary-fixed": "#ffdad5", "primary-fixed": "#c3f400", "on-secondary": "#2a3329", "surface": "#101410", "on-tertiary-fixed": "#410001", "surface-container-low": "#191d18", "surface-tint": "#abd600", "inverse-primary": "#506600", "on-tertiary-fixed-variant": "#930005", "secondary-fixed": "#dce5d7", "on-surface-variant": "#c4c9ac", "on-secondary-container": "#b2bbae", "on-background": "#e0e4dc", "tertiary-fixed-dim": "#ffb4aa", "background": "#101410", "surface-container-high": "#272b26", "on-secondary-fixed": "#161e15", "outline-variant": "#444933", "on-primary-container": "#556d00", "outline": "#8e9379", "on-secondary-fixed-variant": "#41493f", "primary-fixed-dim": "#abd600", "error-container": "#93000a", "tertiary-container": "#ffdad5", "on-surface": "#e0e4dc", "on-error": "#690005", "tertiary": "#ffffff", "on-primary-fixed": "#161e00", "on-primary": "#283500", "surface-dim": "#101410", "secondary-container": "#434b41", "surface-container-highest": "#323631", "secondary": "#c0c9bc", "on-tertiary-container": "#ca0a0f", "inverse-surface": "#e0e4dc", "surface-bright": "#363a35", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#3c4d00", "primary": "#ffffff", "error": "#ffb4ab" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "0.875rem", "margin": "1.25rem", "margin-desktop": "2.5rem", "space-xl": "2rem", "space-lg": "1.25rem", "gutter": "1rem", "gutter-desktop": "1.5rem" }, fontFamily: { "body-sm": ["Outfit"], "headline-xl": ["Outfit"], "headline-lg-mobile": ["Outfit"], "headline-sm": ["Outfit"], "label-sm": ["Outfit"], "score-display": ["Outfit"], "headline-lg": ["Outfit"], "label-md": ["Outfit"], "headline-md": ["Outfit"], "body-md": ["Outfit"], "body-lg": ["Outfit"], "label-lg": ["Outfit"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.06em", "fontWeight": "700" }], "score-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] -ml-2 rounded-full flex items-center justify-center text-on-surface transition-colors hover:bg-surface-container active:scale-95" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Custom Team &amp; Player Builder</span></div><div class="flex items-center gap-1.5 truncate"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Team Identity</h1><div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high shrink-0"><span class="material-symbols-outlined text-[12px] text-primary-fixed">stadium</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Eden Grounds</span></div></div></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Save changes" class="min-w-[44px] h-9 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_16px_rgba(195,244,0,0.2)]"><span class="material-symbols-outlined text-[16px]">done</span><span>Save</span></button><button aria-label="Close builder" class="min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-on-surface-variant transition-colors hover:bg-surface-container active:scale-95" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">close</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full text-on-surface">
+<!-- Top Segmented Mode Switcher -->
+<section class="px-margin pt-space-md pb-space-sm">
+<div class="p-1 rounded-full bg-surface-container flex items-center justify-between shadow-sm">
+<button class="flex-1 py-2 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-[0_4px_16px_rgba(195,244,0,0.25)]" id="tab-team" onclick="switchMainTab('team')">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span>Create Team</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="tab-player" onclick="switchMainTab('player')">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Add Player</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" id="tab-roster" onclick="switchMainTab('roster')">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span class="truncate">Roster (4)</span>
+</button>
+</div>
+</section>
+<!-- LIVE EMBLEM & CARD BANNER PREVIEW (Hero Telemetry) -->
+<section class="px-margin pt-space-xs pb-space-sm">
+<div class="relative rounded-lg overflow-hidden bg-surface-container-high p-space-md transition-all shadow-xl" id="liveBannerCard">
+<!-- Glow ambient accent -->
+<div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-[#ccff00]/15 blur-2xl pointer-events-none transition-all" id="bannerGlow"></div>
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-space-sm min-w-0">
+<!-- Crest / Emblem Preview Frame -->
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-md" id="crestDisplayFrame">
+<span class="material-symbols-outlined text-primary-fixed text-[30px]" id="crestIconDisplay" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider font-bold" id="previewCodeBadge">
+                DLD
+              </span>
+<div class="flex items-center text-primary-fixed" id="previewStarsContainer">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] text-surface-variant">star</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate mt-0.5" id="previewTeamTitle">
+              Delhi Dynamos
+            </h2>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> Eden Grounds (Home)
+              </span>
+<span class="text-surface-variant font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">SEC 23 LICENSED</span>
+</div>
+</div>
+</div>
+<!-- Captain Tag Preview -->
+<div class="flex flex-col items-end shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-primary-fixed flex items-center gap-1 shadow-inner">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+<span id="previewCaptainLabel">C: Kabir</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5">Active Kit 2025</span>
+</div>
+</div>
+<!-- Quick Telemetry Tape -->
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest/60 rounded-full px-3 py-1.5 backdrop-blur-md">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">sports_cricket</span>
+<span>Base Tier Dominance: <strong class="text-on-surface" id="previewTierText">4★ Balance</strong></span>
+</span>
+<span class="text-primary-fixed uppercase tracking-wider font-bold">Pitch Pulse Live</span>
+</div>
+</div>
+</section>
+<!-- TAB 1 CONTENT: TEAM IDENTITY & VISUAL BRANDING -->
+<div class="flex flex-col gap-space-lg px-margin pb-space-xl" id="panel-team-builder">
+<!-- Team Identity Card -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Team Identity</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sec 23.1 Spec</span>
+</div>
+<!-- Team Name Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex justify-between" for="inputTeamName">
+<span>Franchise / Team Name</span>
+<span class="text-primary-fixed font-body-sm text-body-sm" id="teamNameCounter">13 / 24</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-10 rounded-full bg-surface-container font-body-md text-body-md text-on-surface placeholder:text-surface-variant focus:outline-none focus:ring-0 focus:bg-surface-container-highest transition-all" id="inputTeamName" maxlength="24" oninput="updateTeamPreview()" placeholder="e.g. Karachi Kingsmen, Sydney Strikers" type="text" value="Delhi Dynamos"/>
+<span class="absolute right-4 top-3 text-primary-fixed material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Short Code & Base Star Tier Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Short Code -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between" for="inputTeamCode">
+<span>Team Code</span>
+<span class="font-label-sm text-label-sm text-surface-variant">3-Letter Cap</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-4 uppercase rounded-full bg-surface-container font-headline-sm text-headline-sm text-primary-fixed tracking-wider placeholder:text-surface-variant focus:outline-none focus:bg-surface-container-highest transition-all" id="inputTeamCode" maxlength="3" oninput="updateTeamPreview()" type="text" value="DLD"/>
+<span class="absolute right-3.5 top-3.5 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold">ABBR</span>
+</div>
+</div>
+<!-- Star Tier Selection -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant">
+<span>Base Star Tier</span>
+</label>
+<div class="flex items-center gap-2 h-12">
+<button class="flex-1 h-full rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-0.5 transition-all" id="tier-btn-3" onclick="selectStarTier(3)" type="button">
+<span>3</span><span class="material-symbols-outlined text-[14px]">star</span>
+</button>
+<button class="flex-1 h-full rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-0.5 shadow-[0_2px_12px_rgba(195,244,0,0.3)] transition-all" id="tier-btn-4" onclick="selectStarTier(4)" type="button">
+<span>4</span><span class="material-symbols-outlined text-[14px]">star</span>
+</button>
+<button class="flex-1 h-full rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-0.5 transition-all" id="tier-btn-5" onclick="selectStarTier(5)" type="button">
+<span>5</span><span class="material-symbols-outlined text-[14px]">star</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Star Tier Dominance Note Callout -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">Star Dominance Rule:</strong> Ranked 1-4 = 5★ automatically determined by Win %. Starting base tier sets raw starter budget balance and AI match aggression multipliers.
+        </p>
+</div>
+</div>
+<!-- Official Kit Colors: 14 Swatches -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Official Kit Color</h3>
+</div>
+<span class="font-label-md text-label-md text-primary-fixed font-bold" id="selectedColorLabel">Neon Lime (#ccff00)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Select franchise home banner tint from the 14 official cricket federation swatches.</p>
+<!-- 14 Swatches Grid -->
+<div class="grid grid-cols-7 gap-2.5 pt-1">
+<!-- 1. Royal Crimson -->
+<button aria-label="Royal Crimson" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#d62f2f', 'Royal Crimson', '#ffdad5')" style="background-color: #d62f2f;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 2. Sunset Tangerine -->
+<button aria-label="Sunset Tangerine" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#ff8c4a', 'Sunset Tangerine', '#ffdbcb')" style="background-color: #ff8c4a;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 3. Solar Gold -->
+<button aria-label="Solar Gold" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#f4b942', 'Solar Gold', '#ffe08a')" style="background-color: #f4b942;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 4. Neon Lime (Active default) -->
+<button aria-label="Neon Lime" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform scale-110 shadow-[0_0_12px_#ccff00]" onclick="selectColor('#ccff00', 'Neon Lime', '#c3f400')" style="background-color: #ccff00;" type="button">
+<span class="check-icon material-symbols-outlined text-black text-[18px] font-bold">check</span>
+</button>
+<!-- 5. Pitch Green -->
+<button aria-label="Pitch Green" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#22c55e', 'Pitch Green', '#86efac')" style="background-color: #22c55e;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 6. Emerald Teal -->
+<button aria-label="Emerald Teal" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#14b8a6', 'Emerald Teal', '#99f6e4')" style="background-color: #14b8a6;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 7. Sky Cyan -->
+<button aria-label="Sky Cyan" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#2dd4bf', 'Sky Cyan', '#a7f3d0')" style="background-color: #2dd4bf;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 8. Sapphire -->
+<button aria-label="Sapphire" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#4f8ff7', 'Sapphire', '#bfdbfe')" style="background-color: #4f8ff7;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-black text-[16px]">check</span>
+</button>
+<!-- 9. Royal Indigo -->
+<button aria-label="Royal Indigo" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#6c5ce7', 'Royal Indigo', '#ddd6fe')" style="background-color: #6c5ce7;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 10. Lavender Slate -->
+<button aria-label="Lavender Slate" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#7c6fa8', 'Lavender Slate', '#e0e7ff')" style="background-color: #7c6fa8;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 11. Orchid Pink -->
+<button aria-label="Orchid Pink" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#e8649b', 'Orchid Pink', '#fbcfe8')" style="background-color: #e8649b;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 12. Desert Brown -->
+<button aria-label="Desert Brown" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#8a5a34', 'Desert Brown', '#fed7aa')" style="background-color: #8a5a34;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 13. Deep Charcoal -->
+<button aria-label="Deep Charcoal" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#334155', 'Deep Charcoal', '#94a3b8')" style="background-color: #334155;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+<!-- 14. Midnight Onyx -->
+<button aria-label="Midnight Onyx" class="color-swatch relative aspect-square rounded-full flex items-center justify-center transition-transform hover:scale-105 active:scale-95" onclick="selectColor('#0f172a', 'Midnight Onyx', '#64748b')" style="background-color: #0f172a;" type="button">
+<span class="check-icon hidden material-symbols-outlined text-white text-[16px]">check</span>
+</button>
+</div>
+</div>
+<!-- Team Emblem Presets & Upload -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Emblem Crest</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Presets + SVG</span>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- Preset 1: Roaring Lion -->
+<button class="crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" id="crest-btn-sports_kabaddi" onclick="selectCrest('sports_kabaddi', 'Roaring Lion')" type="button">
+<span class="material-symbols-outlined text-[28px]">sports_kabaddi</span>
+<span class="font-label-sm text-label-sm truncate">Lion</span>
+</button>
+<!-- Preset 2: Speed Thunderbolt (Selected) -->
+<button class="crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed shadow-[0_4px_16px_rgba(195,244,0,0.25)] transition-all" id="crest-btn-bolt" onclick="selectCrest('bolt', 'Thunderbolt')" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm font-bold truncate">Speed Bolt</span>
+</button>
+<!-- Preset 3: Royal Crown -->
+<button class="crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" id="crest-btn-crown" onclick="selectCrest('crown', 'Royal Crown')" type="button">
+<span class="material-symbols-outlined text-[28px]">crown</span>
+<span class="font-label-sm text-label-sm truncate">Crown</span>
+</button>
+<!-- Preset 4: Rising Eagle -->
+<button class="crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface transition-all" id="crest-btn-flight" onclick="selectCrest('flight', 'Rising Eagle')" type="button">
+<span class="material-symbols-outlined text-[28px]">flight</span>
+<span class="font-label-sm text-label-sm truncate">Eagle</span>
+</button>
+</div>
+<!-- Upload Custom Image / Crest -->
+<button class="w-full h-11 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-all" onclick="alert('Custom Crest Importer: Supported PNG/SVG transparency format, max 2MB.')" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">cloud_upload</span>
+<span>Upload Custom Emblem SVG / PNG</span>
+</button>
+</div>
+</div>
+<!-- TAB 2 CONTENT: ADD PLAYER TO SQUAD (Granular Spec Section 23) -->
+<div class="flex flex-col gap-space-lg px-margin pb-space-xl hidden" id="panel-player-builder">
+<!-- Player Bio & Role Form Card -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Player Telemetry</h3>
+</div>
+<!-- Squad # Badge (Sequential Section 23) -->
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-primary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tag</span>
+<span>#21 - Next Squad ID</span>
+</span>
+</div>
+<!-- Player Name Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex justify-between" for="inputPlayerName">
+<span>Full Cricket Name</span>
+<span class="text-primary-fixed font-body-sm text-body-sm">Max 24 Letters</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-10 rounded-full bg-surface-container font-body-md text-body-md text-on-surface placeholder:text-surface-variant focus:outline-none focus:bg-surface-container-highest transition-all" id="inputPlayerName" maxlength="24" placeholder="e.g. Rohit Sharma, Kabir Khan" type="text" value="Farhan Akhtar"/>
+<span class="absolute right-4 top-3 text-primary-fixed material-symbols-outlined text-[20px]">badge</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary-fixed">check</span> Unique Squad ID verified across active rosters
+        </span>
+</div>
+<!-- Primary Role Selector (6 Section 23 Official Roles) -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Primary Tactical Role</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all" id="role-BAT" onclick="selectRole('BAT')" type="button">
+<span class="font-bold text-on-surface">BAT</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Batter</span>
+</button>
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all" id="role-BTBW" onclick="selectRole('BTBW')" type="button">
+<span class="font-bold text-on-surface">BTBW</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Top-Order/Bowls</span>
+</button>
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all" id="role-BTAL" onclick="selectRole('BTAL')" type="button">
+<span class="font-bold text-on-surface">BTAL</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Bat All-rounder</span>
+</button>
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all" id="role-WK" onclick="selectRole('WK')" type="button">
+<span class="font-bold text-on-surface">WK</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Wicket-keeper</span>
+</button>
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all" id="role-BWAL" onclick="selectRole('BWAL')" type="button">
+<span class="font-bold text-on-surface">BWAL</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Bowl All-rounder</span>
+</button>
+<button class="role-chip py-2.5 px-2 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex flex-col items-center gap-0.5 shadow-[0_2px_10px_rgba(195,244,0,0.25)] transition-all" id="role-BW" onclick="selectRole('BW')" type="button">
+<span class="font-bold text-on-primary-fixed">BW</span>
+<span class="font-label-sm text-label-sm text-on-primary-container font-semibold">Specialist Bowl</span>
+</button>
+</div>
+</div>
+<!-- Batting Hand vs Bowling Style -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Batting Hand -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Batting Hand</label>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" id="bat-hand-RHB" onclick="selectBattingHand('RHB')" type="button">
+              RHB (Right)
+            </button>
+<button class="flex-1 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold transition-all" id="bat-hand-LHB" onclick="selectBattingHand('LHB')" type="button">
+              LHB (Left)
+            </button>
+</div>
+</div>
+<!-- Bowling Hand/Style Selector -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant flex justify-between">
+<span>Bowling Style</span>
+<span class="text-primary-fixed font-label-sm text-label-sm">Mandatory for BW</span>
+</label>
+<div class="flex flex-wrap gap-1.5" id="bowlingStyleContainer">
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('RF')" type="button">RF</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('RFM')" type="button">RFM</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('RM')" type="button">RM</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-bold font-label-sm text-label-sm" onclick="selectBowlStyle('LF')" type="button">LF</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('LFM')" type="button">LFM</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('LM')" type="button">LM</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('RO')" type="button">RO</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('RL')" type="button">RL</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('LO')" type="button">LO</button>
+<button class="bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm" onclick="selectBowlStyle('LC')" type="button">LC</button>
+</div>
+</div>
+</div>
+<!-- Tactical Matchup Helper Banner -->
+<div class="p-2.5 rounded-DEFAULT bg-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">psychology</span>
+<span>Tactical Helper: <strong class="text-primary-fixed" id="bowlStyleHelperText">LF = Left-Arm Fast (Seam Angle &amp; Swing)</strong></span>
+</span>
+<span class="text-surface-variant">Dice King Matrix</span>
+</div>
+</div>
+<!-- Special Marks & Role Traits Toggles (Section 23 Rulebook) -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Role Traits &amp; Marks</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tactical Flags</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Captain (C) -->
+<label class="flex items-center justify-between p-3 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary-fixed font-headline-sm">C</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Team Captain</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">One captain per squad. Assigning transfers captaincy.</span>
+</div>
+</div>
+<input class="w-5 h-5 accent-[#c3f400] rounded cursor-pointer" id="mark-captain" onchange="toggleCaptain(this)" type="checkbox"/>
+</label>
+<!-- Star Player (★) with Threshold -->
+<div class="flex flex-col gap-2 p-3 rounded-DEFAULT bg-surface-container">
+<label class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-headline-sm">★</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Star Player Status</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Unlocks High Score (HS/★) clutch lines when run threshold met.</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-[#c3f400] rounded cursor-pointer" id="mark-star" onchange="toggleStar(this)" type="checkbox"/>
+</label>
+<!-- Star Runs Threshold (1-200) -->
+<div class="mt-2 pt-2 flex items-center justify-between bg-surface-container-lowest/60 rounded-full px-3 py-1.5" id="starThresholdContainer">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Star Runs Activation Threshold:</span>
+<div class="flex items-center gap-1.5">
+<input class="w-14 h-7 text-center rounded-full bg-surface-container text-primary-fixed font-bold font-label-md text-label-md focus:outline-none" id="starThresholdInput" max="200" min="1" type="number" value="25"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">runs</span>
+</div>
+</div>
+</div>
+<!-- Opener (O) -->
+<label class="flex items-center justify-between p-3 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface font-headline-sm">O</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Opener (Powerplay Specialist)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Access to PWPO Powerplay dice advantage.</span>
+</div>
+</div>
+<input class="w-5 h-5 accent-[#c3f400] rounded cursor-pointer" id="mark-opener" type="checkbox"/>
+</label>
+<!-- Finisher (F) -->
+<label class="flex items-center justify-between p-3 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface font-headline-sm">F</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Finisher (Slog Specialist)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SLG F slog death line dice multiplier.</span>
+</div>
+</div>
+<input class="w-5 h-5 accent-[#c3f400] rounded cursor-pointer" id="mark-finisher" type="checkbox"/>
+</label>
+<!-- Death Bowler (D) -->
+<label class="flex items-center justify-between p-3 rounded-DEFAULT bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary-fixed font-headline-sm">D</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Death Bowler (DB)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SLG DB line: maximizes dot balls and reverse-swing wickets.</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-[#c3f400] rounded cursor-pointer" id="mark-death-bowler" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Fielding Skills (Section 23 Color Matrices: Red 85%, Green 65%, Blue 40%) -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Fielding Matrices</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">R / G / B Precision</span>
+</div>
+<!-- Outfield Catch Skill -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Catching Skill</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Best: Red (85%)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 rounded-full bg-error text-on-error font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm" id="catch-red" onclick="selectSkill('catch', 'red')" type="button">
+<span>Red</span><span class="font-label-sm text-label-sm opacity-90">85%</span>
+</button>
+<button class="py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1" id="catch-green" onclick="selectSkill('catch', 'green')" type="button">
+<span>Green</span><span class="font-label-sm text-label-sm opacity-60">65%</span>
+</button>
+<button class="py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1" id="catch-blue" onclick="selectSkill('catch', 'blue')" type="button">
+<span>Blue</span><span class="font-label-sm text-label-sm opacity-60">40%</span>
+</button>
+</div>
+</div>
+<!-- Run-Out Skill -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Direct-Hit Run Out</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Good: Green (65%)</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1" id="runout-red" onclick="selectSkill('runout', 'red')" type="button">
+<span>Red</span><span class="font-label-sm text-label-sm opacity-60">85%</span>
+</button>
+<button class="py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm" id="runout-green" onclick="selectSkill('runout', 'green')" type="button">
+<span>Green</span><span class="font-label-sm text-label-sm opacity-90">65%</span>
+</button>
+<button class="py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1" id="runout-blue" onclick="selectSkill('runout', 'blue')" type="button">
+<span>Blue</span><span class="font-label-sm text-label-sm opacity-60">40%</span>
+</button>
+</div>
+</div>
+<!-- Keeping Skills (Conditional on WK) -->
+<div class="flex flex-col gap-space-sm pt-2" id="keepingSkillSubPanel">
+<div class="p-2.5 rounded-DEFAULT bg-surface-container flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">sports_baseball</span>
+<span>Wicketkeeper Matrices (Only active when WK selected)</span>
+</span>
+<span class="font-label-sm text-label-sm text-surface-variant">3 Matrix Lines</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2 rounded-DEFAULT bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WK Catch</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold">Red (85%)</span>
+</div>
+<div class="p-2 rounded-DEFAULT bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Stumping</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold">Red (85%)</span>
+</div>
+<div class="p-2 rounded-DEFAULT bg-surface-container flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WK Run-Out</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">Grn (65%)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3 CONTENT: CUSTOM ROSTER PREVIEW (4 Teams Active) -->
+<div class="flex flex-col gap-space-lg px-margin pb-space-xl hidden" id="panel-roster-overview">
+<!-- Active Roster Card -->
+<div class="p-space-lg rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 rounded-full bg-primary-fixed"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Active Custom Rosters</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">4 / 4 Slots Filled</span>
+</div>
+<!-- Teams Grid -->
+<div class="flex flex-col gap-2.5">
+<!-- Team 1 -->
+<div class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#ccff00] text-black flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Delhi Dynamos</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-primary-fixed">DLD</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">7 Players • 4★ Balance • Eden Grounds</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">check_circle</span>
+</div>
+<!-- Team 2 -->
+<div class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#d62f2f] text-white flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">crown</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Karachi Kingsmen</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-white">KKM</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">11 Players • 5★ Ranked • National Oval</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">more_vert</button>
+</div>
+<!-- Team 3 -->
+<div class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#4f8ff7] text-black flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">flight</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Sydney Strikers</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-[#4f8ff7]">SYS</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 Players • 3★ Challenger • Harbour Ring</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">more_vert</button>
+</div>
+<!-- Team 4 -->
+<div class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#ff8c4a] text-black flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[20px]">sports_kabaddi</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">Lahore Leopards</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-[#ff8c4a]">LHL</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">12 Players • 4★ Balance • GSL Fortress</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface material-symbols-outlined text-[20px]">more_vert</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SQUAD ROSTER PROGRESS & MINI SQUAD CHIPS (Persistent Section) -->
+<section class="px-margin pb-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-high shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">groups</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">
+            Squad Progress: <span class="text-primary-fixed">7 / 20 Players</span>
+</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Min 7 (5-ov) • 11 (10-ov)</span>
+</div>
+<!-- Segmented Mini Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden flex">
+<div class="h-full bg-primary-fixed transition-all" style="width: 35%;"></div>
+</div>
+<!-- Mini Squad Chips Preview -->
+<div class="flex flex-wrap gap-1.5 pt-1 max-h-24 overflow-y-auto">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#1 Kabir</strong>
+<span class="text-on-surface-variant">(C, ★25r, BAT)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#2 Farhan</strong>
+<span class="text-on-surface-variant">(D, BW, LF)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#3 Dev</strong>
+<span class="text-on-surface-variant">(O, BAT, RHB)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#4 Tariq</strong>
+<span class="text-on-surface-variant">(WK, RHB)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#5 Ashwin</strong>
+<span class="text-on-surface-variant">(BTAL, RO)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#6 Imran</strong>
+<span class="text-on-surface-variant">(F, BWAL, RFM)</span>
+</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<strong class="text-primary-fixed">#7 Bilal</strong>
+<span class="text-on-surface-variant">(BW, LC)</span>
+</span>
+</div>
+</div>
+</section>
+<!-- BOTTOM FIXED ACTION DOCK (56px Hero Button + Secondary Actions) -->
+<section class="sticky bottom-0 z-40 bg-surface/90 backdrop-blur-xl px-margin pt-space-xs pb-space-lg mt-auto shadow-[0_-8px_24px_rgba(0,0,0,0.6)]">
+<div class="flex flex-col gap-2">
+<!-- 56px Glowing Electric Lime Hero Button -->
+<button class="w-full h-14 rounded-full bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_4px_24px_rgba(204,255,0,0.35)]" onclick="initializeTeamAction()" type="button">
+<span>SAVE &amp; INITIALIZE TEAM</span>
+<span class="text-[20px]">🏏</span>
+</button>
+<!-- Secondary Controls Bar -->
+<div class="flex items-center gap-2">
+<button class="flex-1 h-11 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" onclick="quickAddPlayer()" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">person_add</span>
+<span>Add Another Player (+)</span>
+</button>
+<button class="h-11 px-4 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 transition-all" onclick="history.back()" type="button">
+<span>Cancel</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MICRO-INTERACTIONS & LIVE SYNC SCRIPT -->
+<script>
+    let currentThemeColor = '#ccff00';
+    let currentEmblem = 'bolt';
+    let selectedTier = 4;
+    let isCaptainActive = false;
+
+    function switchMainTab(tab) {
+      const pTeam = document.getElementById('panel-team-builder');
+      const pPlayer = document.getElementById('panel-player-builder');
+      const pRoster = document.getElementById('panel-roster-overview');
+
+      const btnTeam = document.getElementById('tab-team');
+      const btnPlayer = document.getElementById('tab-player');
+      const btnRoster = document.getElementById('tab-roster');
+
+      [pTeam, pPlayer, pRoster].forEach(p => p.classList.add('hidden'));
+      [btnTeam, btnPlayer, btnRoster].forEach(b => {
+        b.className = "flex-1 py-2 px-3 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all";
+      });
+
+      if (tab === 'team') {
+        pTeam.classList.remove('hidden');
+        btnTeam.className = "flex-1 py-2 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-[0_4px_16px_rgba(195,244,0,0.25)]";
+      } else if (tab === 'player') {
+        pPlayer.classList.remove('hidden');
+        btnPlayer.className = "flex-1 py-2 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-[0_4px_16px_rgba(195,244,0,0.25)]";
+      } else if (tab === 'roster') {
+        pRoster.classList.remove('hidden');
+        btnRoster.className = "flex-1 py-2 px-3 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all shadow-[0_4px_16px_rgba(195,244,0,0.25)]";
+      }
+    }
+
+    function updateTeamPreview() {
+      const nameInput = document.getElementById('inputTeamName');
+      const codeInput = document.getElementById('inputTeamCode');
+      const teamTitle = document.getElementById('previewTeamTitle');
+      const codeBadge = document.getElementById('previewCodeBadge');
+      const counter = document.getElementById('teamNameCounter');
+
+      const nameVal = nameInput.value.trim() || 'Custom Team';
+      const codeVal = (codeInput.value.trim() || 'CUS').toUpperCase();
+
+      teamTitle.textContent = nameVal;
+      codeBadge.textContent = codeVal;
+      counter.textContent = `${nameInput.value.length} / 24`;
+    }
+
+    function selectColor(hex, name, lightTint) {
+      currentThemeColor = hex;
+      document.getElementById('selectedColorLabel').textContent = `${name} (${hex})`;
+      
+      const swatches = document.querySelectorAll('.color-swatch');
+      swatches.forEach(swatch => {
+        swatch.classList.remove('scale-110', 'shadow-[0_0_12px_#ccff00]');
+        const check = swatch.querySelector('.check-icon');
+        if (check) check.classList.add('hidden');
+      });
+
+      const clicked = event.currentTarget;
+      clicked.classList.add('scale-110');
+      const activeCheck = clicked.querySelector('.check-icon');
+      if (activeCheck) activeCheck.classList.remove('hidden');
+
+      // Update Live Card Glow & Crest
+      const bannerGlow = document.getElementById('bannerGlow');
+      if (bannerGlow) {
+        bannerGlow.style.backgroundColor = hex;
+      }
+      const crestFrame = document.getElementById('crestDisplayFrame');
+      if (crestFrame) {
+        crestFrame.style.boxShadow = `0 0 16px ${hex}40`;
+      }
+    }
+
+    function selectStarTier(tier) {
+      selectedTier = tier;
+      [3, 4, 5].forEach(t => {
+        const btn = document.getElementById(`tier-btn-${t}`);
+        if (t === tier) {
+          btn.className = "flex-1 h-full rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-0.5 shadow-[0_2px_12px_rgba(195,244,0,0.3)] transition-all";
+        } else {
+          btn.className = "flex-1 h-full rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-0.5 transition-all";
+        }
+      });
+
+      const container = document.getElementById('previewStarsContainer');
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= tier) {
+          starsHtml += '<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: \'FILL\' 1;">star</span>';
+        } else {
+          starsHtml += '<span class="material-symbols-outlined text-[14px] text-surface-variant">star</span>';
+        }
+      }
+      container.innerHTML = starsHtml;
+      document.getElementById('previewTierText').textContent = `${tier}★ Balance`;
+    }
+
+    function selectCrest(iconName, label) {
+      currentEmblem = iconName;
+      document.querySelectorAll('.crest-choice').forEach(b => {
+        b.className = "crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-surface-container text-on-surface-variant hover:text-on-surface transition-all";
+      });
+      const activeBtn = document.getElementById(`crest-btn-${iconName}`);
+      if (activeBtn) {
+        activeBtn.className = "crest-choice flex flex-col items-center gap-1.5 p-3 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed shadow-[0_4px_16px_rgba(195,244,0,0.25)] transition-all";
+      }
+
+      const previewIcon = document.getElementById('crestIconDisplay');
+      if (previewIcon) {
+        previewIcon.textContent = iconName;
+      }
+    }
+
+    function selectRole(roleCode) {
+      document.querySelectorAll('.role-chip').forEach(c => {
+        c.className = "role-chip py-2.5 px-2 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-md text-label-md flex flex-col items-center gap-0.5 transition-all";
+        const titleSpan = c.querySelector('span:first-child');
+        if (titleSpan) titleSpan.className = "font-bold text-on-surface";
+      });
+
+      const activeChip = document.getElementById(`role-${roleCode}`);
+      if (activeChip) {
+        activeChip.className = "role-chip py-2.5 px-2 rounded-DEFAULT bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex flex-col items-center gap-0.5 shadow-[0_2px_10px_rgba(195,244,0,0.25)] transition-all";
+        const titleSpan = activeChip.querySelector('span:first-child');
+        if (titleSpan) titleSpan.className = "font-bold text-on-primary-fixed";
+      }
+
+      const wkSub = document.getElementById('keepingSkillSubPanel');
+      if (roleCode === 'WK') {
+        wkSub.classList.remove('opacity-40');
+      } else {
+        wkSub.classList.add('opacity-40');
+      }
+    }
+
+    function selectBattingHand(hand) {
+      const rhb = document.getElementById('bat-hand-RHB');
+      const lhb = document.getElementById('bat-hand-LHB');
+      if (hand === 'RHB') {
+        rhb.className = "flex-1 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold transition-all";
+        lhb.className = "flex-1 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all";
+      } else {
+        lhb.className = "flex-1 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold transition-all";
+        rhb.className = "flex-1 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all";
+      }
+    }
+
+    function selectBowlStyle(code) {
+      document.querySelectorAll('.bowl-style-chip').forEach(b => {
+        b.className = "bowl-style-chip px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm";
+      });
+      const active = event.currentTarget;
+      active.className = "bowl-style-chip px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-bold font-label-sm text-label-sm";
+
+      const helperMap = {
+        'RF': 'RF = Right-Arm Fast (Raw Pace 145+)',
+        'RFM': 'RFM = Right-Arm Fast Medium',
+        'RM': 'RM = Right-Arm Medium (Line & Length)',
+        'LF': 'LF = Left-Arm Fast (Seam Angle & Swing)',
+        'LFM': 'LFM = Left-Arm Fast Medium',
+        'LM': 'LM = Left-Arm Medium Swing',
+        'RO': 'RO = Off-Break Spin (Matchup vs LHB)',
+        'RL': 'RL = Leg-Break Wrist Spin',
+        'LO': 'LO = Left-Arm Orthodox Finger Spin',
+        'LC': 'LC = Chinaman / Left-Arm Wrist Spin'
+      };
+      document.getElementById('bowlStyleHelperText').textContent = helperMap[code] || `${code} Bowling`;
+    }
+
+    function toggleCaptain(el) {
+      const label = document.getElementById('previewCaptainLabel');
+      const playerName = document.getElementById('inputPlayerName').value || 'New Player';
+      if (el.checked) {
+        label.textContent = `C: ${playerName.split(' ')[0]}`;
+      } else {
+        label.textContent = 'C: Kabir';
+      }
+    }
+
+    function toggleStar(el) {
+      const container = document.getElementById('starThresholdContainer');
+      if (el.checked) {
+        container.classList.remove('opacity-40', 'pointer-events-none');
+      } else {
+        container.classList.add('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    function selectSkill(type, color) {
+      const colors = ['red', 'green', 'blue'];
+      colors.forEach(c => {
+        const btn = document.getElementById(`${type}-${c}`);
+        if (c === color) {
+          if (c === 'red') {
+            btn.className = "py-2 rounded-full bg-error text-on-error font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm";
+          } else if (c === 'green') {
+            btn.className = "py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm";
+          } else {
+            btn.className = "py-2 rounded-full bg-[#4f8ff7] text-black font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm";
+          }
+        } else {
+          btn.className = "py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1";
+        }
+      });
+    }
+
+    function quickAddPlayer() {
+      switchMainTab('player');
+      const input = document.getElementById('inputPlayerName');
+      input.focus();
+    }
+
+    function initializeTeamAction() {
+      const name = document.getElementById('inputTeamName').value || 'Delhi Dynamos';
+      alert(`Franchise '${name}' registered with 7 Squad Players. Tactical telemetry rules compiled for Dice Cricket King Season 2025.`);
+    }
+  </script>
+</div></main></body></html>
