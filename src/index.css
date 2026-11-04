@@ -146,6 +146,50 @@
   animation: activeBeaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* DRS Neon Glow Pulse & Animation Effects */
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #c3f400, 0 0 20px #c3f400, 0 0 35px #ccff00, 0 0 50px rgba(195, 244, 0, 0.8);
+    filter: drop-shadow(0 0 12px rgba(195, 244, 0, 0.9));
+  }
+  50% {
+    text-shadow: 0 0 18px #c3f400, 0 0 32px #c3f400, 0 0 65px #ccff00, 0 0 90px rgba(204, 255, 0, 0.95);
+    filter: drop-shadow(0 0 24px rgba(204, 255, 0, 1));
+  }
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes neonRingExpand {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+}
+
+.animate-neon-ring {
+  animation: neonRingExpand 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.drs-neon-card {
+  box-shadow: 0 0 40px rgba(195, 244, 0, 0.35), 0 0 80px rgba(195, 244, 0, 0.15), inset 0 0 25px rgba(195, 244, 0, 0.15);
+}
+
+.drs-text-neon {
+  color: #c3f400;
+  text-shadow: 0 0 12px #c3f400, 0 0 25px rgba(195, 244, 0, 0.9), 0 0 45px rgba(204, 255, 0, 0.7);
+}
+
 /* Smooth Entrance Transition for Match Views */
 @keyframes viewEntrance {
   0% {
@@ -244,4 +288,90 @@
 .animate-confetti-particle {
   animation: confettiFall 4s linear infinite;
 }
+
+/* 6 Themes Configuration (Faiz Dice Games Specification) */
+.theme-classic_maroon {
+  --theme-bg: #1a0a0f;
+  background-color: #1a0a0f !important;
+}
+.theme-classic_maroon .bg-\[\#101410\] {
+  background-color: #1a0a0f !important;
+}
+.theme-classic_maroon .bg-\[\#141814\] {
+  background-color: #261119 !important;
+}
+.theme-classic_maroon .bg-\[\#1d211c\] {
+  background-color: #331622 !important;
+}
+
+.theme-night_stadium {
+  --theme-bg: #090d14;
+  background-color: #090d14 !important;
+}
+.theme-night_stadium .bg-\[\#101410\] {
+  background-color: #090d14 !important;
+}
+.theme-night_stadium .bg-\[\#141814\] {
+  background-color: #111827 !important;
+}
+.theme-night_stadium .bg-\[\#1d211c\] {
+  background-color: #1f2937 !important;
+}
+
+.theme-pitch_green {
+  --theme-bg: #0d170e;
+  background-color: #0d170e !important;
+}
+.theme-pitch_green .bg-\[\#101410\] {
+  background-color: #0d170e !important;
+}
+.theme-pitch_green .bg-\[\#141814\] {
+  background-color: #132415 !important;
+}
+.theme-pitch_green .bg-\[\#1d211c\] {
+  background-color: #1b331f !important;
+}
+
+.theme-super_league {
+  --theme-bg: #12091f;
+  background-color: #12091f !important;
+}
+.theme-super_league .bg-\[\#101410\] {
+  background-color: #12091f !important;
+}
+.theme-super_league .bg-\[\#141814\] {
+  background-color: #1e1136 !important;
+}
+.theme-super_league .bg-\[\#1d211c\] {
+  background-color: #2b184d !important;
+}
+
+.theme-ocean_breeze {
+  --theme-bg: #081721;
+  background-color: #081721 !important;
+}
+.theme-ocean_breeze .bg-\[\#101410\] {
+  background-color: #081721 !important;
+}
+.theme-ocean_breeze .bg-\[\#141814\] {
+  background-color: #0f2434 !important;
+}
+.theme-ocean_breeze .bg-\[\#1d211c\] {
+  background-color: #16364d !important;
+}
+
+.theme-retro_scoreboard {
+  --theme-bg: #121212;
+  background-color: #121212 !important;
+}
+.theme-retro_scoreboard .bg-\[\#101410\] {
+  background-color: #121212 !important;
+}
+.theme-retro_scoreboard .bg-\[\#141814\] {
+  background-color: #1c1c1c !important;
+}
+.theme-retro_scoreboard .bg-\[\#1d211c\] {
+  background-color: #282828 !important;
+}
+
 

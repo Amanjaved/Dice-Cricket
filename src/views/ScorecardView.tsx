@@ -95,26 +95,38 @@ export const ScorecardView: React.FC<ScorecardViewProps> = ({ match, onBack }) =
 
       {/* Player of the Match Banner in Scorecard */}
       {potm && (
-        <div className="bg-gradient-to-r from-[#1c180f] via-[#241e12] to-[#1c180f] border border-amber-400/40 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-lg print:border-black">
+        <div className="bg-gradient-to-r from-[#1c180f] via-[#241e12] to-[#1c180f] border border-amber-400/40 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg print:border-black">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-black font-black text-lg flex items-center justify-center shrink-0 shadow-md">
               <Award className="w-5 h-5 text-black" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex flex-wrap items-center gap-1.5">
                 <span className="text-[9px] font-black uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-0.2 rounded-full border border-amber-400/30">
                   PLAYER OF THE MATCH
                 </span>
                 <span className="text-xs font-black text-white">{potm.name}</span>
                 <span className="text-[10px] text-amber-300 font-bold">({potm.teamCode})</span>
+                <span className="text-[10px] text-slate-400 font-mono">· {potm.role}</span>
               </div>
               <div className="text-[11px] text-slate-300 mt-0.5 font-semibold">
                 {potm.headline}
               </div>
             </div>
           </div>
-          <div className="text-right shrink-0">
-            <span className="text-[10px] font-mono text-[#ccff00] font-bold bg-[#101410] px-2.5 py-1 rounded-full border border-white/10">
+
+          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
+            {potm.batting && (potm.batting.runs > 0 || potm.batting.balls > 0) && (
+              <span className="text-[10px] font-mono text-[#c3f400] font-bold bg-[#101410] px-2 py-0.5 rounded-full border border-[#c3f400]/30">
+                🏏 {potm.batting.runs}{potm.batting.notOut ? '*' : ''}r ({potm.batting.balls}b)
+              </span>
+            )}
+            {potm.bowling && (potm.bowling.wickets > 0 || potm.bowling.overs > 0) && (
+              <span className="text-[10px] font-mono text-amber-300 font-bold bg-[#101410] px-2 py-0.5 rounded-full border border-amber-400/30">
+                🎯 {potm.bowling.wickets}w/{potm.bowling.runsConceded}
+              </span>
+            )}
+            <span className="text-[10px] font-mono text-white font-bold bg-[#101410] px-2.5 py-0.5 rounded-full border border-white/10">
               ★ {potm.fantasyPoints} Rating
             </span>
           </div>

@@ -19,6 +19,9 @@ import { CardsView } from './views/CardsView';
 import { RankingsView } from './views/RankingsView';
 import { RuleBookView } from './views/RuleBookView';
 import { CustomiseView } from './views/CustomiseView';
+import { MenuView } from './views/MenuView';
+import { MatchesView } from './views/MatchesView';
+import { StatsView } from './views/StatsView';
 
 export function App() {
   const [currentView, setCurrentView] = useState<string>('home');
@@ -31,6 +34,7 @@ export function App() {
     format: '5_overs',
     ground: 'NSG'
   });
+  const [returnView, setReturnView] = useState<string>('matches');
 
   useEffect(() => {
     // Check for ongoing match on startup
@@ -49,6 +53,34 @@ export function App() {
   const handleResumeMatch = (match: MatchState) => {
     setActiveMatch(match);
     setCurrentView('live');
+  };
+
+  const handleOpenScorecard = (match: MatchState, fromView = 'matches') => {
+    setActiveMatch(match);
+    setReturnView(fromView);
+    setCurrentView('scorecard');
+  };
+
+  const handleOpenSummary = (match: MatchState, fromView = 'matches') => {
+    setActiveMatch(match);
+    setReturnView(fromView);
+    setCurrentView('summary');
+  };
+
+  const handleOpenBallByBall = (match: MatchState, fromView = 'matches') => {
+    setActiveMatch(match);
+    setReturnView(fromView);
+    setCurrentView('ballbyball');
+  };
+
+  const handleOpenMatch = (match: MatchState, fromView = 'matches') => {
+    setActiveMatch(match);
+    setReturnView(fromView);
+    if (match.status === 'COMPLETED') {
+      setCurrentView('scorecard');
+    } else {
+      setCurrentView('live');
+    }
   };
 
   const handlePlayFixture = (fixture: TournamentFixture) => {
@@ -128,14 +160,14 @@ export function App() {
           {currentView === 'scorecard' && activeMatch && (
             <ScorecardView
               match={activeMatch}
-              onBack={() => setCurrentView('live')}
+              onBack={() => setCurrentView(activeMatch?.status === 'IN_PROGRESS' || activeMatch?.status === 'TIE_SUPER_OVER' ? 'live' : returnView)}
             />
           )}
 
           {currentView === 'summary' && activeMatch && (
             <SummaryView
               match={activeMatch}
-              onBack={() => setCurrentView('live')}
+              onBack={() => setCurrentView(activeMatch?.status === 'IN_PROGRESS' || activeMatch?.status === 'TIE_SUPER_OVER' ? 'live' : returnView)}
               onViewScorecard={() => setCurrentView('scorecard')}
             />
           )}
@@ -143,7 +175,23 @@ export function App() {
           {currentView === 'ballbyball' && activeMatch && (
             <BallByBallView
               match={activeMatch}
-              onBack={() => setCurrentView('live')}
+              onBack={() => setCurrentView(activeMatch?.status === 'IN_PROGRESS' || activeMatch?.status === 'TIE_SUPER_OVER' ? 'live' : returnView)}
+            />
+          )}
+
+          {currentView === 'matches' && (
+            <MatchesView
+              onStartNewMatch={() => handleStartQuickMatch('5_overs', 'NSG')}
+              onResumeMatch={handleResumeMatch}
+              onViewScorecard={(m) => handleOpenScorecard(m, 'matches')}
+              onViewSummary={(m) => handleOpenSummary(m, 'matches')}
+              onViewBallByBall={(m) => handleOpenBallByBall(m, 'matches')}
+            />
+          )}
+
+          {currentView === 'stats' && (
+            <StatsView
+              onOpenMatch={(m) => handleOpenMatch(m, 'stats')}
             />
           )}
 
@@ -156,7 +204,11 @@ export function App() {
 
           {currentView === 'dpl' && <DplView />}
 
-          {currentView === 'teams' && <TeamsView />}
+          {currentView === 'teams' && (
+            <TeamsView
+              onOpenMatch={(m) => handleOpenMatch(m, 'teams')}
+            />
+          )}
 
           {currentView === 'sheets' && <SheetsView />}
 
@@ -174,6 +226,26 @@ export function App() {
               onSettingsChanged={(st) => setSettings(st)}
             />
           )}
+
+          {currentView === 'menu' && (
+            <MenuView
+              currentView={currentView}
+              onNavigate={(view) => {
+                setCurrentView(view);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onStartQuickMatch={handleStartQuickMatch}
+              activeMatch={activeMatch}
+              soundEnabled={settings.soundEnabled}
+              onToggleSound={() => {
+                const next = !settings.soundEnabled;
+                soundEngine.enabled = next;
+                const updated = { ...settings, soundEnabled: next };
+                setSettings(updated);
+                storage.saveSettings(updated);
+              }}
+            />
+          )}
         </div>
       </main>
 
@@ -184,44 +256,35 @@ export function App() {
           setCurrentView(view);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        onOpenMore={() => setShowMobileMore(true)}
+        onOpenMore={() => setCurrentView('menu')}
       />
 
-      {/* Mobile "More" Drawer Sheet */}
+      {/* Mobile "More" Drawer Sheet (Full-fidelity MenuView Slideup) */}
       {showMobileMore && (
-        <div className="md:hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col justify-end">
-          <div className="bg-[#141814] border-t border-[#272b26] rounded-t-3xl p-5 space-y-4 animate-slideUp">
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <span className="text-sm font-black text-white">More Game Features</span>
-              <button
-                onClick={() => setShowMobileMore(false)}
-                className="text-slate-400 hover:text-white text-xs font-bold"
-              >
-                Done ✕
-              </button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-2.5 text-center text-xs">
-              {[
-                { id: 'dpl', label: 'DPL Auction' },
-                { id: 'teams', label: 'Teams DB' },
-                { id: 'sheets', label: '12 Sheets' },
-                { id: 'cards', label: '87 Cards' },
-                { id: 'rulebook', label: 'Rule Book' },
-                { id: 'customise', label: 'Customise' },
-              ].map(item => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    setCurrentView(item.id);
-                    setShowMobileMore(false);
-                  }}
-                  className="p-3 bg-[#1d211c] border border-white/5 rounded-2xl text-slate-200 font-bold hover:bg-[#272b26]"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+        <div className="md:hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex flex-col justify-end">
+          <div className="bg-[#141814] border-t-2 border-[#c3f400]/40 rounded-t-3xl max-h-[88vh] overflow-y-auto p-4 space-y-4 animate-slideUp">
+            <MenuView
+              currentView={currentView}
+              onNavigate={(view) => {
+                setCurrentView(view);
+                setShowMobileMore(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onStartQuickMatch={(fmt, grd) => {
+                handleStartQuickMatch(fmt, grd);
+                setShowMobileMore(false);
+              }}
+              activeMatch={activeMatch}
+              soundEnabled={settings.soundEnabled}
+              onToggleSound={() => {
+                const next = !settings.soundEnabled;
+                soundEngine.enabled = next;
+                const updated = { ...settings, soundEnabled: next };
+                setSettings(updated);
+                storage.saveSettings(updated);
+              }}
+              onClose={() => setShowMobileMore(false)}
+            />
           </div>
         </div>
       )}

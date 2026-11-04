@@ -1,14 +1,20 @@
 // src/views/TeamsView.tsx
 import React, { useState } from 'react';
 import { Users, Plus, Shield, Search, Sparkles, Trash2, Check, ArrowRight } from 'lucide-react';
-import type { Team, Player, Role, BattingHand, BowlingStyle, SkillColor } from '../types';
+import type { Team, Player, Role, BattingHand, BowlingStyle, SkillColor, MatchState } from '../types';
 import { storage } from '../services/storage';
+import { PlayerProfileModal } from '../components/PlayerProfileModal';
 
-export const TeamsView: React.FC = () => {
+interface TeamsViewProps {
+  onOpenMatch?: (match: MatchState) => void;
+}
+
+export const TeamsView: React.FC<TeamsViewProps> = ({ onOpenMatch }) => {
   const [teams, setTeams] = useState<Team[]>(storage.getAllTeams());
   const [selectedTeamId, setSelectedTeamId] = useState<string>(teams[0]?.id || "IND");
   const [searchQuery, setSearchQuery] = useState("");
   const [roleFilter, setRoleFilter] = useState<string>("ALL");
+  const [inspectingPlayer, setInspectingPlayer] = useState<Player | null>(null);
 
   // Modals for Custom Team and Add Player
   const [showAddTeamModal, setShowAddTeamModal] = useState(false);
@@ -247,14 +253,16 @@ export const TeamsView: React.FC = () => {
             {filteredPlayers.map(p => (
               <div
                 key={p.no}
-                className="p-3.5 bg-[#1d211c] border border-white/5 hover:border-white/20 rounded-2xl transition-all space-y-2"
+                onClick={() => setInspectingPlayer(p)}
+                className="p-3.5 bg-[#1d211c] border border-white/5 hover:border-[#c3f400]/40 hover:bg-[#232922] rounded-2xl transition-all space-y-2 cursor-pointer group"
+                title="Click to view career stats & player profile"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-[#101410] text-slate-300 font-mono text-xs flex items-center justify-center font-bold">
+                    <span className="w-6 h-6 rounded-full bg-[#101410] text-slate-300 font-mono text-xs flex items-center justify-center font-bold group-hover:bg-[#c3f400] group-hover:text-black transition-colors">
                       {p.no}
                     </span>
-                    <span className="font-bold text-white text-sm">{p.name}</span>
+                    <span className="font-bold text-white text-sm group-hover:text-[#c3f400] transition-colors">{p.name}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     {p.marks.includes('C') && <span className="bg-blue-400/20 text-blue-300 text-[9px] px-1.5 py-0.5 rounded font-bold">C</span>}
@@ -503,6 +511,16 @@ export const TeamsView: React.FC = () => {
             </div>
           </form>
         </div>
+      )}
+
+      {/* Player Profile Modal */}
+      {inspectingPlayer && selectedTeam && (
+        <PlayerProfileModal
+          player={inspectingPlayer}
+          team={selectedTeam}
+          onClose={() => setInspectingPlayer(null)}
+          onOpenMatch={onOpenMatch}
+        />
       )}
     </div>
   );

@@ -60,6 +60,27 @@ class FaizSoundEngine {
     osc.stop(t + 0.09);
   }
 
+  playCardDraw() {
+    if (!this.enabled) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(600, t);
+    osc.frequency.exponentialRampToValueAtTime(280, t + 0.06);
+
+    gain.gain.setValueAtTime(0.08, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + 0.07);
+  }
+
   playFour() {
     if (!this.enabled) return;
     const ctx = this.getContext();
@@ -143,6 +164,28 @@ class FaizSoundEngine {
       gain.connect(ctx.destination);
       osc.start(t + idx * 0.15);
       osc.stop(t + idx * 0.15 + 0.42);
+    });
+  }
+
+  playDrsSuccess() {
+    if (!this.enabled) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+
+    // Futuristic electronic rising chime sequence (high tech Hawk-Eye success sound)
+    const pitches = [587.33, 739.99, 880, 1174.66, 1479.98];
+    pitches.forEach((freq, idx) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, t + idx * 0.08);
+      gain.gain.setValueAtTime(0.22, t + idx * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + idx * 0.08 + 0.35);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(t + idx * 0.08);
+      osc.stop(t + idx * 0.08 + 0.38);
     });
   }
 

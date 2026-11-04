@@ -9,6 +9,7 @@ interface PitchViewProps {
   lastBallResult: string | null;
   lastBallType?: 'dot' | 'runs' | 'four' | 'six' | 'wicket' | 'extra';
   isAnimationsEnabled: boolean;
+  onTriggerDrsReview?: () => void;
 }
 
 export const PitchView: React.FC<PitchViewProps> = ({
@@ -17,10 +18,11 @@ export const PitchView: React.FC<PitchViewProps> = ({
   bowler,
   lastBallResult,
   lastBallType,
-  isAnimationsEnabled
+  isAnimationsEnabled,
+  onTriggerDrsReview
 }) => {
   // Current active animation state
-  const [activeTelemetry, setActiveTelemetry] = useState<'six' | 'four' | 'wicket' | null>(null);
+  const [activeTelemetry, setActiveTelemetry] = useState<'six' | 'four' | 'wicket' | 'drs' | null>(null);
   const [speed] = useState<number>(142);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -51,11 +53,11 @@ export const PitchView: React.FC<PitchViewProps> = ({
       <div className="w-full p-3 bg-[#151914]/90 backdrop-blur-md flex flex-col gap-2 z-20 border-b border-[#232821]">
         <div className="flex items-center justify-between gap-2">
           {/* Telemetry Mode Selector Pills */}
-          <div className="flex items-center gap-1 bg-[#191d18] p-1 rounded-full border border-[#2e342c]">
+          <div className="flex items-center gap-1 bg-[#191d18] p-1 rounded-full border border-[#2e342c] overflow-x-auto">
             <button
               onClick={() => setActiveTelemetry('six')}
               type="button"
-              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all ${
+              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all shrink-0 ${
                 activeTelemetry === 'six'
                   ? 'bg-amber-400 text-[#0b0f0b] shadow-md'
                   : 'text-[#9ba394] hover:text-white'
@@ -66,7 +68,7 @@ export const PitchView: React.FC<PitchViewProps> = ({
             <button
               onClick={() => setActiveTelemetry('four')}
               type="button"
-              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all ${
+              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all shrink-0 ${
                 activeTelemetry === 'four'
                   ? 'bg-[#c3f400] text-[#0b0f0b] shadow-md'
                   : 'text-[#9ba394] hover:text-white'
@@ -77,7 +79,7 @@ export const PitchView: React.FC<PitchViewProps> = ({
             <button
               onClick={() => setActiveTelemetry('wicket')}
               type="button"
-              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all ${
+              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all shrink-0 ${
                 activeTelemetry === 'wicket'
                   ? 'bg-red-500 text-white shadow-md'
                   : 'text-[#9ba394] hover:text-white'
@@ -85,9 +87,24 @@ export const PitchView: React.FC<PitchViewProps> = ({
             >
               WICKET
             </button>
+            <button
+              onClick={() => {
+                setActiveTelemetry('drs');
+                if (onTriggerDrsReview) onTriggerDrsReview();
+              }}
+              type="button"
+              data-testid="pitch-drs-safe-btn"
+              className={`px-3 py-1 rounded-full font-sans text-[11px] font-bold uppercase transition-all shrink-0 border ${
+                activeTelemetry === 'drs'
+                  ? 'bg-[#c3f400] text-[#0b0f0b] border-[#c3f400] shadow-[0_0_12px_rgba(195,244,0,0.6)]'
+                  : 'bg-[#c3f400]/15 text-[#c3f400] border-[#c3f400]/30 hover:bg-[#c3f400]/30'
+              }`}
+            >
+              DRS OVERTURN
+            </button>
           </div>
 
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] font-bold shrink-0">
             <span className="material-symbols-outlined text-[14px]">speed</span>
             <span>{speed} km/h</span>
           </div>
@@ -153,6 +170,27 @@ export const PitchView: React.FC<PitchViewProps> = ({
               <span className="text-red-300 font-bold">Impact: Stumps Shattered</span>
               <span>•</span>
               <span className="text-white">DRS Codex Sec 11 Eligible</span>
+            </div>
+          </div>
+        )}
+
+        {activeTelemetry === 'drs' && (
+          <div className="w-full px-4 py-2 bg-[#151d14]/90 border border-[#c3f400]/40 rounded-2xl flex flex-col items-center gap-1 animate-fadeIn">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">⚡</span>
+              <span className="text-[17px] font-black text-[#c3f400] uppercase tracking-wider drs-text-neon animate-neon-pulse">
+                REVIEW SUCCESSFUL! NOT OUT
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-[#c3f400] text-[#0b0f0b] text-[10px] font-black uppercase">
+                OVERTURNED
+              </span>
+            </div>
+            <div className="flex items-center gap-2 text-[11px] font-semibold text-[#c3f400] flex-wrap justify-center">
+              <span className="text-white font-bold">UltraEdge: Spike Inside Edge</span>
+              <span>•</span>
+              <span className="text-[#c3f400] font-bold">Decision: Dot Ball</span>
+              <span>•</span>
+              <span className="text-white">Hawk-Eye: Verified</span>
             </div>
           </div>
         )}

@@ -1,6 +1,5 @@
 // src/components/Navbar.tsx
 import React from 'react';
-import { soundEngine } from '../services/sound';
 
 interface NavbarProps {
   currentView: string;
@@ -15,51 +14,59 @@ export const Navbar: React.FC<NavbarProps> = ({
   soundEnabled,
   onToggleSound
 }) => {
+  const NAV_ITEMS = [
+    { id: 'home', label: 'Home', icon: 'home' },
+    { id: 'matches', label: 'Matches', icon: 'sports_cricket' },
+    { id: 'tournaments', label: 'Tournaments', icon: 'emoji_events' },
+    { id: 'teams', label: 'Teams', icon: 'group' },
+    { id: 'dpl', label: 'DPL', icon: 'military_tech' },
+    { id: 'rankings', label: 'Rankings', icon: 'leaderboard' },
+    { id: 'stats', label: 'Stats', icon: 'analytics' },
+    { id: 'sheets', label: 'Sheets', icon: 'table_chart' },
+    { id: 'customise', label: 'Customise', icon: 'tune' },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-[#0b0f0b]/90 backdrop-blur-xl border-b border-[#232821] px-4 py-2.5 select-none">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        {/* Brand Logo & Name matching Stitch */}
+    <header className="sticky top-0 z-50 bg-[#0b0f0b]/95 backdrop-blur-xl border-b border-[#232821] px-4 py-2.5 select-none">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Header Branding matching Section 2: red-and-blue dice logo, "Dice Cricket", "Faiz Dice Games" */}
         <div
           onClick={() => onNavigate('home')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-2xl bg-[#191d18] border border-[#2e342c] flex items-center justify-center text-[#c3f400] shadow-md group-hover:scale-105 transition-transform">
-            <span className="material-symbols-outlined text-[22px]">sports_cricket</span>
+          {/* Red and Blue Dice Graphic Logo */}
+          <div className="flex items-center -space-x-1.5 group-hover:scale-105 transition-transform">
+            {/* Red Die */}
+            <div className="w-7 h-7 rounded-lg die-3d-red flex items-center justify-center shadow-md relative z-10 border border-red-300/30">
+              <span className="w-2 h-2 rounded-full bg-white shadow-xs" />
+            </div>
+            {/* Blue Die */}
+            <div className="w-7 h-7 rounded-lg die-3d-blue flex items-center justify-center shadow-md border border-sky-300/30">
+              <div className="grid grid-cols-2 gap-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs" />
+              </div>
+            </div>
           </div>
+
           <div className="flex flex-col">
-            <div className="flex items-center gap-1.5 leading-none">
-              <span className="font-headline-sm font-black text-white tracking-tight uppercase text-[17px]">
-                DICE CRICKET KING
-              </span>
-              <span className="w-2 h-2 rounded-full bg-[#ccff00] animate-ping" />
-            </div>
-            <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#9ba394] tracking-widest uppercase mt-1">
-              <span>By Faiz Dice Games</span>
-              <span className="text-[#3d4538]">•</span>
-              <span className="text-[#c3f400]">Pitch Pulse</span>
-            </div>
+            <span className="font-sans font-black text-white tracking-tight uppercase text-[16px] leading-tight">
+              Dice Cricket
+            </span>
+            <span className="text-[10px] font-bold text-[#c3f400] tracking-wider uppercase leading-tight">
+              Faiz Dice Games
+            </span>
           </div>
         </div>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-1">
-          {[
-            { id: 'home', label: 'Home', icon: 'home' },
-            { id: 'live', label: 'Live Arena', icon: 'stadium' },
-            { id: 'tournaments', label: 'Tournaments', icon: 'emoji_events' },
-            { id: 'dpl', label: 'DPL League', icon: 'military_tech' },
-            { id: 'teams', label: 'Teams DB', icon: 'group' },
-            { id: 'sheets', label: '12 Sheets', icon: 'table_chart' },
-            { id: 'cards', label: '87 Cards', icon: 'style' },
-            { id: 'rankings', label: 'Rankings', icon: 'leaderboard' },
-            { id: 'rulebook', label: 'Rule Codex', icon: 'gavel' },
-            { id: 'customise', label: 'Customise', icon: 'tune' },
-          ].map((item) => (
+        {/* Top menu (large screen): Home, Matches, Tournaments, Teams, DPL, Rankings, Stats, Sheets, Customise */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
-              className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[12px] font-bold transition-all ${
-                currentView === item.id
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-bold transition-all cursor-pointer ${
+                currentView === item.id || (item.id === 'matches' && ['live', 'scorecard', 'summary', 'ballbyball', 'setup'].includes(currentView))
                   ? 'bg-[#c3f400] text-[#101410] shadow-[0_0_18px_rgba(195,244,0,0.3)] font-black'
                   : 'text-[#9ba394] hover:text-white hover:bg-[#191d18]'
               }`}
@@ -70,40 +77,34 @@ export const Navbar: React.FC<NavbarProps> = ({
           ))}
         </nav>
 
-        {/* Right Tools: Sound Toggle & Tanweer Profile */}
-        <div className="flex items-center gap-2.5">
+        {/* Right Tools: Sound Toggle, Customise shortcut & Mobile Matches Quick Link */}
+        <div className="flex items-center gap-2">
+          {/* Quick Match / Matches button on tablet/mobile */}
+          <button
+            onClick={() => onNavigate('matches')}
+            className="hidden sm:flex lg:hidden items-center gap-1 px-3 py-1.5 rounded-full bg-[#191d18] border border-[#2e342c] text-xs font-bold text-slate-300 hover:text-white"
+          >
+            <span className="material-symbols-outlined text-[16px] text-[#c3f400]">sports_cricket</span>
+            <span>Matches</span>
+          </button>
+
           <button
             onClick={onToggleSound}
             title={soundEnabled ? "Faiz Sound Engine Active (Click to mute)" : "Unmute Sound Engine"}
-            className="w-9 h-9 rounded-full bg-[#191d18] border border-[#2e342c] flex items-center justify-center text-on-surface hover:text-[#c3f400] transition-colors"
+            className="w-9 h-9 rounded-full bg-[#191d18] border border-[#2e342c] flex items-center justify-center text-[#9ba394] hover:text-[#c3f400] transition-colors cursor-pointer"
           >
             <span className="material-symbols-outlined text-[18px]">
               {soundEnabled ? 'volume_up' : 'volume_off'}
             </span>
           </button>
 
-          <div
+          <button
             onClick={() => onNavigate('customise')}
-            className="flex items-center gap-2 pl-1 cursor-pointer group"
+            title="Customise (Themes, Layouts, Scorer)"
+            className="w-9 h-9 rounded-full bg-[#191d18] border border-[#2e342c] flex items-center justify-center text-[#9ba394] hover:text-white transition-colors cursor-pointer"
           >
-            <div className="relative w-9 h-9 rounded-full overflow-hidden bg-[#191d18] border border-[#c3f400]/40 p-0.5 shadow-md group-hover:border-[#c3f400] transition-colors">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1mbmKlNI1OFjKYnmcL1fqCFMOD9sp2rDTb0L9syNyyuNnC5pemphEml4i4t0lkyDUmoFZY6m5HSFM_QqaIy5wikRTgkgyVdxjiFiihBSe3IpY_dyxMR1iK1HsAkR1QqcBr2lgfhP5u5hN_uuG7GssESiGkW_1wvNcI-jxfzb-o1Bf37C7QnOXUklghHnQPMMGo7sqzVX18CHIM2tO3EHK19NLN6AGrM8cVYMjHpI"
-                alt="Tanweer"
-                className="w-full h-full object-cover rounded-full"
-              />
-              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#c3f400] rounded-full ring-2 ring-[#101410]" />
-            </div>
-            <div className="hidden sm:flex flex-col text-left">
-              <span className="text-[12px] font-bold text-white flex items-center gap-1 leading-tight">
-                Tanweer
-                <span className="text-[9px] font-black text-[#101410] bg-[#c3f400] px-1 py-0.2 rounded-full">
-                  PRO
-                </span>
-              </span>
-              <span className="text-[10px] text-[#9ba394] leading-tight">Strategist</span>
-            </div>
-          </div>
+            <span className="material-symbols-outlined text-[18px]">tune</span>
+          </button>
         </div>
       </div>
     </header>
